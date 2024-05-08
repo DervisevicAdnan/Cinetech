@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bMiPVR+QIPQblpmamItYJkrklkAvDEg658RKybPUnkr35RILuV2npAsFI5IRcmNSUPuzIMzgvphZDcRXdqXjZQ==",
+  "dgSpecHash": "qfpadaHW07EfdOkGRORPMeiI3qZtUyHTBcAuD1YnTsURjt2lYGANfbO44O5PI1kB8t+79OyUVG3bZA0hsN+RoQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\AdiDr\\source\\repos\\CineTech\\CineTech\\CineTech.csproj",
+  "projectFilePath": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\CineTech.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AdiDr\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\AdiDr\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

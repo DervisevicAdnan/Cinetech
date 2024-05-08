@@ -4557,11 +4557,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\AdiDr\\source\\repos\\CineTech\\CineTech\\CineTech.csproj",
+      "projectUniqueName": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\CineTech.csproj",
       "projectName": "CineTech",
-      "projectPath": "C:\\Users\\AdiDr\\source\\repos\\CineTech\\CineTech\\CineTech.csproj",
+      "projectPath": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\CineTech.csproj",
       "packagesPath": "C:\\Users\\AdiDr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\AdiDr\\source\\repos\\CineTech\\CineTech\\obj\\",
+      "outputPath": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\AdiDr\\AppData\\Roaming\\NuGet\\NuGet.Config",
