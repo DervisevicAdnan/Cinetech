@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\aNaToMiCaLL\\Desktop\\Fax\\tim27-cinetech\\CineTech\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|c:\\users\\anatomicall\\desktop\\fax\\tim27-cinetech\\cinetech\\cinetech\\models\\userroles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|solutionrelative:cinetech\\models\\userroles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|c:\\users\\anatomicall\\desktop\\fax\\tim27-cinetech\\cinetech\\cinetech\\models\\zanrovifilma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|solutionrelative:cinetech\\models\\zanrovifilma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|c:\\users\\anatomicall\\desktop\\fax\\tim27-cinetech\\cinetech\\cinetech\\models\\notifikacijefilma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|solutionrelative:cinetech\\models\\notifikacijefilma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|c:\\users\\anatomicall\\desktop\\fax\\tim27-cinetech\\cinetech\\cinetech\\models\\ocjenefilma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|solutionrelative:cinetech\\models\\ocjenefilma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|c:\\users\\anatomicall\\desktop\\fax\\tim27-cinetech\\cinetech\\cinetech\\models\\ocjena.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|solutionrelative:cinetech\\models\\ocjena.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -51,6 +67,58 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "UserRoles.cs",
+              "DocumentMoniker": "C:\\Users\\aNaToMiCaLL\\Desktop\\Fax\\tim27-cinetech\\CineTech\\CineTech\\Models\\UserRoles.cs",
+              "RelativeDocumentMoniker": "CineTech\\Models\\UserRoles.cs",
+              "ToolTip": "C:\\Users\\aNaToMiCaLL\\Desktop\\Fax\\tim27-cinetech\\CineTech\\CineTech\\Models\\UserRoles.cs",
+              "RelativeToolTip": "CineTech\\Models\\UserRoles.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-10T09:14:26.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ZanroviFilma.cs",
+              "DocumentMoniker": "C:\\Users\\aNaToMiCaLL\\Desktop\\Fax\\tim27-cinetech\\CineTech\\CineTech\\Models\\ZanroviFilma.cs",
+              "RelativeDocumentMoniker": "CineTech\\Models\\ZanroviFilma.cs",
+              "ToolTip": "C:\\Users\\aNaToMiCaLL\\Desktop\\Fax\\tim27-cinetech\\CineTech\\CineTech\\Models\\ZanroviFilma.cs",
+              "RelativeToolTip": "CineTech\\Models\\ZanroviFilma.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-10T09:12:03.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NotifikacijeFilma.cs",
+              "DocumentMoniker": "C:\\Users\\aNaToMiCaLL\\Desktop\\Fax\\tim27-cinetech\\CineTech\\CineTech\\Models\\NotifikacijeFilma.cs",
+              "RelativeDocumentMoniker": "CineTech\\Models\\NotifikacijeFilma.cs",
+              "ToolTip": "C:\\Users\\aNaToMiCaLL\\Desktop\\Fax\\tim27-cinetech\\CineTech\\CineTech\\Models\\NotifikacijeFilma.cs",
+              "RelativeToolTip": "CineTech\\Models\\NotifikacijeFilma.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-10T09:11:21.279Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OcjeneFilma.cs",
+              "DocumentMoniker": "C:\\Users\\aNaToMiCaLL\\Desktop\\Fax\\tim27-cinetech\\CineTech\\CineTech\\Models\\OcjeneFilma.cs",
+              "RelativeDocumentMoniker": "CineTech\\Models\\OcjeneFilma.cs",
+              "ToolTip": "C:\\Users\\aNaToMiCaLL\\Desktop\\Fax\\tim27-cinetech\\CineTech\\CineTech\\Models\\OcjeneFilma.cs",
+              "RelativeToolTip": "CineTech\\Models\\OcjeneFilma.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-10T09:10:33.773Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Ocjena.cs",
               "DocumentMoniker": "C:\\Users\\aNaToMiCaLL\\Desktop\\Fax\\tim27-cinetech\\CineTech\\CineTech\\Models\\Ocjena.cs",
               "RelativeDocumentMoniker": "CineTech\\Models\\Ocjena.cs",
@@ -63,7 +131,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Notifikacija.cs",
               "DocumentMoniker": "C:\\Users\\aNaToMiCaLL\\Desktop\\Fax\\tim27-cinetech\\CineTech\\CineTech\\Models\\Notifikacija.cs",
               "RelativeDocumentMoniker": "CineTech\\Models\\Notifikacija.cs",
@@ -71,12 +139,11 @@
               "RelativeToolTip": "CineTech\\Models\\Notifikacija.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-10T07:32:12.497Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-10T07:32:12.497Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Kupovina.cs",
               "DocumentMoniker": "C:\\Users\\aNaToMiCaLL\\Desktop\\Fax\\tim27-cinetech\\CineTech\\CineTech\\Models\\Kupovina.cs",
               "RelativeDocumentMoniker": "CineTech\\Models\\Kupovina.cs",
@@ -84,12 +151,11 @@
               "RelativeToolTip": "CineTech\\Models\\Kupovina.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-10T07:30:56.17Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-10T07:30:56.17Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "Film.cs",
               "DocumentMoniker": "C:\\Users\\aNaToMiCaLL\\Desktop\\Fax\\tim27-cinetech\\CineTech\\CineTech\\Models\\Film.cs",
               "RelativeDocumentMoniker": "CineTech\\Models\\Film.cs",
@@ -97,12 +163,11 @@
               "RelativeToolTip": "CineTech\\Models\\Film.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-10T07:18:15.75Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-10T07:18:15.75Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "KinoSala.cs",
               "DocumentMoniker": "C:\\Users\\aNaToMiCaLL\\Desktop\\Fax\\tim27-cinetech\\CineTech\\CineTech\\Models\\KinoSala.cs",
               "RelativeDocumentMoniker": "CineTech\\Models\\KinoSala.cs",
@@ -110,12 +175,11 @@
               "RelativeToolTip": "CineTech\\Models\\KinoSala.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-10T07:21:23.708Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-10T07:21:23.708Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "Korisnik.cs",
               "DocumentMoniker": "C:\\Users\\aNaToMiCaLL\\Desktop\\Fax\\tim27-cinetech\\CineTech\\CineTech\\Models\\Korisnik.cs",
               "RelativeDocumentMoniker": "CineTech\\Models\\Korisnik.cs",
@@ -123,12 +187,11 @@
               "RelativeToolTip": "CineTech\\Models\\Korisnik.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-10T07:18:05.357Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-10T07:18:05.357Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "Rezervacija.cs",
               "DocumentMoniker": "C:\\Users\\aNaToMiCaLL\\Desktop\\Fax\\tim27-cinetech\\CineTech\\CineTech\\Models\\Rezervacija.cs",
               "RelativeDocumentMoniker": "CineTech\\Models\\Rezervacija.cs",
@@ -136,12 +199,11 @@
               "RelativeToolTip": "CineTech\\Models\\Rezervacija.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-10T07:30:12.074Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-10T07:30:12.074Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "Transakcija.cs",
               "DocumentMoniker": "C:\\Users\\aNaToMiCaLL\\Desktop\\Fax\\tim27-cinetech\\CineTech\\CineTech\\Models\\Transakcija.cs",
               "RelativeDocumentMoniker": "CineTech\\Models\\Transakcija.cs",
@@ -149,12 +211,11 @@
               "RelativeToolTip": "CineTech\\Models\\Transakcija.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-10T07:28:34.453Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-10T07:28:34.453Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "Roles.cs",
               "DocumentMoniker": "C:\\Users\\aNaToMiCaLL\\Desktop\\Fax\\tim27-cinetech\\CineTech\\CineTech\\Models\\Roles.cs",
               "RelativeDocumentMoniker": "CineTech\\Models\\Roles.cs",
@@ -162,8 +223,7 @@
               "RelativeToolTip": "CineTech\\Models\\Roles.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-10T07:19:10.423Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-10T07:19:10.423Z"
             }
           ]
         }
