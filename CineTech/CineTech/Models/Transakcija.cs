@@ -12,8 +12,8 @@ namespace CineTech.Models
         [ForeignKey("Korisnik")]
         public int KorisnikId { get; set; }
         public Korisnik Korisnik { get; set; }
-        [ForeignKey("Transakcija")]
-        public int TransakcijaId {  get; set; }
-        public Transakcija transakcija { get; set; }
+        [ForeignKey("ZauzetaSjedista")]
+        public int ZauzetaSjedistaId {  get; set; }
+        public ZauzetaSjedista ZauzetaSjedista { get; set; }
     }
 }
