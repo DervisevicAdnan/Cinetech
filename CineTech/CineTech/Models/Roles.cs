@@ -1,8 +1,11 @@
-﻿namespace CineTech.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace CineTech.Models
 {
     public class Roles
     {
-        public int id;
-        public String naziv;
+        [Key]
+        public int id { get; set; }
+        public String naziv { get; set; }
     }
 }

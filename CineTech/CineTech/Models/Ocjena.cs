@@ -1,10 +1,17 @@
-﻿namespace CineTech.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace CineTech.Models
 {
     public class Ocjena
     {
-        public int id, ocjena;
-        public String komentar;
-        public DateTime datum;
-
+        [Key]
+        public int id { get; set; }
+        public int ocjena { get; set; }
+        public String komentar { get; set; }
+        public DateTime datum { get; set; }
+        [ForeignKey("Korisnik")]
+        public int korisnikId { get; set; }
+        public Korisnik korisnik { get; set; }
     }
 }

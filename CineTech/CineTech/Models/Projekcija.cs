@@ -1,10 +1,24 @@
-﻿namespace CineTech.Models
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace CineTech.Models
 {
     public class Projekcija
     {
-        public int id;
-        public DateTime datum;
-        public TimeOnly vrijeme;
-        public double cijenaOsnovneKarte;
+        [Key]
+        public int id { get; set; }
+        public DateTime datum { get; set; }
+        public TimeOnly vrijeme { get; set; }
+        public double cijenaOsnovneKarte { get; set; }
+        [ForeignKey("KinoSala")]
+        public int kinoSalaId { get; set; }
+        public KinoSala kinoSala { get; set; }
+        [ForeignKey("Film")]
+        public int filmId { get; set; }
+        public Film Film { get; set; }
+
+
+
     }
 }

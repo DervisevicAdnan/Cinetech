@@ -2,6 +2,6 @@
 {
     public class Kupovina:Transakcija
     {
-        public double cijena;
+        public double cijena { get; set; }
     }
 }
