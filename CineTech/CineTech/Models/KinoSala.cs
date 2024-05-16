@@ -9,5 +9,6 @@ namespace CineTech.Models
         public String naziv { get; set; }
         public int brojRedova { get; set; }
         public int brojKolona { get; set; }
+        public KinoSala() { }
 }
 }

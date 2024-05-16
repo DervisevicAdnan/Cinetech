@@ -11,7 +11,8 @@ namespace CineTech.Models
         public String komentar { get; set; }
         public DateTime datum { get; set; }
         [ForeignKey("Korisnik")]
-        public int korisnikId { get; set; }
+        public String korisnikId { get; set; }
         public Korisnik korisnik { get; set; }
+        public Ocjena() { }
     }
 }

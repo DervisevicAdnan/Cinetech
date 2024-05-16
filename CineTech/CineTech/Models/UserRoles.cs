@@ -8,10 +8,11 @@ namespace CineTech.Models
         [Key]
         public int id { get; set; }
         [ForeignKey("Korisnik")]
-        public int korisnikId { get; set; }
+        public String korisnikId { get; set; }
         [ForeignKey("Roles")]
         public int roleId { get; set; }
         public Korisnik korisnik {get; set;}
         public Roles rola { get; set; } 
+        public UserRoles() { }
     }
 }

@@ -10,10 +10,11 @@ namespace CineTech.Models
         public DateOnly datum { get; set; }
         public TimeOnly vrijeme { get; set; }
         [ForeignKey("Korisnik")]
-        public int KorisnikId { get; set; }
+        public String KorisnikId { get; set; }
         public Korisnik Korisnik { get; set; }
         [ForeignKey("ZauzetaSjedista")]
         public int ZauzetaSjedistaId {  get; set; }
         public ZauzetaSjedista ZauzetaSjedista { get; set; }
+        public Transakcija() { }
     }
 }

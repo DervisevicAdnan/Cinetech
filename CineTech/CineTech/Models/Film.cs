@@ -14,5 +14,6 @@ namespace CineTech.Models
         public DateTime releseDate { get; set; }
         public String trailer { get; set; }
         public StatusPrikazivanja StatusPrikazivanja { get; set; }
+        public Film() { }
 }
 }

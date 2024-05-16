@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CineTech.Models
@@ -8,9 +9,10 @@ namespace CineTech.Models
         [Key]
         public int id { get; set; }
         [ForeignKey("Korisnik")]
-        public int KorisnikId {  get; set; }
-        public Korisnik Korisnik {  get; set; }
+        public String KorisnikId {  get; set; }
+        public Korisnik Korisnik { get; set; }
         public PeriodNotifikacije PeriodNotifikacije { get; set; }
         public StatusNotifikacije StatusNotifikacije { get; set; }
+        public Notifikacija() { }
     }
 }

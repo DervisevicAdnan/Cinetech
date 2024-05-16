@@ -11,5 +11,6 @@ namespace CineTech.Models
         public int idFilma { get; set; }
         public Film Film { get; set; }
         public Zanr zanrFilma { get; set; }
+        public ZanroviFilma() { }
     }
 }

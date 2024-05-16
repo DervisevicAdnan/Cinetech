@@ -7,5 +7,6 @@ namespace CineTech.Models
         [Key]
         public int id { get; set; }
         public String naziv { get; set; }
+        public Roles() { }
     }
 }

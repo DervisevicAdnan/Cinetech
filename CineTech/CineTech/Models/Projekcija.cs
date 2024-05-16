@@ -18,7 +18,7 @@ namespace CineTech.Models
         public int filmId { get; set; }
         public Film Film { get; set; }
 
-
+        public Projekcija() { }
 
     }
 }
