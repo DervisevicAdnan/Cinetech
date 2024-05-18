@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CineTech.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240515202709_Migracija1")]
-    partial class Migracija1
+    [Migration("20240518140721_migracija")]
+    partial class migracija
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -91,39 +91,6 @@ namespace CineTech.Data.Migrations
                     b.ToTable("KinoSala", (string)null);
                 });
 
-            modelBuilder.Entity("CineTech.Models.Korisnik", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
-
-                    b.Property<string>("email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("imePreizime")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("korisnickoIme")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("telefon")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("id");
-
-                    b.ToTable("Korisnik", (string)null);
-                });
-
             modelBuilder.Entity("CineTech.Models.Notifikacija", b =>
                 {
                     b.Property<int>("id")
@@ -132,8 +99,9 @@ namespace CineTech.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
 
-                    b.Property<int>("KorisnikId")
-                        .HasColumnType("int");
+                    b.Property<string>("KorisnikId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("PeriodNotifikacije")
                         .HasColumnType("int");
@@ -186,8 +154,9 @@ namespace CineTech.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("korisnikId")
-                        .HasColumnType("int");
+                    b.Property<string>("korisnikId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("ocjena")
                         .HasColumnType("int");
@@ -279,8 +248,9 @@ namespace CineTech.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
 
-                    b.Property<int>("KorisnikId")
-                        .HasColumnType("int");
+                    b.Property<string>("KorisnikId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("ZauzetaSjedistaId")
                         .HasColumnType("int");
@@ -310,8 +280,9 @@ namespace CineTech.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
 
-                    b.Property<int>("korisnikId")
-                        .HasColumnType("int");
+                    b.Property<string>("korisnikId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("rolaid")
                         .HasColumnType("int");
@@ -488,6 +459,8 @@ namespace CineTech.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.UseTptMappingStrategy();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -590,6 +563,21 @@ namespace CineTech.Data.Migrations
                     b.HasBaseType("CineTech.Models.Transakcija");
 
                     b.ToTable("Rezervacija", (string)null);
+                });
+
+            modelBuilder.Entity("CineTech.Models.Korisnik", b =>
+                {
+                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
+
+                    b.Property<string>("imePrezime")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.ToTable("Korisnik", (string)null);
                 });
 
             modelBuilder.Entity("CineTech.Models.Notifikacija", b =>
@@ -796,6 +784,15 @@ namespace CineTech.Data.Migrations
                     b.HasOne("CineTech.Models.Transakcija", null)
                         .WithOne()
                         .HasForeignKey("CineTech.Models.Rezervacija", "id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("CineTech.Models.Korisnik", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                        .WithOne()
+                        .HasForeignKey("CineTech.Models.Korisnik", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

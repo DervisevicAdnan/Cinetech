@@ -9,10 +9,7 @@ namespace CineTech.Models
     public class Korisnik : IdentityUser
     {
         public Korisnik() { }   
-        public String korisnickoIme { get; set; }
-        public String imePreizime { get; set; }
-        public String email { get; set; }
-        public String telefon { get; set; }
+        public String imePrezime { get; set; }
         public String password { get; set; }
     }
 }

@@ -51,10 +51,7 @@ namespace CineTech.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    korisnickoIme = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    imePreizime = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    telefon = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    imePrezime = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     password = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
