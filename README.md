@@ -1,4 +1,7 @@
-## Stranica za kino - CineTech
+# CineTech - Aplikacija za kino
+## Tim 27 - SCS
+
+![Imgur image](https://i.imgur.com/Dcqttej.png)
 
 **Naziv aplikacije:** CineTech
 **Popis članova:**
