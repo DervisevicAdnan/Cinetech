@@ -4,6 +4,7 @@
 ![Imgur image](https://i.imgur.com/Dcqttej.png)
 
 **Naziv aplikacije:** CineTech
+
 **Popis članova:**
 - Adi Drakovac
 - Adnan Dervišević
