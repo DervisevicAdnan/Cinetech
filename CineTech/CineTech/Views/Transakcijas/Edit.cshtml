@@ -1,0 +1,49 @@
+﻿@model CineTech.Models.Transakcija
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Transakcija</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id" />
+            <div class="form-group">
+                <label asp-for="datum" class="control-label"></label>
+                <input asp-for="datum" class="form-control" />
+                <span asp-validation-for="datum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="vrijeme" class="control-label"></label>
+                <input asp-for="vrijeme" class="form-control" />
+                <span asp-validation-for="vrijeme" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KorisnikId" class="control-label"></label>
+                <select asp-for="KorisnikId" class="form-control" asp-items="ViewBag.KorisnikId"></select>
+                <span asp-validation-for="KorisnikId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ZauzetaSjedistaId" class="control-label"></label>
+                <select asp-for="ZauzetaSjedistaId" class="form-control" asp-items="ViewBag.ZauzetaSjedistaId"></select>
+                <span asp-validation-for="ZauzetaSjedistaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
