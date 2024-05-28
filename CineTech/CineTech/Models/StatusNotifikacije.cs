@@ -1,7 +1,12 @@
-﻿namespace CineTech.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace CineTech.Models
 {
     public enum StatusNotifikacije
     {
-        NaCekanju, Dostavljena
+        [Display(Name="NaCekanju")]
+        NaCekanju, 
+        [Display(Name="Dostavljena")]
+        Dostavljena
     }
 }

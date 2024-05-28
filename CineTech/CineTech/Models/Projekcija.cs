@@ -10,6 +10,7 @@ namespace CineTech.Models
         public int id { get; set; }
         public DateTime datum { get; set; }
         public TimeOnly vrijeme { get; set; }
+        [Required]
         public double cijenaOsnovneKarte { get; set; }
         [ForeignKey("KinoSala")]
         public int kinoSalaId { get; set; }

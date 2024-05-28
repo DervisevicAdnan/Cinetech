@@ -1,7 +1,16 @@
-﻿namespace CineTech.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace CineTech.Models
 {
     public enum PeriodNotifikacije
     {
-        DanPrije, SedmicuPrije, MjesecPrije, PriOdredjivanjuDatuma
+        [Display(Name = "DanPrije")]
+        DanPrije,
+        [Display(Name ="SedmicuPrije")] 
+        SedmicuPrije,
+        [Display(Name ="MjesecPrije")] 
+        MjesecPrije, 
+        [Display(Name="PriOdredjivanjuDatuma")]
+        PriOdredjivanjuDatuma
     }
 }

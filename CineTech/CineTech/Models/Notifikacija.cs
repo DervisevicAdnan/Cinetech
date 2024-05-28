@@ -11,7 +11,11 @@ namespace CineTech.Models
         [ForeignKey("Korisnik")]
         public String KorisnikId {  get; set; }
         public Korisnik Korisnik { get; set; }
+        [Required]
+        [EnumDataType(typeof(PeriodNotifikacije))]
         public PeriodNotifikacije PeriodNotifikacije { get; set; }
+        [Required]
+        [EnumDataType(typeof(StatusNotifikacije))]
         public StatusNotifikacije StatusNotifikacije { get; set; }
         public Notifikacija() { }
     }

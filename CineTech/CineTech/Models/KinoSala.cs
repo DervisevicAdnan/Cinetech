@@ -6,8 +6,11 @@ namespace CineTech.Models
     {
         [Key]
         public int id { get; set; }
+        [Required]
         public String naziv { get; set; }
+        [Required]
         public int brojRedova { get; set; }
+        [Required]
         public int brojKolona { get; set; }
         public KinoSala() { }
 }
