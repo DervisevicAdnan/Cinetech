@@ -17,6 +17,7 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.naslovnaSlika)
+                
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.opis)
@@ -46,7 +47,7 @@
                 @Html.DisplayFor(modelItem => item.naziv)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.naslovnaSlika)
+                <img src=@item.naslovnaSlika/>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.opis)

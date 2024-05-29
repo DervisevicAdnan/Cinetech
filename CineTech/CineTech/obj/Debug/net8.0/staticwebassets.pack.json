@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\wwwroot\\img\\logoCinetechCrni.png",
+      "PackagePath": "staticwebassets\\img\\logoCinetechCrni.png"
+    },
+    {
       "Id": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

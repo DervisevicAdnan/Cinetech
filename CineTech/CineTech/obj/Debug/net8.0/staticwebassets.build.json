@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qONihwKJgmXCCLCeoRu+U2mz/ZuIjGXbTl+2aYQCHBo=",
+  "Hash": "DkZOcJNx2+KWDqCpVtxbRmfKboHe6RlUoB7Msg1M/+U=",
   "Source": "CineTech",
   "BasePath": "_content/CineTech",
   "Mode": "Default",
@@ -1231,6 +1231,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\wwwroot\\img\\logoCinetechCrni.png",
+      "SourceId": "CineTech",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\wwwroot\\",
+      "BasePath": "_content/CineTech",
+      "RelativePath": "img/logoCinetechCrni.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\logoCinetechCrni.png"
     },
     {
       "Identity": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\wwwroot\\js\\site.js",
