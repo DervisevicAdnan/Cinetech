@@ -9,14 +9,8 @@ namespace CineTech.Models
     {
         public Korisnik() { }
         [Required]
+        [Display(Name = "Ime i prezime:")]
         public String imePrezime { get; set; }
-        [Required]
-        [StringLength(maximumLength: 25, MinimumLength = 8, ErrorMessage = "Vaš password nema minimalnih 8 karatkera")]
-        public String password { get; set; }
 
-        internal async Task GetImePrezimeAsync(IdentityUser user)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -9,8 +9,10 @@ namespace CineTech.Models
         public int id { get; set; }
         [Required]
         [Range(minimum:1,maximum:5,ErrorMessage ="Ocjena mora biti između 1-5 !")]
+        [Display(Name = "Ocjena:")]
         public int ocjena { get; set; }
         [StringLength(maximumLength:50,ErrorMessage = "Prekoračili ste dužinu od 50")]
+        [Display(Name = "Komentar:")]
         public String komentar { get; set; }
         public DateTime datum { get; set; }
         [ForeignKey("Korisnik")]
