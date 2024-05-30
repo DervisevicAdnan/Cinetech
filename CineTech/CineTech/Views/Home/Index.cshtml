@@ -1,8 +1,36 @@
-﻿@{
+﻿@model IEnumerable<CineTech.Models.Film>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Dobrodošli u CineTech kino.</h1>
+    <p>Filmovi koji se trenutno emituju:</a>.</p>
+</div>
+
+<div class="container">
+    <div class="row">
+        @foreach (var film in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <a asp-action="Details" asp-route-id="@film.id"><img class="card-img-top" src="@film.naslovnaSlika" alt="@film.naziv" /></a>
+                    <div class="card-body">
+                        <h5 class="card-title">@film.naziv</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">@film.redatelj</h6>
+                        <p class="card-text">
+                            <strong>Žanr:</strong> MORAM SKONTAT<br>
+                            <strong>Release date:</strong> @film.releseDate<br>
+                            <strong>Glumci:</strong> @film.glumci<br>
+                            <strong>Opis:</strong> @film.opis
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="@film.trailer" class="btn btn-primary" target="_blank">Pogledaj trailer</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
 </div>
