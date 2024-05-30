@@ -59,7 +59,7 @@
                 @Html.DisplayFor(modelItem => item.glumci)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.releseDate)
+                    @Html.DisplayFor(modelItem => item.releseDate)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.trailer)
@@ -68,10 +68,12 @@
                 @Html.DisplayFor(modelItem => item.StatusPrikazivanja)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
-            </td>
+                    @if (User.IsInRole("Administrator")) {
+                    <a asp-action="Edit" asp-route-id="@item.id">Edit</a>
+                    <a asp-action = "Delete" asp-route-id = "@item.id"> Delete </a>
+                }
+                    <a asp-action="Details" asp-route-id="@item.id"> Details </a>
+                </td>
         </tr>
 }
     </tbody>

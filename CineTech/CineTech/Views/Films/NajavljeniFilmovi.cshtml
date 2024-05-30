@@ -1,0 +1,108 @@
+﻿@model IEnumerable<CineTech.Models.Film>
+
+@{
+    ViewData["Title"] = "NajavljeniFilmovi";
+}
+
+<h1>Filmovi u najavi</h1>
+<!--<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.naziv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.naslovnaSlika)
+
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.opis)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.redatelj)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.glumci)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.releseDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.trailer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StatusPrikazivanja)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.naziv)
+                </td>
+                <td>
+                    <img src=@item.naslovnaSlika style="width: 150px; height: auto;">
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.opis)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.redatelj)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.glumci)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.releseDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.trailer)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StatusPrikazivanja)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+-->
+
+
+<div class="container">
+    <div class="row">
+    @foreach (var film in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img class="card-img-top" src="@film.naslovnaSlika" alt="@film.naziv" />
+                <div class="card-body">
+                    <h5 class="card-title">@film.naziv</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">@film.redatelj</h6>
+                    <p class="card-text">
+                        <strong>Žanr:</strong> MORAM SKONTAT<br>
+                        <strong>Release date:</strong> @film.releseDate<br>
+                        <strong>Glumci:</strong> @film.glumci<br>
+                        <strong>Opis:</strong> @film.opis
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="@film.trailer" class="btn btn-primary" target="_blank">Pogledaj trailer</a>
+                @if (User.IsInRole("Administrator")) {
+                    <a asp-action="Edit" asp-route-id="@film.id">Edit</a>
+                    <a asp-action = "Delete" asp-route-id = "@film.id"> Delete </a>
+                }
+                    <a asp-action="Details" asp-route-id="@film.id"> Details </a>
+                </div>
+            </div>
+        </div>
+    }
+    </div>
+</div>

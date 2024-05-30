@@ -1,5 +1,7 @@
+using CineTech.Data;
 using CineTech.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace CineTech.Controllers

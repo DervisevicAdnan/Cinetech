@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CineTech.Data;
 using CineTech.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CineTech.Controllers
 {
@@ -22,7 +23,10 @@ namespace CineTech.Controllers
         // GET: Films
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Film.ToListAsync());
+            var aktuelniFilmovi = await _context.Film
+            .Where(f => f.StatusPrikazivanja == StatusPrikazivanja.Aktuelan)
+            .ToListAsync();
+            return View(aktuelniFilmovi);
         }
 
         // GET: Films/Details/5
@@ -44,6 +48,7 @@ namespace CineTech.Controllers
         }
 
         // GET: Films/Create
+        [Authorize(Roles = "Administrator")]
         public IActionResult Create()
         {
             return View();
@@ -54,6 +59,7 @@ namespace CineTech.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Create([Bind("id,naziv,naslovnaSlika,opis,redatelj,glumci,releseDate,trailer,StatusPrikazivanja")] Film film)
         {
             if (ModelState.IsValid)
@@ -66,6 +72,7 @@ namespace CineTech.Controllers
         }
 
         // GET: Films/Edit/5
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -86,6 +93,7 @@ namespace CineTech.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Edit(int id, [Bind("id,naziv,naslovnaSlika,opis,redatelj,glumci,releseDate,trailer,StatusPrikazivanja")] Film film)
         {
             if (id != film.id)
@@ -117,6 +125,7 @@ namespace CineTech.Controllers
         }
 
         // GET: Films/Delete/5
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -137,6 +146,7 @@ namespace CineTech.Controllers
         // POST: Films/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var film = await _context.Film.FindAsync(id);
@@ -149,6 +159,18 @@ namespace CineTech.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public IActionResult NajgledanijiFilmovi()
+        {
+            return View();
+        }
+       public async Task<IActionResult> NajavljeniFilmovi()
+        {
+             var najavljeniFilmovi = await _context.Film
+            .Where(f => f.StatusPrikazivanja == StatusPrikazivanja.UNajavi)
+            .ToListAsync();
+
+             return View(najavljeniFilmovi);
+        }
         private bool FilmExists(int id)
         {
             return _context.Film.Any(e => e.id == id);
