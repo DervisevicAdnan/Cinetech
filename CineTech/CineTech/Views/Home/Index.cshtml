@@ -15,7 +15,7 @@
         {
             <div class="col-md-4 mb-4">
                 <div class="card h-100">
-                    <a asp-action="Details" asp-route-id="@film.id"><img class="card-img-top" src="@film.naslovnaSlika" alt="@film.naziv" /></a>
+                    <a asp-controller="Films" asp-action="Details" asp-route-id="@film.id"><img class="card-img-top" src="@film.naslovnaSlika" alt="@film.naziv" /></a>
                     <div class="card-body">
                         <h5 class="card-title">@film.naziv</h5>
                         <h6 class="card-subtitle mb-2 text-muted">@film.redatelj</h6>

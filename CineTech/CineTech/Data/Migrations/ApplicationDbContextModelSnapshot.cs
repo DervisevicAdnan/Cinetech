@@ -572,11 +572,6 @@ namespace CineTech.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("password")
-                        .IsRequired()
-                        .HasMaxLength(25)
-                        .HasColumnType("nvarchar(25)");
-
                     b.ToTable("Korisnik", (string)null);
                 });
 

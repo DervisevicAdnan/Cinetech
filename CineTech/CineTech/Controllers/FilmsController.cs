@@ -29,6 +29,13 @@ namespace CineTech.Controllers
             return View(aktuelniFilmovi);
         }
 
+        public async Task<IActionResult> Admin()
+        {
+            var filmovi = await _context.Film
+            .ToListAsync();
+            return View(filmovi);
+        }
+
         // GET: Films/Details/5
         public async Task<IActionResult> Details(int? id)
         {
