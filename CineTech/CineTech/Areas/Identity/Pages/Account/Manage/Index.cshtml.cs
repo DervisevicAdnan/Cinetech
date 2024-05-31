@@ -111,7 +111,7 @@ namespace CineTech.Areas.Identity.Pages.Account.Manage
             }
 
             await _signInManager.RefreshSignInAsync(user);
-            StatusMessage = "Your profile has been updated";
+            StatusMessage = "Tvoj profil je ažuriran.";
             return RedirectToPage();
         }
     }

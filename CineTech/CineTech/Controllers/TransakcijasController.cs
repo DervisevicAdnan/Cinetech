@@ -25,6 +25,10 @@ namespace CineTech.Controllers
             var applicationDbContext = _context.Transakcija.Include(t => t.Korisnik).Include(t => t.ZauzetaSjedista);
             return View(await applicationDbContext.ToListAsync());
         }
+        public Task<IActionResult> KupovinaView()
+        {
+            return Task.FromResult<IActionResult>(View());
+        }
 
         // GET: Transakcijas/Details/5
         public async Task<IActionResult> Details(int? id)

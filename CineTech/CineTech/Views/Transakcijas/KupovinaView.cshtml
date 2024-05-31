@@ -3,5 +3,33 @@
     ViewData["Title"] = "KupovinaView";
 }
 
-<h1>KupovinaView</h1>
-
+<h1>Upišite podatke vaše kartice</h1>
+<body>
+    <div class="container">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+        <div class="left-section">
+        <img src="~/img/logoCinetechCrni.png" height="100px" />
+        <h3>Za platiti:</h3>
+            <p>Cijena</p>
+        </div>
+        <div class="right-section">
+            <h2>Dovršite kupovinu karata</h2>
+            <p>Unesite sve podatke kartice</p>
+            <form action="#">
+                <input type="text" placeholder="Broj kartice" required>
+                        <div class="form-floating mb-3">
+                            <input type=text placeholder="Važi do (MM/GGGG)" required>
+                            <input type=text placeholder="CVV" required>
+                </div>
+                <div class="cards">
+                    <img src="~/img/VISA.jpg" height="50px" />
+                    <img src="~/img/Mastercard.png" height="50px" />
+                </div>
+            <right><a asp-controller="Home" asp-action="Index" class="btn btn-primary">Plati</a></right>
+         </form>
+        </div>
+    </div>
+    </<div>
+    </div>
+</body>

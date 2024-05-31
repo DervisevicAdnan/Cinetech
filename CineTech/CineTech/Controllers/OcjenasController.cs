@@ -48,7 +48,7 @@ namespace CineTech.Controllers
         // GET: Ocjenas/Create
         public IActionResult Create()
         {
-            ViewData["korisnikId"] = new SelectList(_context.Korisnik, "Id", "Id");
+           ViewData["korisnikId"] = new SelectList(_context.Korisnik, "Id", "Id");
             return View();
         }
 
@@ -56,18 +56,19 @@ namespace CineTech.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,ocjena,komentar,datum,korisnikId")] Ocjena ocjena)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(ocjena);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["korisnikId"] = new SelectList(_context.Korisnik, "Id", "Id", ocjena.korisnikId);
-            return View(ocjena);
-        }
+         [ValidateAntiForgeryToken]
+         public async Task<IActionResult> Create([Bind("id,ocjena,komentar,datum,korisnikId")] Ocjena ocjena)
+         {
+             if (ModelState.IsValid)
+             {
+                 _context.Add(ocjena);
+                 await _context.SaveChangesAsync();
+                 return RedirectToAction(nameof(Index));
+             }
+             ViewData["korisnikId"] = new SelectList(_context.Korisnik, "Id", "Id", ocjena.korisnikId);
+             return View();
+         }
+
 
         // GET: Ocjenas/Edit/5
         public async Task<IActionResult> Edit(int? id)

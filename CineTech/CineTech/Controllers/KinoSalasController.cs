@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CineTech.Data;
 using CineTech.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CineTech.Controllers
 {
@@ -44,6 +45,8 @@ namespace CineTech.Controllers
         }
 
         // GET: KinoSalas/Create
+        [Authorize(Roles = "Administrator")]
+
         public IActionResult Create()
         {
             return View();
@@ -54,6 +57,8 @@ namespace CineTech.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> Create([Bind("id,naziv,brojRedova,brojKolona")] KinoSala kinoSala)
         {
             if (ModelState.IsValid)
@@ -66,6 +71,8 @@ namespace CineTech.Controllers
         }
 
         // GET: KinoSalas/Edit/5
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -86,6 +93,8 @@ namespace CineTech.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> Edit(int id, [Bind("id,naziv,brojRedova,brojKolona")] KinoSala kinoSala)
         {
             if (id != kinoSala.id)
@@ -117,6 +126,8 @@ namespace CineTech.Controllers
         }
 
         // GET: KinoSalas/Delete/5
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -137,6 +148,8 @@ namespace CineTech.Controllers
         // POST: KinoSalas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var kinoSala = await _context.KinoSala.FindAsync(id);

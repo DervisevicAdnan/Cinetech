@@ -89,7 +89,7 @@ namespace CineTech.Areas.Identity.Pages.Account
             [Display(Name = "UserName")]
             public string UserName { get; set;}
             [Required]
-            [Display(Name = "UserName")]
+            [Display(Name = "Ime i prezime")]
             public string Name { get; set; }
 
             [Required]
@@ -131,9 +131,7 @@ namespace CineTech.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = CreateUser();
-
-
-
+                user.imePrezime = Input.Name;
                 await _userStore.SetUserNameAsync(user, Input.UserName, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
                 
@@ -189,7 +187,7 @@ namespace CineTech.Areas.Identity.Pages.Account
             return Page();
         }
         
-        private IdentityUser CreateUser()
+        private Korisnik CreateUser()
         {
             try
             {

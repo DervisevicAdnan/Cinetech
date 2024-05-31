@@ -1,0 +1,24 @@
+﻿@model IEnumerable<CineTech.Models.Film>
+
+@{
+    ViewData["Title"] = "AdminIndex";
+}
+
+<h1>Administratorska kontrolna ploča</h1>
+
+<p>
+    <div>
+        <a asp-action="AdminFilmovi" class="btn btn-primary">Panel za filmove</a>
+</div>
+<p> </p>
+<div>
+        <a asp-controller="KinoSalas" asp-action="Index" class="btn btn-primary">Panel za Kino sale</a>
+        </div>
+<p> </p>
+<div>
+        <a asp-controller="Projekcijas" asp-action="Index" class="btn btn-primary">Panel za Kino sale</a>
+        </div>
+        <p></p>
+
+    
+</p>

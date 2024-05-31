@@ -13,8 +13,36 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\wwwroot\\img\\Mastercard.png",
+      "PackagePath": "staticwebassets\\img\\Mastercard.png"
+    },
+    {
+      "Id": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\wwwroot\\img\\TFA.png",
+      "PackagePath": "staticwebassets\\img\\TFA.png"
+    },
+    {
+      "Id": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\wwwroot\\img\\VISA.jpg",
+      "PackagePath": "staticwebassets\\img\\VISA.jpg"
+    },
+    {
+      "Id": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\wwwroot\\img\\email.png",
+      "PackagePath": "staticwebassets\\img\\email.png"
+    },
+    {
       "Id": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\wwwroot\\img\\logoCinetechCrni.png",
       "PackagePath": "staticwebassets\\img\\logoCinetechCrni.png"
+    },
+    {
+      "Id": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\wwwroot\\img\\password.jpg",
+      "PackagePath": "staticwebassets\\img\\password.jpg"
+    },
+    {
+      "Id": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\wwwroot\\img\\personalData.png",
+      "PackagePath": "staticwebassets\\img\\personalData.png"
+    },
+    {
+      "Id": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\wwwroot\\img\\profile.png",
+      "PackagePath": "staticwebassets\\img\\profile.png"
     },
     {
       "Id": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\wwwroot\\js\\site.js",

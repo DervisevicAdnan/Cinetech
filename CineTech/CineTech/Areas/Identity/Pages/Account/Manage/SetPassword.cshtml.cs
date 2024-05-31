@@ -106,7 +106,7 @@ namespace CineTech.Areas.Identity.Pages.Account.Manage
             }
 
             await _signInManager.RefreshSignInAsync(user);
-            StatusMessage = "Your password has been set.";
+            StatusMessage = "Tvoj password je ažuriran.";
 
             return RedirectToPage();
         }

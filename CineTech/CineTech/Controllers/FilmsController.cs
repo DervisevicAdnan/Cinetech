@@ -29,7 +29,12 @@ namespace CineTech.Controllers
             return View(aktuelniFilmovi);
         }
 
-        public async Task<IActionResult> Admin()
+        public IActionResult AdminIndex()
+        {
+
+            return View();
+        }
+        public async Task<IActionResult> AdminFilmovi()
         {
             var filmovi = await _context.Film
             .ToListAsync();
@@ -38,6 +43,22 @@ namespace CineTech.Controllers
 
         // GET: Films/Details/5
         public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var film = await _context.Film
+                .FirstOrDefaultAsync(m => m.id == id);
+            if (film == null)
+            {
+                return NotFound();
+            }
+
+            return View(film);
+        }
+        public async Task<IActionResult> AdminDetails(int? id)
         {
             if (id == null)
             {
@@ -73,7 +94,7 @@ namespace CineTech.Controllers
             {
                 _context.Add(film);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(AdminFilmovi));
             }
             return View(film);
         }
@@ -126,7 +147,7 @@ namespace CineTech.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(AdminFilmovi));
             }
             return View(film);
         }
@@ -163,7 +184,7 @@ namespace CineTech.Controllers
             }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(AdminFilmovi));
         }
 
         public IActionResult NajgledanijiFilmovi()
