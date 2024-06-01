@@ -11,7 +11,7 @@ namespace CineTech.Models
         [ForeignKey("Korisnik")]
         [Display(Name = "Korisnik")]
         public String KorisnikId {  get; set; }
-        public Korisnik Korisnik { get; set; }
+        //public Korisnik Korisnik { get; set; }
         [Required]
         [EnumDataType(typeof(PeriodNotifikacije))]
         [Display(Name = "Period notifikacije:")]

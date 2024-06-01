@@ -7,23 +7,30 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CineTech.Data;
 using CineTech.Models;
+using Microsoft.AspNetCore.Identity;
+using System.Transactions;
+using Microsoft.VisualBasic;
+using System.Data.SqlTypes;
 
 namespace CineTech.Controllers
 {
     public class OcjenasController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
+        
 
-        public OcjenasController(ApplicationDbContext context)
+        public OcjenasController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
+           
         }
 
         // GET: Ocjenas
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Ocjena.Include(o => o.korisnik);
-            return View(await applicationDbContext.ToListAsync());
+            return View(await _context.Ocjena.ToListAsync());
         }
 
         // GET: Ocjenas/Details/5
@@ -35,7 +42,6 @@ namespace CineTech.Controllers
             }
 
             var ocjena = await _context.Ocjena
-                .Include(o => o.korisnik)
                 .FirstOrDefaultAsync(m => m.id == id);
             if (ocjena == null)
             {
@@ -46,9 +52,13 @@ namespace CineTech.Controllers
         }
 
         // GET: Ocjenas/Create
-        public IActionResult Create()
+        [HttpGet]
+        public async Task<IActionResult> Create()
         {
-           ViewData["korisnikId"] = new SelectList(_context.Korisnik, "Id", "Id");
+            var user = await _userManager.GetUserAsync(User);
+            var korisnik1 = await _userManager.GetUserNameAsync(user);
+            var korisnik = await _userManager.GetUserIdAsync(user);
+            ViewBag.KorisnikId = korisnik1;
             return View();
         }
 
@@ -56,19 +66,33 @@ namespace CineTech.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-         [ValidateAntiForgeryToken]
-         public async Task<IActionResult> Create([Bind("id,ocjena,komentar,datum,korisnikId")] Ocjena ocjena)
-         {
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("id,ocjenaFilma,komentar,datum,korisnikId")] Ocjena ocjena)
+        {
+            var user = await _userManager.GetUserAsync(User);
+            var korisnik = await _userManager.GetUserIdAsync(user);
+            ocjena.datum = DateTime.Today;
+            ocjena.korisnikId = korisnik;
             if (ModelState.IsValid)
+            {
+
+                if (ocjena.korisnikId != korisnik)
+                {
+                    return NotFound();
+                }
+                _context.Add(ocjena);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            /*if (ModelState.IsValid)
             {
                 _context.Add(ocjena);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["korisnikId"] = new SelectList(_context.Korisnik, "Id", "Id", ocjena.korisnikId);
-            return View();
+            return View(ocjena);*/
+            return View(ocjena);
         }
-
 
         // GET: Ocjenas/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -83,7 +107,6 @@ namespace CineTech.Controllers
             {
                 return NotFound();
             }
-            ViewData["korisnikId"] = new SelectList(_context.Korisnik, "Id", "Id", ocjena.korisnikId);
             return View(ocjena);
         }
 
@@ -92,7 +115,7 @@ namespace CineTech.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,ocjena,komentar,datum,korisnikId")] Ocjena ocjena)
+        public async Task<IActionResult> Edit(int id, [Bind("id,ocjenaFilma,komentar,datum,korisnikId")] Ocjena ocjena)
         {
             if (id != ocjena.id)
             {
@@ -119,7 +142,6 @@ namespace CineTech.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["korisnikId"] = new SelectList(_context.Korisnik, "Id", "Id", ocjena.korisnikId);
             return View(ocjena);
         }
 
@@ -132,7 +154,6 @@ namespace CineTech.Controllers
             }
 
             var ocjena = await _context.Ocjena
-                .Include(o => o.korisnik)
                 .FirstOrDefaultAsync(m => m.id == id);
             if (ocjena == null)
             {

@@ -14,7 +14,7 @@ namespace CineTech.Models
         [ForeignKey("Projekcija")]
         [Display(Name = "Projekcija")]
         public int ProjekcijaId { get; set; }
-        public Projekcija  Projekcija { get; set; } 
+        //public Projekcija  Projekcija { get; set; } 
         public ZauzetaSjedista() { }
     }
 }

@@ -22,8 +22,7 @@ namespace CineTech.Controllers
         // GET: Notifikacijas
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Notifikacija.Include(n => n.Korisnik);
-            return View(await applicationDbContext.ToListAsync());
+            return View(await _context.Notifikacija.ToListAsync());
         }
 
         // GET: Notifikacijas/Details/5
@@ -35,7 +34,6 @@ namespace CineTech.Controllers
             }
 
             var notifikacija = await _context.Notifikacija
-                .Include(n => n.Korisnik)
                 .FirstOrDefaultAsync(m => m.id == id);
             if (notifikacija == null)
             {
@@ -48,7 +46,6 @@ namespace CineTech.Controllers
         // GET: Notifikacijas/Create
         public IActionResult Create()
         {
-            ViewData["KorisnikId"] = new SelectList(_context.Korisnik, "Id", "Id");
             return View();
         }
 
@@ -65,7 +62,6 @@ namespace CineTech.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["KorisnikId"] = new SelectList(_context.Korisnik, "Id", "Id", notifikacija.KorisnikId);
             return View(notifikacija);
         }
 
@@ -82,7 +78,6 @@ namespace CineTech.Controllers
             {
                 return NotFound();
             }
-            ViewData["KorisnikId"] = new SelectList(_context.Korisnik, "Id", "Id", notifikacija.KorisnikId);
             return View(notifikacija);
         }
 
@@ -118,7 +113,6 @@ namespace CineTech.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["KorisnikId"] = new SelectList(_context.Korisnik, "Id", "Id", notifikacija.KorisnikId);
             return View(notifikacija);
         }
 
@@ -131,7 +125,6 @@ namespace CineTech.Controllers
             }
 
             var notifikacija = await _context.Notifikacija
-                .Include(n => n.Korisnik)
                 .FirstOrDefaultAsync(m => m.id == id);
             if (notifikacija == null)
             {

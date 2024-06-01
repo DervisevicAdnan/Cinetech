@@ -22,10 +22,10 @@
                 @Html.DisplayNameFor(model => model.cijenaOsnovneKarte)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.kinoSala)
+                @Html.DisplayNameFor(model => model.kinoSalaId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Film)
+                @Html.DisplayNameFor(model => model.filmId)
             </th>
             <th></th>
         </tr>
@@ -43,10 +43,10 @@
                 @Html.DisplayFor(modelItem => item.cijenaOsnovneKarte)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.kinoSala.id)
+                @Html.DisplayFor(modelItem => item.kinoSalaId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Film.id)
+                @Html.DisplayFor(modelItem => item.filmId)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |

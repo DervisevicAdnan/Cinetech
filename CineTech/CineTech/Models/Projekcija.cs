@@ -18,11 +18,11 @@ namespace CineTech.Models
         [ForeignKey("KinoSala")]
         [Display(Name = "KinoSalaID")]
         public int kinoSalaId { get; set; }
-        public KinoSala kinoSala { get; set; }
+        //public KinoSala kinoSala { get; set; }
         [ForeignKey("Film")]
         [Display(Name = "FilmID")]
         public int filmId { get; set; }
-        public Film Film { get; set; }
+       // public Film Film { get; set; }
 
         public Projekcija() { }
 

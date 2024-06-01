@@ -22,12 +22,7 @@ namespace CineTech.Controllers
         // GET: Transakcijas
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Transakcija.Include(t => t.Korisnik).Include(t => t.ZauzetaSjedista);
-            return View(await applicationDbContext.ToListAsync());
-        }
-        public Task<IActionResult> KupovinaView()
-        {
-            return Task.FromResult<IActionResult>(View());
+            return View(await _context.Transakcija.ToListAsync());
         }
 
         // GET: Transakcijas/Details/5
@@ -39,8 +34,6 @@ namespace CineTech.Controllers
             }
 
             var transakcija = await _context.Transakcija
-                .Include(t => t.Korisnik)
-                .Include(t => t.ZauzetaSjedista)
                 .FirstOrDefaultAsync(m => m.id == id);
             if (transakcija == null)
             {
@@ -53,8 +46,6 @@ namespace CineTech.Controllers
         // GET: Transakcijas/Create
         public IActionResult Create()
         {
-            ViewData["KorisnikId"] = new SelectList(_context.Korisnik, "Id", "Id");
-            ViewData["ZauzetaSjedistaId"] = new SelectList(_context.ZauzetaSjedista, "id", "id");
             return View();
         }
 
@@ -71,8 +62,6 @@ namespace CineTech.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["KorisnikId"] = new SelectList(_context.Korisnik, "Id", "Id", transakcija.KorisnikId);
-            ViewData["ZauzetaSjedistaId"] = new SelectList(_context.ZauzetaSjedista, "id", "id", transakcija.ZauzetaSjedistaId);
             return View(transakcija);
         }
 
@@ -89,8 +78,6 @@ namespace CineTech.Controllers
             {
                 return NotFound();
             }
-            ViewData["KorisnikId"] = new SelectList(_context.Korisnik, "Id", "Id", transakcija.KorisnikId);
-            ViewData["ZauzetaSjedistaId"] = new SelectList(_context.ZauzetaSjedista, "id", "id", transakcija.ZauzetaSjedistaId);
             return View(transakcija);
         }
 
@@ -126,8 +113,6 @@ namespace CineTech.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["KorisnikId"] = new SelectList(_context.Korisnik, "Id", "Id", transakcija.KorisnikId);
-            ViewData["ZauzetaSjedistaId"] = new SelectList(_context.ZauzetaSjedista, "id", "id", transakcija.ZauzetaSjedistaId);
             return View(transakcija);
         }
 
@@ -140,8 +125,6 @@ namespace CineTech.Controllers
             }
 
             var transakcija = await _context.Transakcija
-                .Include(t => t.Korisnik)
-                .Include(t => t.ZauzetaSjedista)
                 .FirstOrDefaultAsync(m => m.id == id);
             if (transakcija == null)
             {

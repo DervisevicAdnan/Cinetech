@@ -99,7 +99,7 @@ namespace CineTech.Data.Migrations
 
                     b.Property<string>("KorisnikId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PeriodNotifikacije")
                         .HasColumnType("int");
@@ -108,8 +108,6 @@ namespace CineTech.Data.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("id");
-
-                    b.HasIndex("KorisnikId");
 
                     b.ToTable("Notifikacija", (string)null);
                 });
@@ -129,10 +127,6 @@ namespace CineTech.Data.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("id");
-
-                    b.HasIndex("FilmId");
-
-                    b.HasIndex("NotifikacijaId");
 
                     b.ToTable("NotifikacijeFilma", (string)null);
                 });
@@ -155,14 +149,12 @@ namespace CineTech.Data.Migrations
 
                     b.Property<string>("korisnikId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ocjena")
+                    b.Property<int>("ocjenaFilma")
                         .HasColumnType("int");
 
                     b.HasKey("id");
-
-                    b.HasIndex("korisnikId");
 
                     b.ToTable("Ocjena", (string)null);
                 });
@@ -215,10 +207,6 @@ namespace CineTech.Data.Migrations
 
                     b.HasKey("id");
 
-                    b.HasIndex("filmId");
-
-                    b.HasIndex("kinoSalaId");
-
                     b.ToTable("Projekcija", (string)null);
                 });
 
@@ -249,7 +237,7 @@ namespace CineTech.Data.Migrations
 
                     b.Property<string>("KorisnikId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ZauzetaSjedistaId")
                         .HasColumnType("int");
@@ -261,10 +249,6 @@ namespace CineTech.Data.Migrations
                         .HasColumnType("time");
 
                     b.HasKey("id");
-
-                    b.HasIndex("KorisnikId");
-
-                    b.HasIndex("ZauzetaSjedistaId");
 
                     b.ToTable("Transakcija", (string)null);
 
@@ -314,8 +298,6 @@ namespace CineTech.Data.Migrations
 
                     b.HasKey("id");
 
-                    b.HasIndex("idFilma");
-
                     b.ToTable("ZanroviFilma", (string)null);
                 });
 
@@ -337,8 +319,6 @@ namespace CineTech.Data.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("id");
-
-                    b.HasIndex("ProjekcijaId");
 
                     b.ToTable("ZauzetaSjedista", (string)null);
                 });
@@ -575,47 +555,6 @@ namespace CineTech.Data.Migrations
                     b.ToTable("Korisnik", (string)null);
                 });
 
-            modelBuilder.Entity("CineTech.Models.Notifikacija", b =>
-                {
-                    b.HasOne("CineTech.Models.Korisnik", "Korisnik")
-                        .WithMany()
-                        .HasForeignKey("KorisnikId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Korisnik");
-                });
-
-            modelBuilder.Entity("CineTech.Models.NotifikacijeFilma", b =>
-                {
-                    b.HasOne("CineTech.Models.Film", "Film")
-                        .WithMany()
-                        .HasForeignKey("FilmId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CineTech.Models.Notifikacija", "Notifikacija")
-                        .WithMany()
-                        .HasForeignKey("NotifikacijaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Film");
-
-                    b.Navigation("Notifikacija");
-                });
-
-            modelBuilder.Entity("CineTech.Models.Ocjena", b =>
-                {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "korisnik")
-                        .WithMany()
-                        .HasForeignKey("korisnikId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("korisnik");
-                });
-
             modelBuilder.Entity("CineTech.Models.OcjeneFilma", b =>
                 {
                     b.HasOne("CineTech.Models.Film", "Film")
@@ -635,44 +574,6 @@ namespace CineTech.Data.Migrations
                     b.Navigation("Ocjena");
                 });
 
-            modelBuilder.Entity("CineTech.Models.Projekcija", b =>
-                {
-                    b.HasOne("CineTech.Models.Film", "Film")
-                        .WithMany()
-                        .HasForeignKey("filmId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CineTech.Models.KinoSala", "kinoSala")
-                        .WithMany()
-                        .HasForeignKey("kinoSalaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Film");
-
-                    b.Navigation("kinoSala");
-                });
-
-            modelBuilder.Entity("CineTech.Models.Transakcija", b =>
-                {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "Korisnik")
-                        .WithMany()
-                        .HasForeignKey("KorisnikId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CineTech.Models.ZauzetaSjedista", "ZauzetaSjedista")
-                        .WithMany()
-                        .HasForeignKey("ZauzetaSjedistaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Korisnik");
-
-                    b.Navigation("ZauzetaSjedista");
-                });
-
             modelBuilder.Entity("CineTech.Models.UserRoles", b =>
                 {
                     b.HasOne("CineTech.Models.Korisnik", "korisnik")
@@ -690,28 +591,6 @@ namespace CineTech.Data.Migrations
                     b.Navigation("korisnik");
 
                     b.Navigation("rola");
-                });
-
-            modelBuilder.Entity("CineTech.Models.ZanroviFilma", b =>
-                {
-                    b.HasOne("CineTech.Models.Film", "Film")
-                        .WithMany()
-                        .HasForeignKey("idFilma")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Film");
-                });
-
-            modelBuilder.Entity("CineTech.Models.ZauzetaSjedista", b =>
-                {
-                    b.HasOne("CineTech.Models.Projekcija", "Projekcija")
-                        .WithMany()
-                        .HasForeignKey("ProjekcijaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Projekcija");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

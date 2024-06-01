@@ -22,8 +22,7 @@ namespace CineTech.Controllers
         // GET: Projekcijas
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Projekcija.Include(p => p.Film).Include(p => p.kinoSala);
-            return View(await applicationDbContext.ToListAsync());
+            return View(await _context.Projekcija.ToListAsync());
         }
 
         // GET: Projekcijas/Details/5
@@ -35,8 +34,6 @@ namespace CineTech.Controllers
             }
 
             var projekcija = await _context.Projekcija
-                .Include(p => p.Film)
-                .Include(p => p.kinoSala)
                 .FirstOrDefaultAsync(m => m.id == id);
             if (projekcija == null)
             {
@@ -49,8 +46,6 @@ namespace CineTech.Controllers
         // GET: Projekcijas/Create
         public IActionResult Create()
         {
-            ViewData["filmId"] = new SelectList(_context.Film, "id", "id");
-            ViewData["kinoSalaId"] = new SelectList(_context.KinoSala, "id", "id");
             return View();
         }
 
@@ -61,15 +56,12 @@ namespace CineTech.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("id,datum,vrijeme,cijenaOsnovneKarte,kinoSalaId,filmId")] Projekcija projekcija)
         {
-            
             if (ModelState.IsValid)
             {
                 _context.Add(projekcija);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["filmId"] = new SelectList(_context.Film, "id", "id", projekcija.filmId);
-            ViewData["kinoSalaId"] = new SelectList(_context.KinoSala, "id", "id", projekcija.kinoSalaId);
             return View(projekcija);
         }
 
@@ -86,8 +78,6 @@ namespace CineTech.Controllers
             {
                 return NotFound();
             }
-            ViewData["filmId"] = new SelectList(_context.Film, "id", "id", projekcija.filmId);
-            ViewData["kinoSalaId"] = new SelectList(_context.KinoSala, "id", "id", projekcija.kinoSalaId);
             return View(projekcija);
         }
 
@@ -123,8 +113,6 @@ namespace CineTech.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["filmId"] = new SelectList(_context.Film, "id", "id", projekcija.filmId);
-            ViewData["kinoSalaId"] = new SelectList(_context.KinoSala, "id", "id", projekcija.kinoSalaId);
             return View(projekcija);
         }
 
@@ -137,8 +125,6 @@ namespace CineTech.Controllers
             }
 
             var projekcija = await _context.Projekcija
-                .Include(p => p.Film)
-                .Include(p => p.kinoSala)
                 .FirstOrDefaultAsync(m => m.id == id);
             if (projekcija == null)
             {

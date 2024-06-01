@@ -1,0 +1,40 @@
+﻿@model CineTech.Models.ZauzetaSjedista
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ZauzetaSjedista</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="red" class="control-label"></label>
+                <input asp-for="red" class="form-control" />
+                <span asp-validation-for="red" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="redniBrojSjedista" class="control-label"></label>
+                <input asp-for="redniBrojSjedista" class="form-control" />
+                <span asp-validation-for="redniBrojSjedista" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjekcijaId" class="control-label"></label>
+                <input asp-for="ProjekcijaId" class="form-control" />
+                <span asp-validation-for="ProjekcijaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
