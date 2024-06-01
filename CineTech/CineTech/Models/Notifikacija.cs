@@ -8,7 +8,7 @@ namespace CineTech.Models
     {
         [Key]
         public int id { get; set; }
-        [ForeignKey("AspNetUsers")]
+        [ForeignKey("Korisnik")]
         [Display(Name = "Korisnik")]
         public String KorisnikId {  get; set; }
         public Korisnik Korisnik { get; set; }

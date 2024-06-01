@@ -12,7 +12,7 @@ namespace CineTech.Models
         public DateOnly datum { get; set; }
         [Display(Name = "Vrijeme transakcije:")]
         public TimeOnly vrijeme { get; set; }
-        [ForeignKey("AspNetUsers")]
+        [ForeignKey("Korisnik")]
         [Display(Name = "KorisnikID")]
         public String KorisnikId { get; set; }
         public IdentityUser Korisnik { get; set; }

@@ -16,7 +16,7 @@ namespace CineTech.Models
         [Display(Name = "Komentar:")]
         public String komentar { get; set; }
         public DateTime datum { get; set; }
-        [ForeignKey("AspNetUsers")]
+        [ForeignKey("Korisnik")]
         public String korisnikId { get; set; }
         public IdentityUser korisnik { get; set; }
         public Ocjena() { }
