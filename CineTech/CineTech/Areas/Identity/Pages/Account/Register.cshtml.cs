@@ -137,12 +137,12 @@ namespace CineTech.Areas.Identity.Pages.Account
                 
                 var result = await _userManager.CreateAsync(user, Input.Password);
 
-                var defaultRole = "Korisnik";
+/*                var defaultRole = "Korisnik";
                     if (!await _roleManager.RoleExistsAsync(defaultRole))
                     {
                         await _roleManager.CreateAsync(new IdentityRole(defaultRole));
                     }
-                    await _userManager.AddToRoleAsync(user, defaultRole);
+                    await _userManager.AddToRoleAsync(user, defaultRole);*/
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
