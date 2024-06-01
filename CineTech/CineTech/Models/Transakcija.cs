@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CineTech.Models
@@ -11,10 +12,10 @@ namespace CineTech.Models
         public DateOnly datum { get; set; }
         [Display(Name = "Vrijeme transakcije:")]
         public TimeOnly vrijeme { get; set; }
-        [ForeignKey("Korisnik")]
+        [ForeignKey("AspNetUsers")]
         [Display(Name = "KorisnikID")]
         public String KorisnikId { get; set; }
-        public Korisnik Korisnik { get; set; }
+        public IdentityUser Korisnik { get; set; }
         [ForeignKey("ZauzetaSjedista")]
         [Display(Name = "Zauzeta sjedista")]
         public int ZauzetaSjedistaId {  get; set; }

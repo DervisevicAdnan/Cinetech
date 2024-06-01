@@ -607,7 +607,7 @@ namespace CineTech.Data.Migrations
 
             modelBuilder.Entity("CineTech.Models.Ocjena", b =>
                 {
-                    b.HasOne("CineTech.Models.Korisnik", "korisnik")
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "korisnik")
                         .WithMany()
                         .HasForeignKey("korisnikId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -656,7 +656,7 @@ namespace CineTech.Data.Migrations
 
             modelBuilder.Entity("CineTech.Models.Transakcija", b =>
                 {
-                    b.HasOne("CineTech.Models.Korisnik", "Korisnik")
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "Korisnik")
                         .WithMany()
                         .HasForeignKey("KorisnikId")
                         .OnDelete(DeleteBehavior.Cascade)

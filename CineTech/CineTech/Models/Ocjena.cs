@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CineTech.Models
@@ -7,7 +8,7 @@ namespace CineTech.Models
     {
         [Key]
         public int id { get; set; }
-        //[Required]
+        [Required]
         [Range(minimum:1,maximum:5,ErrorMessage ="Ocjena mora biti između 1-5 !")]
         [Display(Name = "Ocjena:")]
         public int ocjena { get; set; }
@@ -15,9 +16,9 @@ namespace CineTech.Models
         [Display(Name = "Komentar:")]
         public String komentar { get; set; }
         public DateTime datum { get; set; }
-        [ForeignKey("Korisnik")]
+        [ForeignKey("AspNetUsers")]
         public String korisnikId { get; set; }
-        public Korisnik korisnik { get; set; }
+        public IdentityUser korisnik { get; set; }
         public Ocjena() { }
     }
 }
