@@ -61,6 +61,7 @@ namespace CineTech.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("id,datum,vrijeme,cijenaOsnovneKarte,kinoSalaId,filmId")] Projekcija projekcija)
         {
+            
             if (ModelState.IsValid)
             {
                 _context.Add(projekcija);

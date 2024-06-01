@@ -59,15 +59,15 @@ namespace CineTech.Controllers
          [ValidateAntiForgeryToken]
          public async Task<IActionResult> Create([Bind("id,ocjena,komentar,datum,korisnikId")] Ocjena ocjena)
          {
-             if (ModelState.IsValid)
-             {
-                 _context.Add(ocjena);
-                 await _context.SaveChangesAsync();
-                 return RedirectToAction(nameof(Index));
-             }
-             ViewData["korisnikId"] = new SelectList(_context.Korisnik, "Id", "Id", ocjena.korisnikId);
-             return View();
-         }
+            if (ModelState.IsValid)
+            {
+                _context.Add(ocjena);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["korisnikId"] = new SelectList(_context.Korisnik, "Id", "Id", ocjena.korisnikId);
+            return View();
+        }
 
 
         // GET: Ocjenas/Edit/5

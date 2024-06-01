@@ -7,7 +7,7 @@ namespace CineTech.Models
     {
         [Key]
         public int id { get; set; }
-        [Required]
+        //[Required]
         [Range(minimum:1,maximum:5,ErrorMessage ="Ocjena mora biti između 1-5 !")]
         [Display(Name = "Ocjena:")]
         public int ocjena { get; set; }
