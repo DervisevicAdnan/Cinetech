@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\Data\\Migrations\\20240601182643_migracija.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CineTech\\Data\\Migrations\\20240601182643_migracija.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|c:\\users\\adidr\\onedrive\\dokumenti\\github\\tim27-cinetech\\cinetech\\cinetech\\data\\migrations\\20240601182643_migracija.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|solutionrelative:cinetech\\data\\migrations\\20240601182643_migracija.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|c:\\users\\adidr\\onedrive\\dokumenti\\github\\tim27-cinetech\\cinetech\\cinetech\\models\\film.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -131,8 +131,7 @@
               "RelativeToolTip": "CineTech\\Data\\Migrations\\20240601182446_migracijaaaaqaaa.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T18:24:46.525Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-01T18:24:46.525Z"
             },
             {
               "$type": "Document",
@@ -144,8 +143,7 @@
               "RelativeToolTip": "CineTech\\Data\\Migrations\\20240601182355_novamigracijaabd.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T18:23:55.376Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-01T18:23:55.376Z"
             },
             {
               "$type": "Document",
@@ -157,8 +155,7 @@
               "RelativeToolTip": "CineTech\\Models\\Film.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T18:23:32.095Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-01T18:23:32.095Z"
             },
             {
               "$type": "Document",
@@ -170,8 +167,7 @@
               "RelativeToolTip": "CineTech\\Models\\KinoSala.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T18:23:30.154Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-01T18:23:30.154Z"
             },
             {
               "$type": "Document",
@@ -183,8 +179,7 @@
               "RelativeToolTip": "CineTech\\Models\\OcjeneFilma.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T12:51:43.63Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-01T12:51:43.63Z"
             },
             {
               "$type": "Document",
@@ -196,8 +191,7 @@
               "RelativeToolTip": "CineTech\\Models\\PeriodNotifikacije.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T12:52:04.123Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-01T12:52:04.123Z"
             },
             {
               "$type": "Document",
@@ -209,8 +203,7 @@
               "RelativeToolTip": "CineTech\\Models\\Rezervacija.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T12:53:30.875Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-01T12:53:30.875Z"
             },
             {
               "$type": "Document",
@@ -222,8 +215,7 @@
               "RelativeToolTip": "CineTech\\Models\\Projekcija.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAABMAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T12:50:01.367Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-01T12:50:01.367Z"
             },
             {
               "$type": "Document",
@@ -235,8 +227,7 @@
               "RelativeToolTip": "CineTech\\Models\\Transakcija.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T12:53:35.131Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-01T12:53:35.131Z"
             },
             {
               "$type": "Document",
@@ -248,8 +239,7 @@
               "RelativeToolTip": "CineTech\\Models\\ZanroviFilma.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T12:53:57.379Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-01T12:53:57.379Z"
             },
             {
               "$type": "Document",
@@ -261,8 +251,7 @@
               "RelativeToolTip": "CineTech\\Models\\ZauzetaSjedista.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T12:54:03.945Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-01T12:54:03.945Z"
             },
             {
               "$type": "Document",
@@ -274,8 +263,7 @@
               "RelativeToolTip": "CineTech\\Models\\Zanr.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T12:53:56.084Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-01T12:53:56.084Z"
             },
             {
               "$type": "Document",
@@ -287,8 +275,7 @@
               "RelativeToolTip": "CineTech\\Models\\NotifikacijeFilma.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T12:50:46.637Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-01T12:50:46.637Z"
             },
             {
               "$type": "Document",
@@ -300,8 +287,7 @@
               "RelativeToolTip": "CineTech\\Models\\Notifikacija.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T12:50:36.897Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-01T12:50:36.897Z"
             },
             {
               "$type": "Document",
@@ -313,8 +299,7 @@
               "RelativeToolTip": "CineTech\\Models\\Kupovina.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T18:22:41.885Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-01T18:22:41.885Z"
             },
             {
               "$type": "Document",
@@ -326,8 +311,7 @@
               "RelativeToolTip": "CineTech\\Models\\Korisnik.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T18:22:40.554Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-01T18:22:40.554Z"
             },
             {
               "$type": "Document",
@@ -339,8 +323,7 @@
               "RelativeToolTip": "CineTech\\Models\\Ocjena.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T12:50:02.506Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-01T12:50:02.506Z"
             },
             {
               "$type": "Document",
