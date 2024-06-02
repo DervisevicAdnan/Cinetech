@@ -32,6 +32,10 @@ namespace CineTech.Controllers
         {
             return View();
         }
+        public IActionResult KupovinaView()
+        {
+            return View();
+        }
         [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> AdminView()
         {
