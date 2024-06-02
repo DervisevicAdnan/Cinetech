@@ -62,6 +62,6 @@
 </div>
 <div>
     <a asp-controller="Home" asp-action="Index" class="btn btn-primary" >Nazad</a>
-    <a asp-controller="Ocjenas" asp-action="Index" class="btn btn-primary">Ocjeni film</a>
+    <a asp-controller="Ocjenas" asp-action="Index" asp-route-id="@Model?.id" class="btn btn-primary">Ocjeni film</a>
 
 </div>

@@ -64,12 +64,11 @@ namespace CineTech.Controllers
 
         // GET: Ocjenas/Create
         [HttpGet]
-        public async Task<IActionResult> Create()
+        public async Task<IActionResult> Create(int ?id)
         {
             var user = await _userManager.GetUserAsync(User);
             var korisnik1 = await _userManager.GetUserNameAsync(user);
             var korisnik = await _userManager.GetUserIdAsync(user);
-          
             ViewBag.KorisnikId = korisnik1;
             return View();
         }
@@ -98,7 +97,7 @@ namespace CineTech.Controllers
                 await _context.SaveChangesAsync();
                 var ocjeneFilma = new OcjeneFilma
                 {
-                    FilmId = 3, 
+                    FilmId = id, 
                     OcjenaId = ocjena.id 
                 };
 
