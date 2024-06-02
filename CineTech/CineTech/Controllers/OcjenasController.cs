@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Identity;
 using System.Transactions;
 using Microsoft.VisualBasic;
 using System.Data.SqlTypes;
+using Microsoft.CodeAnalysis.Elfie.Serialization;
 
 namespace CineTech.Controllers
 {
@@ -29,8 +30,9 @@ namespace CineTech.Controllers
 
         // GET: Ocjenas
         public async Task<IActionResult> Index()
-        {
-            return View(await _context.Ocjena.ToListAsync());
+
+        { 
+             return View(await _context.Ocjena.ToListAsync());
         }
 
         // GET: Ocjenas/Details/5
@@ -70,9 +72,10 @@ namespace CineTech.Controllers
         public async Task<IActionResult> Create([Bind("id,ocjenaFilma,komentar,datum,korisnikId")] Ocjena ocjena)
         {
             var user = await _userManager.GetUserAsync(User);
-            var korisnik = await _userManager.GetUserIdAsync(user);
+            var korisnik = await _userManager.GetUserIdAsync(user);          
             ocjena.datum = DateTime.Today;
             ocjena.korisnikId = korisnik;
+
             if (ModelState.IsValid)
             {
 
@@ -82,6 +85,11 @@ namespace CineTech.Controllers
                 }
                 _context.Add(ocjena);
                 await _context.SaveChangesAsync();
+                //var film = await _context.Film.FirstOrDefaultAsync();
+      //          ocjeneFilma.FilmId = film.id;
+      //          ocjeneFilma.OcjenaId = ocjena.id;
+      //          _context.OcjeneFilma.Add(ocjeneFilma);
+      //          await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
             /*if (ModelState.IsValid)
