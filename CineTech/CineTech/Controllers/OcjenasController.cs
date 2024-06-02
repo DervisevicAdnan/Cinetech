@@ -81,15 +81,12 @@ namespace CineTech.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("id,ocjenaFilma,komentar,datum,korisnikId")] Ocjena ocjena)
         {
-            /*var kreirajinstancu = KreirajOcjenuFilma();
-            kreirajinstancu.FilmId = 1;
-            kreirajinstancu.OcjenaId = ocjena.id;*/
             var user = await _userManager.GetUserAsync(User);
             var korisnik = await _userManager.GetUserIdAsync(user);          
             ocjena.datum = DateTime.Today;
             ocjena.korisnikId = korisnik;
 
-
+            
             if (ModelState.IsValid)
             {
 
@@ -101,11 +98,10 @@ namespace CineTech.Controllers
                 await _context.SaveChangesAsync();
                 var ocjeneFilma = new OcjeneFilma
                 {
-                    FilmId = 1, // Postavite željeni FilmId
-                    OcjenaId = ocjena.id // Koristite id sačuvane instance ocjena
+                    FilmId = 3, 
+                    OcjenaId = ocjena.id 
                 };
 
-                // Sačuvajte instancu OcjeneFilma
                 _context.OcjeneFilma.Add(ocjeneFilma);
                 await _context.SaveChangesAsync();
 

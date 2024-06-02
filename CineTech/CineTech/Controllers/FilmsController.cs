@@ -94,7 +94,6 @@ namespace CineTech.Controllers
             {
                 _context.Add(film);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(AdminFilmovi));
             }
             return View(film);
         }

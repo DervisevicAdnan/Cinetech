@@ -20,6 +20,8 @@ namespace CineTech.Models
         public DateTime datum { get; set; }
         [ForeignKey("Korisnik")]
         public String korisnikId { get; set; }
+        [ForeignKey("Film")]
+        public int FilmId { get; set; } 
         //public IdentityUser korisnik { get; set; }
         public Ocjena() { }
     }
