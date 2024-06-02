@@ -11,8 +11,6 @@ namespace CineTech.Models
         public int FilmId { get; set; }
         [ForeignKey("Ocjena")]
         public int OcjenaId { get; set; }
-        public Film Film { get; set; }
-        public Ocjena Ocjena { get; set; }
         public OcjeneFilma() { }
     }
 }

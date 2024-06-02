@@ -36,7 +36,21 @@ namespace CineTech.Controllers
             _signInManager = signInManager;
            
         }
-
+       /* public async Task<IActionResult> OcjeneFilma(int? id)
+        {
+            var igrice = await _context.OcjeneFilma.ToListAsync();
+            var ocjena = await _context.Ocjena
+                .FirstOrDefaultAsync(m => m.id == id);
+            var o = new OcjeneFilma
+            {
+                FilmId = (int)id,
+                OcjenaId = ocjena.id
+            };
+            //igrice.RemoveAll(komentar => komentar.FilmId != id);
+            igrice.Add(o);
+            await _context.SaveChangesAsync();
+            return View(igrice);
+        }*/
         // GET: Ocjenas
         public async Task<IActionResult> Index()
 
@@ -64,7 +78,7 @@ namespace CineTech.Controllers
 
         // GET: Ocjenas/Create
         [HttpGet]
-        public async Task<IActionResult> Create(int ?id)
+        public async Task<IActionResult> Create()
         {
             var user = await _userManager.GetUserAsync(User);
             var korisnik1 = await _userManager.GetUserNameAsync(user);
@@ -95,14 +109,14 @@ namespace CineTech.Controllers
                 }
                 _context.Add(ocjena);
                 await _context.SaveChangesAsync();
-                var ocjeneFilma = new OcjeneFilma
+                /*var ocjeneFilma = new OcjeneFilma
                 {
-                    FilmId = id, 
+                    FilmId = 3, 
                     OcjenaId = ocjena.id 
-                };
+                };*/
 
-                _context.OcjeneFilma.Add(ocjeneFilma);
-                await _context.SaveChangesAsync();
+                //_context.OcjeneFilma.Add(ocjeneFilma);
+                //await _context.SaveChangesAsync();
 
                 //var film = await _context.Film.FirstOrDefaultAsync();
                 //          ocjeneFilma.FilmId = film.id;
@@ -128,8 +142,10 @@ namespace CineTech.Controllers
             {
                 return NotFound();
             }
-
             var ocjena = await _context.Ocjena.FindAsync(id);
+            var user = await _userManager.GetUserAsync(User);
+            var korisnik = await _userManager.GetUserIdAsync(user);
+            ViewBag.UserId = korisnik;
             if (ocjena == null)
             {
                 return NotFound();
@@ -150,6 +166,9 @@ namespace CineTech.Controllers
             }
             var user = await _userManager.GetUserAsync(User);
             var korisnik = await _userManager.GetUserIdAsync(user);
+            ocjena.korisnikId = korisnik;
+
+
             if (ModelState.IsValid)
             {
                 if (ocjena.korisnikId != korisnik)
@@ -217,8 +236,8 @@ namespace CineTech.Controllers
             }
             catch
             {
-                throw new InvalidOperationException($"Can't create an instance of '{nameof(OcjeneFilma)}'. " +
-                    $"Ensure that '{nameof(OcjeneFilma)}' is not an abstract class and has a parameterless constructor, or alternatively " +
+                throw new InvalidOperationException($"Can't create an instance of '{nameof(Models.OcjeneFilma)}'. " +
+                    $"Ensure that '{nameof(Models.OcjeneFilma)}' is not an abstract class and has a parameterless constructor, or alternatively " +
                     $"override the register page in /Areas/Identity/Pages/Account/Register.cshtml");
             }
         }

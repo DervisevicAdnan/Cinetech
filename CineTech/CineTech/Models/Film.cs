@@ -24,6 +24,8 @@ namespace CineTech.Models
         public String glumci { get; set; }
         [Required]
         [Display(Name = "Relese Date:")]
+        [DataType(DataType.Date)]
+
         public DateTime releseDate { get; set; }
         [Required]
         [Display(Name = "Trailer:")]

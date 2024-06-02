@@ -175,10 +175,6 @@ namespace CineTech.Data.Migrations
 
                     b.HasKey("id");
 
-                    b.HasIndex("FilmId");
-
-                    b.HasIndex("OcjenaId");
-
                     b.ToTable("OcjeneFilma", (string)null);
                 });
 
@@ -553,25 +549,6 @@ namespace CineTech.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.ToTable("Korisnik", (string)null);
-                });
-
-            modelBuilder.Entity("CineTech.Models.OcjeneFilma", b =>
-                {
-                    b.HasOne("CineTech.Models.Film", "Film")
-                        .WithMany()
-                        .HasForeignKey("FilmId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CineTech.Models.Ocjena", "Ocjena")
-                        .WithMany()
-                        .HasForeignKey("OcjenaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Film");
-
-                    b.Navigation("Ocjena");
                 });
 
             modelBuilder.Entity("CineTech.Models.UserRoles", b =>

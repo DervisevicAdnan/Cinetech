@@ -36,7 +36,8 @@ namespace CineTech.Controllers
         }
         public async Task<IActionResult> AdminFilmovi()
         {
-            var filmovi = await _context.Film
+            var filmovi = await _context.Film.OrderBy(f => f.StatusPrikazivanja == StatusPrikazivanja.Aktuelan ? 1 :
+                      f.StatusPrikazivanja == StatusPrikazivanja.UNajavi ? 2 : 3)
             .ToListAsync();
             return View(filmovi);
         }
@@ -94,6 +95,7 @@ namespace CineTech.Controllers
             {
                 _context.Add(film);
                 await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(AdminFilmovi));
             }
             return View(film);
         }

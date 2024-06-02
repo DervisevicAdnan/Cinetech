@@ -134,6 +134,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsbXNcVGVybWluaVZpZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Films/tesrView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsbXNcdGVzclZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -212,6 +216,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Ocjenas/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2NqZW5hc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Ocjenas/OcjeneFilma.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2NqZW5hc1xPY2plbmVGaWxtYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Projekcijas/Create.cshtml]
