@@ -1,11 +1,27 @@
-﻿@model IEnumerable<CineTech.Models.Ocjena>
+﻿@using Microsoft.AspNetCore.Identity
+@model IEnumerable<CineTech.Models.Ocjena>
+@inject UserManager<IdentityUser> UserManager
+@inject SignInManager<IdentityUser> SignInManager
+
+
+
+@{
+    var currentUserId = await UserManager.GetUserAsync(User);
+    var korisnik = await UserManager.GetUserIdAsync(currentUserId);
+    //var username = await UserManager.GetUserNameAsync(currentUserId);
+    var isAdmin = User.IsInRole("Administrator");
+    async Task<string> GetUserNameAsync(string userId)
+    {
+        var user = await UserManager.FindByIdAsync(userId);
+        return user?.UserName;
+    }
+}
 
 @{
     ViewData["Title"] = "Index";
 }
 
 <h1>Index</h1>
-
 <p>
     <a asp-action="Create">Create New</a>
 </p>
@@ -22,7 +38,13 @@
                 @Html.DisplayNameFor(model => model.datum)
             </th>
             <th>
+                @if (User.IsInRole("Administrator")){
+
                 @Html.DisplayNameFor(model => model.korisnikId)
+                }
+            </th>
+            <th>
+                Korisnicko ime
             </th>
             <th></th>
         </tr>
@@ -40,12 +62,23 @@
                 @Html.DisplayFor(modelItem => item.datum)
             </td>
             <td>
+                @if (User.IsInRole("Administrator"))
+                {
                 @Html.DisplayFor(modelItem => item.korisnikId)
+                }
             </td>
+                <td>
+                    @{
+                        var username = await GetUserNameAsync(item.korisnikId);
+                        @username
+                    }
+                </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                    @if (@SignInManager.UserManager.Users.First(user => user.UserName == User.Identity.Name).Id == item.korisnikId || isAdmin){
+                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> 
+                <a asp-action="Details" asp-route-id="@item.id">Details</a> 
                 <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                    }
             </td>
         </tr>
 }

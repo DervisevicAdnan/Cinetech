@@ -12,6 +12,13 @@ using System.Transactions;
 using Microsoft.VisualBasic;
 using System.Data.SqlTypes;
 using Microsoft.CodeAnalysis.Elfie.Serialization;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+
 
 namespace CineTech.Controllers
 {
@@ -19,12 +26,14 @@ namespace CineTech.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<IdentityUser> _userManager;
-        
+        private readonly SignInManager<IdentityUser> _signInManager;
 
-        public OcjenasController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
+
+        public OcjenasController(ApplicationDbContext context, UserManager<IdentityUser> userManager,SignInManager<IdentityUser>signInManager)
         {
             _context = context;
             _userManager = userManager;
+            _signInManager = signInManager;
            
         }
 
@@ -129,9 +138,14 @@ namespace CineTech.Controllers
             {
                 return NotFound();
             }
-
+            var user = await _userManager.GetUserAsync(User);
+            var korisnik = await _userManager.GetUserIdAsync(user);
             if (ModelState.IsValid)
             {
+                if (ocjena.korisnikId != korisnik)
+                {
+                    return RedirectToAction(nameof(Index));
+                }
                 try
                 {
                     _context.Update(ocjena);
