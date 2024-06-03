@@ -139,6 +139,9 @@ namespace CineTech.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
 
+                    b.Property<int>("FilmId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("datum")
                         .HasColumnType("datetime2");
 

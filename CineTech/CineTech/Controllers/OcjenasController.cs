@@ -76,6 +76,63 @@ namespace CineTech.Controllers
             return View(ocjena);
         }
 
+        // GET: Ocjenas/OcjeneFilma/5
+        public async Task<IActionResult> OcjeneFilma(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var ocjena = await _context.Ocjena
+                .Where(o => o.FilmId == id)
+                .ToListAsync();
+            if (ocjena == null)
+            {
+                return NotFound();
+            }
+
+            return View(ocjena);
+        }
+
+        // GET: Ocjenas/OcijeniFilm/5
+        [HttpGet]
+        public async Task<IActionResult> OcijeniFilm(int? id)
+        {
+            var user = await _userManager.GetUserAsync(User);
+            var korisnik1 = await _userManager.GetUserNameAsync(user);
+            var korisnik = await _userManager.GetUserIdAsync(user);
+            ViewBag.KorisnikId = korisnik1;
+            ViewBag.FilmId = id;
+            return View();
+        }
+
+        // POST: Ocjenas/OcijeniFilm/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> OcijeniFilm([Bind("ocjenaFilma,komentar,datum,korisnikId,FilmId")] Ocjena ocjena)
+        {
+            var user = await _userManager.GetUserAsync(User);
+            var korisnik = await _userManager.GetUserIdAsync(user);
+            ocjena.datum = DateTime.Today;
+            ocjena.korisnikId = korisnik;
+
+            if (ModelState.IsValid)
+            {
+                if (ocjena.korisnikId != korisnik)
+                {
+                    return NotFound();
+                }
+                _context.Add(ocjena);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            return View(ocjena);
+        }
+
+
         // GET: Ocjenas/Create
         [HttpGet]
         public async Task<IActionResult> Create()

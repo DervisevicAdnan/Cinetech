@@ -74,11 +74,11 @@
                     }
                 </td>
             <td>
-                    @if (@SignInManager.UserManager.Users.First(user => user.UserName == User.Identity.Name).Id == item.korisnikId || isAdmin){
-                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> 
-                <a asp-action="Details" asp-route-id="@item.id">Details</a> 
-                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
-                    }
+                @if (@SignInManager.UserManager.Users.First(user => user.UserName == User.Identity.Name).Id == item.korisnikId || isAdmin){
+                    <a asp-action="Edit" asp-route-id="@item.id">Edit</a> 
+                    <a asp-action="Details" asp-route-id="@item.id">Details</a> 
+                    <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                }
             </td>
         </tr>
 }

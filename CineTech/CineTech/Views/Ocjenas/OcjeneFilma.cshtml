@@ -1,10 +1,4 @@
-﻿
-@{
-    ViewData["Title"] = "OcjeneFilma";
-}
-
-
-@using Microsoft.AspNetCore.Identity
+﻿@using Microsoft.AspNetCore.Identity
 @model IEnumerable<CineTech.Models.Ocjena>
 @inject UserManager<IdentityUser> UserManager
 @inject SignInManager<IdentityUser> SignInManager
@@ -23,8 +17,13 @@
     }
 }
 
+@{
+    ViewData["Title"] = "OcjeneFilma";
+}
+
+<h1>Ocjene filma</h1>
 <p>
-    <a asp-action="Create" asp-route-id="@Model.?id">Create New</a>
+    <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
     <thead>

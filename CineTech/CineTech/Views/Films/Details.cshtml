@@ -63,6 +63,7 @@
 </div>
 <div>
     <a asp-controller="Home" asp-action="Index" class="btn btn-primary" >Nazad</a>
-    <a asp-controller="Ocjenas" asp-action="Index" asp-route-id="@Model.id" class="btn btn-primary">Ocjeni film</a>
-
+    <a asp-controller="Ocjenas" asp-action="Index" class="btn btn-primary">Ocjene sve</a>
+    <a asp-controller="Ocjenas" asp-action="OcjeneFilma" asp-route-id="@Model.id" class="btn btn-primary">Pogledajte ocjene filma</a>
+    <a asp-controller="Ocjenas" asp-action="OcijeniFilm" asp-route-id="@Model.id" class="btn btn-primary">Ocijenite film</a>
 </div>

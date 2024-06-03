@@ -1,0 +1,50 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using CineTech.Data
+@using CineTech.Controllers
+@using CineTech.Models
+
+@model CineTech.Models.Ocjena
+
+@{
+    ViewData["Title"] = "OcijeniFilm";
+
+}
+
+<h1>Ocijeni Film</h1>
+
+<h4>@ViewBag.FilmId</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="OcijeniFilm">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="ocjenaFilma" class="control-label"></label>
+                <input asp-for="ocjenaFilma" class="form-control" />
+                <span asp-validation-for="ocjenaFilma" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="komentar" class="control-label"></label>
+                <input asp-for="komentar" class="form-control" />
+                <span asp-validation-for="komentar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="korisnikId" class="control-label"></label>
+                <input asp-for="korisnikId" value="@ViewBag.KorisnikId" class="form-control" readonly />
+                <span asp-validation-for="korisnikId" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="FilmId" value="@ViewBag.FilmId" asp-validation-for="FilmId" />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+<script>
+    document.getElementById("datumInput").value = new Date().toLocaleDateString("en-US");
+</script>
