@@ -6,7 +6,8 @@
 
 
 @{
-    if(SignInManager.IsSignedIn(User)){
+    if (SignInManager.IsSignedIn(User))
+    {
         var currentUserId = await UserManager.GetUserAsync(User);
         var korisnik = await UserManager.GetUserIdAsync(currentUserId);
         //var username = await UserManager.GetUserNameAsync(currentUserId);
@@ -21,16 +22,16 @@
 }
 
 @{
-    
-        ViewData["Title"] = "OcjeneFilma";
-    
+
+    ViewData["Title"] = "OcjeneFilmaNotLogged";
+
 }
 
 <h1>Ocjene filma</h1>
 <p>
-    @if (User.IsInRole("Administrator")||User.IsInRole("Korisnik"))
+    @if (User.IsInRole("Administrator, Korisnik"))
     {
-        <a asp-action="OcijeniFilm">Create New</a>
+        <a asp-action="Create">Create New</a>
     }
 </p>
 <table class="table">
@@ -84,7 +85,7 @@
                     }
                 </td>
                 <td>
-                    @if (User.IsInRole("Administrator")||User.IsInRole("Korisnik"))
+                    @if (User.IsInRole("Administrator, Korisnik"))
                     {
                         @if (@SignInManager.UserManager.Users.First(user => user.UserName == User.Identity.Name).Id == item.korisnikId || isAdmin)
                         {
@@ -93,11 +94,8 @@
                         }
                     }<a asp-action="Details" asp-route-id="@item.id">Details</a>
 
-
                 </td>
-
             </tr>
-            }
-            <a asp-controller="Films" asp-action="Details" asp-route-id="@ViewBag.Ocjeneid">Back to list</a>
+        }
     </tbody>
 </table>

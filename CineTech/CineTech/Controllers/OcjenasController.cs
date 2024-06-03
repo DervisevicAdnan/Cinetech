@@ -18,6 +18,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace CineTech.Controllers
@@ -52,15 +53,24 @@ namespace CineTech.Controllers
             return View(igrice);
         }*/
         // GET: Ocjenas
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int ?id)
 
-        { 
-             return View(await _context.Ocjena.ToListAsync());
+        {
+            var ocjena = await _context.Ocjena
+               .Where(o => o.FilmId == id)
+               .ToListAsync();
+            if (ocjena == null)
+            {
+                return NotFound();
+            }
+
+            return View(ocjena);// return View(await _context.Ocjena.ToListAsync());
         }
 
         // GET: Ocjenas/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            ViewBag.ocjenaid = id;
             if (id == null)
             {
                 return NotFound();
@@ -76,9 +86,11 @@ namespace CineTech.Controllers
             return View(ocjena);
         }
 
+        //[Authorize(Roles="Administrator, Korisnik")]
         // GET: Ocjenas/OcjeneFilma/5
         public async Task<IActionResult> OcjeneFilma(int? id)
         {
+            ViewBag.Ocjeneid = id;
             if (id == null)
             {
                 return NotFound();
@@ -87,6 +99,7 @@ namespace CineTech.Controllers
             var ocjena = await _context.Ocjena
                 .Where(o => o.FilmId == id)
                 .ToListAsync();
+            ViewBag.Ocjeneid = id;
             if (ocjena == null)
             {
                 return NotFound();
@@ -121,13 +134,13 @@ namespace CineTech.Controllers
 
             if (ModelState.IsValid)
             {
-                if (ocjena.korisnikId != korisnik)
+               /* if (ocjena.korisnikId != korisnik)
                 {
                     return NotFound();
-                }
+                }*/
                 _context.Add(ocjena);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details", "Films", new { id = ocjena.FilmId });
             }
             return View(ocjena);
         }
@@ -135,12 +148,14 @@ namespace CineTech.Controllers
 
         // GET: Ocjenas/Create
         [HttpGet]
-        public async Task<IActionResult> Create()
+
+        public async Task<IActionResult> Create(int?id)
         {
             var user = await _userManager.GetUserAsync(User);
             var korisnik1 = await _userManager.GetUserNameAsync(user);
             var korisnik = await _userManager.GetUserIdAsync(user);
             ViewBag.KorisnikId = korisnik1;
+            ViewBag.FilmId = id;
             return View();
         }
 
@@ -149,7 +164,8 @@ namespace CineTech.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,ocjenaFilma,komentar,datum,korisnikId")] Ocjena ocjena)
+
+        public async Task<IActionResult> Create([Bind("id,ocjenaFilma,komentar,datum,korisnikId,FilmId")] Ocjena ocjena)
         {
             var user = await _userManager.GetUserAsync(User);
             var korisnik = await _userManager.GetUserIdAsync(user);          
@@ -193,6 +209,7 @@ namespace CineTech.Controllers
         }
 
         // GET: Ocjenas/Edit/5
+        [Authorize(Roles = "Administrator, Korisnik")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -203,6 +220,7 @@ namespace CineTech.Controllers
             var user = await _userManager.GetUserAsync(User);
             var korisnik = await _userManager.GetUserIdAsync(user);
             ViewBag.UserId = korisnik;
+            ViewBag.UserFilm = ocjena.FilmId;
             if (ocjena == null)
             {
                 return NotFound();
@@ -215,7 +233,7 @@ namespace CineTech.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,ocjenaFilma,komentar,datum,korisnikId")] Ocjena ocjena)
+        public async Task<IActionResult> Edit(int id, [Bind("id,ocjenaFilma,komentar,datum,korisnikId,FilmId")] Ocjena ocjena)
         {
             if (id != ocjena.id)
             {
@@ -224,13 +242,14 @@ namespace CineTech.Controllers
             var user = await _userManager.GetUserAsync(User);
             var korisnik = await _userManager.GetUserIdAsync(user);
             ocjena.korisnikId = korisnik;
+            ViewBag.UserFilm = ocjena.FilmId;
 
 
             if (ModelState.IsValid)
             {
                 if (ocjena.korisnikId != korisnik)
                 {
-                    return RedirectToAction(nameof(Index));
+                    return RedirectToAction("OcjeneFilma", "Ocjenas", new { id = ocjena.FilmId });
                 }
                 try
                 {
@@ -248,12 +267,13 @@ namespace CineTech.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("OcjeneFilma", "Ocjenas", new { id = ocjena.FilmId });
             }
             return View(ocjena);
         }
 
         // GET: Ocjenas/Delete/5
+
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -274,6 +294,7 @@ namespace CineTech.Controllers
         // POST: Ocjenas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var ocjena = await _context.Ocjena.FindAsync(id);
@@ -283,7 +304,7 @@ namespace CineTech.Controllers
             }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("OcjeneFilma", "Ocjenas", new { id = ocjena.FilmId });
         }
         private OcjeneFilma KreirajOcjenuFilma()
         {

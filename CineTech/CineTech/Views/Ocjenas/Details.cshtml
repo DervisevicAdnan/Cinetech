@@ -2,6 +2,8 @@
 
 @{
     ViewData["Title"] = "Details";
+    var filmid = Model.FilmId;
+    var ocjenaid = Model.id;
 }
 
 <h1>Details</h1>
@@ -37,6 +39,7 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+   
+    <a asp-controller="Ocjenas" asp-action="OcjeneFilma" asp-route-id="@filmid">Back to list</a>
+   
 </div>

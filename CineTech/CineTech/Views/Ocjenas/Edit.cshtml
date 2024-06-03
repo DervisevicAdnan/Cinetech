@@ -2,6 +2,8 @@
 
 @{
     ViewData["Title"] = "Edit";
+    var filmid = Model.FilmId;
+
 }
 
 <h1>Edit</h1>
@@ -35,6 +37,12 @@
 
             </div>
             <div class="form-group">
+                <label asp-for="FilmId" class="control-label"></label>
+                <input asp-for="FilmId" value="@ViewBag.UserFilm" class=" form-control" readonly />
+                <span asp-validation-for="FilmId" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
@@ -42,6 +50,6 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-controller="Ocjenas" asp-action="OcjeneFilma" asp-route-id="@ViewBag.UserFilm">Back to List</a>
 </div>
 

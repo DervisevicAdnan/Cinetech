@@ -1,8 +1,17 @@
 ﻿@model CineTech.Models.Film
 @inject IEnumerable<CineTech.Models.Film> film
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<IdentityUser> UserManager
+@inject SignInManager<IdentityUser> SignInManager
+
 
 @{
     ViewData["Title"] = "Details";
+    var isAktuelan = false;
+    if(Model.StatusPrikazivanja == StatusPrikazivanja.Aktuelan)
+    {
+        isAktuelan = true;
+    }
 }
 
 <h1>Detalji filma</h1>
@@ -63,7 +72,15 @@
 </div>
 <div>
     <a asp-controller="Home" asp-action="Index" class="btn btn-primary" >Nazad</a>
-    <a asp-controller="Ocjenas" asp-action="Index" class="btn btn-primary">Ocjene sve</a>
+    @if (User.IsInRole("Administrator")||(User.IsInRole("Korisnik")))
+    {
+        if (isAktuelan)
+        {
+            <a asp-controller="Ocjenas" asp-action="OcijeniFilm" asp-route-id="@Model.id" class="btn btn-primary">Ocijenite film</a>
+        }
+    }
+    @if (User.IsInRole("Administrator")){
+        <a asp-controller="Ocjenas" asp-action="Index" class="btn btn-primary">Ocjene sve</a>
+    }
     <a asp-controller="Ocjenas" asp-action="OcjeneFilma" asp-route-id="@Model.id" class="btn btn-primary">Pogledajte ocjene filma</a>
-    <a asp-controller="Ocjenas" asp-action="OcijeniFilm" asp-route-id="@Model.id" class="btn btn-primary">Ocijenite film</a>
 </div>
