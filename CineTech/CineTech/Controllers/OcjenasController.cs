@@ -56,15 +56,7 @@ namespace CineTech.Controllers
         public async Task<IActionResult> Index(int ?id)
 
         {
-            var ocjena = await _context.Ocjena
-               .Where(o => o.FilmId == id)
-               .ToListAsync();
-            if (ocjena == null)
-            {
-                return NotFound();
-            }
-
-            return View(ocjena);// return View(await _context.Ocjena.ToListAsync());
+            return View(await _context.Ocjena.ToListAsync());
         }
 
         // GET: Ocjenas/Details/5
@@ -112,6 +104,8 @@ namespace CineTech.Controllers
         [HttpGet]
         public async Task<IActionResult> OcijeniFilm(int? id)
         {
+            var film = await _context.Film.FindAsync(id);
+            if (film.StatusPrikazivanja != StatusPrikazivanja.Aktuelan) return RedirectToAction("NajavljeniFilmovi", "Films");
             var user = await _userManager.GetUserAsync(User);
             var korisnik1 = await _userManager.GetUserNameAsync(user);
             var korisnik = await _userManager.GetUserIdAsync(user);
@@ -134,20 +128,35 @@ namespace CineTech.Controllers
 
             if (ModelState.IsValid)
             {
-               /* if (ocjena.korisnikId != korisnik)
+            var film = await _context.Film.FindAsync(ocjena.FilmId);
+            if (film.StatusPrikazivanja == StatusPrikazivanja.Aktuelan)
+            {
+                if ((User.IsInRole("Administrator")) || ocjena.korisnikId == korisnik)
                 {
-                    return NotFound();
-                }*/
-                _context.Add(ocjena);
-                await _context.SaveChangesAsync();
-                return RedirectToAction("Details", "Films", new { id = ocjena.FilmId });
+                    _context.Add(ocjena);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction("Details", "Films", new { id = ocjena.FilmId });
+                }
+                else if (ocjena.korisnikId != korisnik)
+                {
+
+                    return RedirectToAction("OcjeneFilma", "Ocjenas", new { id = ocjena.FilmId });
+
+                }
+            }
+            else
+            {
+                    return RedirectToAction("NajavljeniFilmovi", "Films");
+            }
+
+                
             }
             return View(ocjena);
         }
 
 
         // GET: Ocjenas/Create
-        [HttpGet]
+        /*[HttpGet]
 
         public async Task<IActionResult> Create(int?id)
         {
@@ -186,7 +195,7 @@ namespace CineTech.Controllers
                 {
                     FilmId = 3, 
                     OcjenaId = ocjena.id 
-                };*/
+                };
 
                 //_context.OcjeneFilma.Add(ocjeneFilma);
                 //await _context.SaveChangesAsync();
@@ -198,15 +207,15 @@ namespace CineTech.Controllers
                 //          await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            /*if (ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 _context.Add(ocjena);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(ocjena);*/
             return View(ocjena);
-        }
+            return View(ocjena);
+        }*/
 
         // GET: Ocjenas/Edit/5
         [Authorize(Roles = "Administrator, Korisnik")]
@@ -216,14 +225,25 @@ namespace CineTech.Controllers
             {
                 return NotFound();
             }
+
             var ocjena = await _context.Ocjena.FindAsync(id);
             var user = await _userManager.GetUserAsync(User);
             var korisnik = await _userManager.GetUserIdAsync(user);
-            ViewBag.UserId = korisnik;
-            ViewBag.UserFilm = ocjena.FilmId;
-            if (ocjena == null)
+            
+            if ((User.IsInRole("Administrator"))||ocjena.korisnikId==korisnik)
             {
-                return NotFound();
+                ViewBag.UserId = korisnik;
+                ViewBag.UserFilm = ocjena.FilmId;
+                if (ocjena == null)
+                {
+                    return NotFound();
+                }
+            }
+            else if (ocjena.korisnikId != korisnik)
+            {
+
+                return RedirectToAction("OcjeneFilma", "Ocjenas", new { id = ocjena.FilmId });
+
             }
             return View(ocjena);
         }
@@ -241,33 +261,36 @@ namespace CineTech.Controllers
             }
             var user = await _userManager.GetUserAsync(User);
             var korisnik = await _userManager.GetUserIdAsync(user);
-            ocjena.korisnikId = korisnik;
+            //ocjena.korisnikId = korisnik;
             ViewBag.UserFilm = ocjena.FilmId;
-
+            ViewBag.korisnikId = ocjena.korisnikId;
+            
 
             if (ModelState.IsValid)
             {
-                if (ocjena.korisnikId != korisnik)
+                if ((User.IsInRole("Administrator")) || ocjena.korisnikId == korisnik)
+                {
+                    try
+                    {
+                        _context.Update(ocjena);
+                        await _context.SaveChangesAsync();
+                    }
+                    catch (DbUpdateConcurrencyException)
+                    {
+                        if (!OcjenaExists(ocjena.id))
+                        {
+                            return NotFound();
+                        }
+                        else
+                        {
+                            throw;
+                        }
+                    }
+                }
+                else if (ocjena.korisnikId != korisnik)
                 {
                     return RedirectToAction("OcjeneFilma", "Ocjenas", new { id = ocjena.FilmId });
                 }
-                try
-                {
-                    _context.Update(ocjena);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!OcjenaExists(ocjena.id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction("OcjeneFilma", "Ocjenas", new { id = ocjena.FilmId });
             }
             return View(ocjena);
         }
@@ -276,16 +299,26 @@ namespace CineTech.Controllers
 
         public async Task<IActionResult> Delete(int? id)
         {
+            ViewBag.Id = id;
             if (id == null)
             {
                 return NotFound();
             }
-
+            var user = await _userManager.GetUserAsync(User);
+            var korisnik = await _userManager.GetUserIdAsync(user);
             var ocjena = await _context.Ocjena
                 .FirstOrDefaultAsync(m => m.id == id);
-            if (ocjena == null)
+
+            if ((User.IsInRole("Administrator")) || ocjena.korisnikId == korisnik)
             {
-                return NotFound();
+                if (ocjena == null)
+                {
+                    return NotFound();
+                }
+            }
+            else if (ocjena.korisnikId != korisnik)
+            {
+                return RedirectToAction("OcjeneFilma", "Ocjenas", new { id = ocjena.FilmId });
             }
 
             return View(ocjena);
@@ -297,11 +330,21 @@ namespace CineTech.Controllers
 
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            var user = await _userManager.GetUserAsync(User);
+            var korisnik = await _userManager.GetUserIdAsync(user);
             var ocjena = await _context.Ocjena.FindAsync(id);
-            if (ocjena != null)
+            if ((User.IsInRole("Administrator")) || ocjena.korisnikId == korisnik)
             {
-                _context.Ocjena.Remove(ocjena);
+                if (ocjena != null)
+                {
+                    _context.Ocjena.Remove(ocjena);
+                }
             }
+            else if (ocjena.korisnikId != korisnik)
+            {
+                return RedirectToAction("OcjeneFilma", "Ocjenas", new { id = ocjena.FilmId });
+            }
+            
 
             await _context.SaveChangesAsync();
             return RedirectToAction("OcjeneFilma", "Ocjenas", new { id = ocjena.FilmId });

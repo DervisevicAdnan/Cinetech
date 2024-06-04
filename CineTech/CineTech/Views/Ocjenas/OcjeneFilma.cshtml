@@ -10,6 +10,7 @@
         var currentUserId = await UserManager.GetUserAsync(User);
         var korisnik = await UserManager.GetUserIdAsync(currentUserId);
         //var username = await UserManager.GetUserNameAsync(currentUserId);
+
     }
     var isAdmin = User.IsInRole("Administrator");
     async Task<string> GetUserNameAsync(string userId)
@@ -27,12 +28,6 @@
 }
 
 <h1>Ocjene filma</h1>
-<p>
-    @if (User.IsInRole("Administrator")||User.IsInRole("Korisnik"))
-    {
-        <a asp-action="OcijeniFilm">Create New</a>
-    }
-</p>
 <table class="table">
     <thead>
         <tr>
