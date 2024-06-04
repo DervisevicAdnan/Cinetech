@@ -60,7 +60,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                    popravit
+                    @((await _context.Film.FindAsync(item.FilmId))?.naziv ?? "-")
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ocjenaFilma)

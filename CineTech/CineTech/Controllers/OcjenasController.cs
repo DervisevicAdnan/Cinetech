@@ -37,21 +37,7 @@ namespace CineTech.Controllers
             _signInManager = signInManager;
            
         }
-       /* public async Task<IActionResult> OcjeneFilma(int? id)
-        {
-            var igrice = await _context.OcjeneFilma.ToListAsync();
-            var ocjena = await _context.Ocjena
-                .FirstOrDefaultAsync(m => m.id == id);
-            var o = new OcjeneFilma
-            {
-                FilmId = (int)id,
-                OcjenaId = ocjena.id
-            };
-            //igrice.RemoveAll(komentar => komentar.FilmId != id);
-            igrice.Add(o);
-            await _context.SaveChangesAsync();
-            return View(igrice);
-        }*/
+
         // GET: Ocjenas
         public async Task<IActionResult> Index(int ?id)
 
