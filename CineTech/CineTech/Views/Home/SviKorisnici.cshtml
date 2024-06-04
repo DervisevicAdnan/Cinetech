@@ -1,0 +1,76 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using CineTech.Data;
+
+@inject UserManager<IdentityUser> UserManager
+@inject SignInManager<IdentityUser> SignInManager
+@inject ApplicationDbContext _context;
+
+
+@{
+    ViewData["Title"] = "SviKorisnici";
+
+}
+<h1>SviKorisnici</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ID Usera
+            </th>
+            <th>
+                UserName
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Broj telefona
+            </th>
+            <th>
+                Uloge
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Id
+                </td>
+                <td>
+                    @item.UserName
+                </td>
+                <td>
+                    @item.Email
+                </td>
+                <td>
+                    @item.PhoneNumber
+                </td>
+                <td>
+                    @{
+                        var user = await UserManager.FindByNameAsync(item.UserName);
+                        var roles = await UserManager.GetRolesAsync(user);
+                        @string.Join(", ", roles)
+                    }
+                </td>
+                <td>
+                    @{
+                        var username = item.UserName;
+                        var id = item.Id;
+                    }
+                        <form asp-action="Delete" method="post">
+                            <input type="hidden" name="username" value="@username" />
+                            <input type="submit" value="Delete" class="btn btn-danger" /> 
+                        </form>
+                        <p></p>
+                        <a asp-action="SviKorisniciEdit" class="btn btn-primary" asp-route-username="@username">Edit</a>
+                </td>
+            </tr>
+        }
+    <td>
+        <a asp-controller="Films" asp-action="AdminIndex" class="btn btn-primary">Nazad</a>
+    </td>
+    </tbody>
+</table>

@@ -18,12 +18,12 @@ namespace CineTech.Models
         public String komentar { get; set; }
         [DataType(DataType.Date)]
         public DateTime datum { get; set; }
-        [ForeignKey("Korisnik")]
+        [ForeignKey("IdentityUser")]
         public String korisnikId { get; set; }
-        public IdentityUser korisnik { get; set; }
+        //public IdentityUser korisnik { get; set; }
         [ForeignKey("Film")]
         public int FilmId { get; set; } 
-        public Film Film { get; set; }
+        //public Film Film { get; set; }
         public Ocjena() { }
     }
 }

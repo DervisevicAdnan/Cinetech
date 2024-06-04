@@ -8,10 +8,10 @@ namespace CineTech.Models
     {
         [Key]
         public int id { get; set; }
-        [ForeignKey("Korisnik")]
+        [ForeignKey("IdentityUser")]
         [Display(Name = "Korisnik")]
         public String KorisnikId {  get; set; }
-        public IdentityUser Korisnik { get; set; }
+        //public IdentityUser Korisnik { get; set; }
         [Required]
         [EnumDataType(typeof(PeriodNotifikacije))]
         [Display(Name = "Period notifikacije:")]

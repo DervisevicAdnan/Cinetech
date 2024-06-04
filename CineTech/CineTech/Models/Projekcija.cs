@@ -22,7 +22,7 @@ namespace CineTech.Models
         [ForeignKey("Film")]
         [Display(Name = "FilmID")]
         public int filmId { get; set; }
-       // public Film Film { get; set; }
+        //public Film Film { get; set; }
 
         public Projekcija() { }
 

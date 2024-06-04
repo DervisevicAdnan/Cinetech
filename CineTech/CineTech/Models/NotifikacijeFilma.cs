@@ -9,11 +9,11 @@ namespace CineTech.Models
         public int id { get; set; }
         [ForeignKey("Film")]
         public int FilmId { get; set; }
-        public Film Film { get; set; }
+        //public Film Film { get; set; }
         [ForeignKey("Notifikacija")]
         public int NotifikacijaId { get; set; }
         
-        public Notifikacija Notifikacija { get; set; }
+        //public Notifikacija Notifikacija { get; set; }
         public NotifikacijeFilma() { }
     }
 }

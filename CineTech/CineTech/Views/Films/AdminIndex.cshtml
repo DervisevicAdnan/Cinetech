@@ -7,18 +7,22 @@
 <h1>Administratorska kontrolna ploča</h1>
 
 <p>
-    <div>
+<div>
         <a asp-action="AdminFilmovi" class="btn btn-primary">Panel za filmove</a>
 </div>
-<p> </p>
+<p></p>
 <div>
         <a asp-controller="KinoSalas" asp-action="Index" class="btn btn-primary">Panel za Kino sale</a>
-        </div>
-<p> </p>
+</div>
+<p></p>
 <div>
-        <a asp-controller="Projekcijas" asp-action="Index" class="btn btn-primary">Panel za Kino sale</a>
-        </div>
-        <p></p>
-
-    
-</p>
+        <a asp-controller="Projekcijas" asp-action="Index" class="btn btn-primary">Panel za Projekcije</a>
+</div>
+<p></p>
+ <div>
+        <a asp-controller="Ocjenas" asp-action="Index" class="btn btn-primary">Panel ocjena</a>
+</div>
+<p></p>
+<div>
+    <a asp-controller="Home" asp-action="SviKorisnici" class="btn btn-primary">Panel korisnika</a>
+</div>

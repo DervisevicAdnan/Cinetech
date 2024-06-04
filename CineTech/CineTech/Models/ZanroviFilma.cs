@@ -10,7 +10,7 @@ namespace CineTech.Models
         [ForeignKey("Film")]
         [Display(Name = "FilmId:")]
         public int idFilma { get; set; }
-        public Film Film { get; set; }
+        //public Film Film { get; set; }
         [EnumDataType(typeof(Zanr))]
         [Display(Name = "Zanr:")]
         public Zanr zanrFilma { get; set; }
