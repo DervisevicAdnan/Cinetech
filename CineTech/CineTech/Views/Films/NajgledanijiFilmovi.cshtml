@@ -1,10 +1,36 @@
-﻿
-@{
-    ViewData["Title"] = "NajgledanijiFilmovi";
-}
+﻿@using Microsoft.AspNetCore.Identity
+@using CineTech.Data;
 
-<h1>NajgledanijiFilmoviView</h1>
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@inject UserManager<IdentityUser> UserManager
+@inject SignInManager<IdentityUser> SignInManager
+@inject ApplicationDbContext _context;
+@model IEnumerable<CineTech.Models.Film>
+
+<h1>Najgledaniji filmovi</h1>
+<ul>
+<div class="container">
+    <div class="row">
+    @foreach (var film in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <a asp-controller="Films" asp-action="Details" asp-route-id="@film.id"><img class="card-img-top" src="@film.naslovnaSlika" alt="@film.naziv" /></a>
+                <div class="card-body">
+                    <h5 class="card-title">@film.naziv</h5>
+                    <p class="card-text">
+                        @{
+                            var ocjeneFilma = _context.Ocjena.Where(o => o.FilmId == film.id).ToList();
+                            var prosjecnaOcjena = ocjeneFilma.Any() ? ocjeneFilma.Average(o => o.ocjenaFilma) : 0;
+                        }
+                        Prosjecna ocjena: @prosjecnaOcjena.ToString("0.00")
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="@film.trailer" class="btn btn-primary" target="_blank">Pogledaj trailer</a>
+                </div>
+            </div>
+        </div>
+    }
+    </<div>
 </div>
+</ul>

@@ -46,6 +46,14 @@ namespace CineTech.Controllers
         // GET: Projekcijas/Create
         public IActionResult Create()
         {
+            var filmoviList = _context.Film.ToList();
+            var kinoSaleList = _context.KinoSala.ToList();
+
+            ViewBag.FilmoviList = filmoviList;
+            ViewBag.KinoSaleList = kinoSaleList;
+            ViewBag.Filmovi = new SelectList(filmoviList, "id", "naziv");
+            ViewBag.KinoSale = new SelectList(kinoSaleList, "id", "naziv");
+
             return View();
         }
 
@@ -56,12 +64,37 @@ namespace CineTech.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("id,datum,vrijeme,cijenaOsnovneKarte,kinoSalaId,filmId")] Projekcija projekcija)
         {
+            /*
+            if (!_context.Film.Any(f => f.id == projekcija.filmId))
+            {
+                ModelState.AddModelError("FilmId", "Film with the specified ID does not exist.");
+            }
+
+            if (!_context.KinoSala.Any(ks => ks.id == projekcija.kinoSalaId))
+            {
+                ModelState.AddModelError("KinoSalaId", "Kino sala with the specified ID does not exist.");
+            }
+            */
+            var filmExists = _context.Film.Any(f => f.id == projekcija.filmId);
+            var kinoSalaExists = _context.KinoSala.Any(ks => ks.id == projekcija.kinoSalaId);
+
+            if (!filmExists)
+            {
+                ModelState.AddModelError("filmId", "Film ID does not exist.");
+            }
+
+            if (!kinoSalaExists)
+            {
+                ModelState.AddModelError("kinoSalaId", "Kino Sala ID does not exist.");
+            }
+
             if (ModelState.IsValid)
             {
                 _context.Add(projekcija);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
             return View(projekcija);
         }
 

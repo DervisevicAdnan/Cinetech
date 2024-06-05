@@ -9,9 +9,11 @@ namespace CineTech.Models
         [Key]
         public int id { get; set; }
         [Display(Name = "Datum projekcije:")]
+        [DataType(DataType.Date)]
         public DateTime datum { get; set; }
         [Display(Name = "Vrijeme projekcije:")]
-        public TimeOnly vrijeme { get; set; }
+        [DataType(DataType.Time)]
+        public DateTime vrijeme { get; set; }
         [Required]
         [Display(Name = "Cijena osnovne karte:")]
         public double cijenaOsnovneKarte { get; set; }

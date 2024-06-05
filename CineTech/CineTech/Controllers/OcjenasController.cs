@@ -92,9 +92,19 @@ namespace CineTech.Controllers
         {
             var film = await _context.Film.FindAsync(id);
             if (film.StatusPrikazivanja != StatusPrikazivanja.Aktuelan) return RedirectToAction("NajavljeniFilmovi", "Films");
+           
             var user = await _userManager.GetUserAsync(User);
             var korisnik1 = await _userManager.GetUserNameAsync(user);
             var korisnik = await _userManager.GetUserIdAsync(user);
+            var postojecaOcjena = await _context.Ocjena
+            .FirstOrDefaultAsync(o => o.FilmId == id && o.korisnikId == korisnik);
+
+            if (postojecaOcjena != null)
+            {
+                // Ako korisnik već ima ocjenu, preusmjeri ga na neku drugu stranicu
+                return RedirectToAction("Details", "Films",new { id });
+            }
+
             ViewBag.KorisnikId = korisnik1;
             ViewBag.FilmId = id;
             return View();
@@ -113,8 +123,8 @@ namespace CineTech.Controllers
             ocjena.korisnikId = korisnik;
 
             if (ModelState.IsValid)
-            {
-            var film = await _context.Film.FindAsync(ocjena.FilmId);
+            { 
+                var film = await _context.Film.FindAsync(ocjena.FilmId);
             if (film.StatusPrikazivanja == StatusPrikazivanja.Aktuelan)
             {
                 if ((User.IsInRole("Administrator")) || ocjena.korisnikId == korisnik)

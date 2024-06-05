@@ -21,12 +21,16 @@ namespace CineTech.Controllers
         }
 
         // GET: KinoSalas
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> Index()
         {
             return View(await _context.KinoSala.ToListAsync());
         }
 
         // GET: KinoSalas/Details/5
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)

@@ -188,10 +188,6 @@ namespace CineTech.Controllers
             return RedirectToAction(nameof(AdminFilmovi));
         }
 
-        public IActionResult NajgledanijiFilmovi()
-        {
-            return View();
-        }
        public async Task<IActionResult> NajavljeniFilmovi()
         {
              var najavljeniFilmovi = await _context.Film
@@ -203,6 +199,31 @@ namespace CineTech.Controllers
         private bool FilmExists(int id)
         {
             return _context.Film.Any(e => e.id == id);
+        }
+        public IActionResult NajgledanijiFilmovi()
+        {
+            var prosjecneOcjenePoFilmu = _context.Ocjena
+                .GroupBy(o => o.FilmId)
+                .Select(g => new
+                {
+                    FilmId = g.Key,
+                    ProsjecnaOcjena = g.Average(o => o.ocjenaFilma)
+                })
+                .ToList();
+
+            prosjecneOcjenePoFilmu = prosjecneOcjenePoFilmu.OrderByDescending(o => o.ProsjecnaOcjena).ToList();
+
+            var najgledanijiFilmoviIds = prosjecneOcjenePoFilmu.Take(5).Select(o => o.FilmId).ToList();
+
+            var najgledanijiFilmovi = _context.Film.Where(f => najgledanijiFilmoviIds.Contains(f.id)).ToList();
+            
+
+            if (najgledanijiFilmovi == null)
+            {
+                return View(new List<Film>());
+            }
+            najgledanijiFilmovi = najgledanijiFilmovi.OrderBy(f => najgledanijiFilmoviIds.IndexOf(f.id)).ToList();
+            return View(najgledanijiFilmovi.AsEnumerable());
         }
     }
 }
