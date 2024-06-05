@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Create";
+
 }
 
 <h1>Create</h1>
@@ -18,6 +19,7 @@
 
 <h4>Available Kino Sale</h4>
 <ul>
+    
     @foreach (var kinoSala in ViewBag.KinoSaleList)
     {
         <li>Kino Sala ID: @kinoSala.id, Name: @kinoSala.naziv</li>
@@ -53,13 +55,13 @@
                 <span asp-validation-for="filmId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" onsubmit="return validateForm()" />
+                <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-primary">Nazad</a>
 </div>
 
 
