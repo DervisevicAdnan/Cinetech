@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/CineTech.styles.css" asp-append-version="true" />
 </head>
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
@@ -42,6 +46,12 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="KupovinaView">testic</a>
+                        </li>
+                        <li class="nav-item">
+                            @if ((User.IsInRole("Administrator")) || (User.IsInRole("Korisnik")))
+                            {
+                            <a asp-controller="Notifikacijas" asp-action="UserNotifikacije" asp-route-username="@User.Identity.Name" class="nav-link text-dark">Moje notifikacije</a>
+                            }
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<dynamic>
+@using Microsoft.AspNetCore.Identity
+@using CineTech.Data;
+
+@inject UserManager<IdentityUser> UserManager
+@inject SignInManager<IdentityUser> SignInManager
+@inject ApplicationDbContext _context;
+
+
+
+
+@{
+    ViewBag.Title = "Moje Notifikacije";
+    //var filmovi = ViewBag.Filmovi as Dictionary<int, string>;
+    var notifikacijeWithFilms = ViewBag.NotifikacijeWithFilms;
+}
+
+<h1>Moje Notifikacije</h1>
+ @if (notifikacijeWithFilms != null)
+        {
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Period Notifikacije
+            </th>
+            <th>
+                Status Notifikacije
+            </th>
+            <th>
+                Film
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in notifikacijeWithFilms)
+        {
+            <tr>
+                <td>
+                    @item.Notifikacija.PeriodNotifikacije
+                </td>
+                <td>
+                    @item.Notifikacija.StatusNotifikacije
+                </td>
+                <td>
+                        @((await _context.Film.FindAsync(item.FilmId))?.naziv ?? "-")
+                </td>
+            </tr>
+        }
+    </tbody>
+    </table>
+}
+else
+{
+    <p>Error</p>
+}

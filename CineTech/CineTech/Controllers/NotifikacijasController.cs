@@ -7,25 +7,34 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CineTech.Data;
 using CineTech.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CineTech.Controllers
 {
     public class NotifikacijasController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public NotifikacijasController(ApplicationDbContext context)
+
+        public NotifikacijasController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: Notifikacijas
+        [Authorize(Roles = "Administrator, Korisnik")]
+
         public async Task<IActionResult> Index()
         {
             return View(await _context.Notifikacija.ToListAsync());
         }
 
         // GET: Notifikacijas/Details/5
+        [Authorize(Roles = "Administrator, Korisnik")]
+
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -42,10 +51,15 @@ namespace CineTech.Controllers
 
             return View(notifikacija);
         }
+        [Authorize(Roles = "Administrator, Korisnik")]
 
         // GET: Notifikacijas/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create(int? id)
         {
+            var user = await _userManager.GetUserAsync(User);
+            var korisnik1 = await _userManager.GetUserNameAsync(user);
+            ViewBag.korisnikid = korisnik1;
+            ViewBag.proslijedi = id;
             return View();
         }
 
@@ -54,16 +68,56 @@ namespace CineTech.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,KorisnikId,PeriodNotifikacije,StatusNotifikacije")] Notifikacija notifikacija)
+        [Authorize(Roles = "Administrator, Korisnik")]
+
+        public async Task<IActionResult> Create([Bind("KorisnikId,PeriodNotifikacije,StatusNotifikacije")] Notifikacija notifikacija,int filmId)
         {
+
             if (ModelState.IsValid)
             {
                 _context.Add(notifikacija);
                 await _context.SaveChangesAsync();
+                int notifikacijaId = notifikacija.id;
+                NotifikacijeFilma notifikacijeFilma = new NotifikacijeFilma
+                {
+                    FilmId = filmId,
+                    NotifikacijaId = notifikacijaId
+                };
+                _context.NotifikacijeFilma.Add(notifikacijeFilma);
+                await _context.SaveChangesAsync();
+
                 return RedirectToAction(nameof(Index));
             }
             return View(notifikacija);
         }
+        [Authorize(Roles = "Administrator, Korisnik")]
+
+        public async Task<IActionResult> UserNotifikacije(string username)
+        {
+            var user = await _userManager.FindByNameAsync(username);
+            var korisnikId = user.Id;
+
+            // Combine retrievals using JOINs
+            var notifikacijeWithFilms = await _context.Notifikacija
+                .Join(_context.NotifikacijeFilma, n => n.id, nf => nf.NotifikacijaId, (n, nf) => new
+                {
+                    Notifikacija = n,
+                    FilmId = nf.FilmId
+                })
+                .Join(_context.Film, nf => nf.FilmId, f => f.id, (nf, f) => new
+                {
+                    Notifikacija = nf.Notifikacija,
+                    FilmId = nf.FilmId,
+                    FilmNaziv = f.naziv
+                })
+                .ToListAsync();
+
+            ViewBag.NotifikacijeWithFilms = notifikacijeWithFilms;
+
+            return View(notifikacijeWithFilms);
+        }
+
+        [Authorize(Roles = "Administrator, Korisnik")]
 
         // GET: Notifikacijas/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -86,6 +140,8 @@ namespace CineTech.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator, Korisnik")]
+
         public async Task<IActionResult> Edit(int id, [Bind("id,KorisnikId,PeriodNotifikacije,StatusNotifikacije")] Notifikacija notifikacija)
         {
             if (id != notifikacija.id)
@@ -115,6 +171,7 @@ namespace CineTech.Controllers
             }
             return View(notifikacija);
         }
+        [Authorize(Roles = "Administrator, Korisnik")]
 
         // GET: Notifikacijas/Delete/5
         public async Task<IActionResult> Delete(int? id)
@@ -137,6 +194,8 @@ namespace CineTech.Controllers
         // POST: Notifikacijas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator, Korisnik")]
+
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var notifikacija = await _context.Notifikacija.FindAsync(id);

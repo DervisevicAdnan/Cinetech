@@ -11,22 +11,19 @@
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
+            <input type="hidden" name="filmId" value="@ViewBag.proslijedi" />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="KorisnikId" class="control-label"></label>
-                <input asp-for="KorisnikId" class="form-control" />
+                <input asp-for="KorisnikId" value="@ViewBag.korisnikid" class="form-control" readonly/>
                 <span asp-validation-for="KorisnikId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="PeriodNotifikacije" class="control-label"></label>
-                <select asp-for="PeriodNotifikacije" class="form-control"></select>
+                <select asp-for="PeriodNotifikacije" class="form-control" asp-items="Html.GetEnumSelectList<PeriodNotifikacije>()"></select>
                 <span asp-validation-for="PeriodNotifikacije" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="StatusNotifikacije" class="control-label"></label>
-                <select asp-for="StatusNotifikacije" class="form-control"></select>
-                <span asp-validation-for="StatusNotifikacije" class="text-danger"></span>
-            </div>
+           
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
