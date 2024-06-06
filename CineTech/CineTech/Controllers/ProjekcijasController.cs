@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CineTech.Data;
 using CineTech.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CineTech.Controllers
 {
@@ -43,7 +44,61 @@ namespace CineTech.Controllers
             return View(projekcija);
         }
 
-        // GET: Projekcijas/Create
+        /*   GET: Projekcijas/Create
+          public IActionResult Create()
+          {
+              var filmoviList = _context.Film.ToList();
+              var kinoSaleList = _context.KinoSala.ToList();
+
+              ViewBag.FilmoviList = filmoviList;
+              ViewBag.KinoSaleList = kinoSaleList;
+              ViewBag.Filmovi = new SelectList(filmoviList, "id", "naziv");
+              ViewBag.KinoSale = new SelectList(kinoSaleList, "id", "naziv");
+
+              return View();
+          }
+
+          // POST: Projekcijas/Create
+          // To protect from overposting attacks, enable the specific properties you want to bind to.
+          // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+          [HttpPost]
+          [ValidateAntiForgeryToken]
+          public async Task<IActionResult> Create([Bind("id,datum,vrijeme,cijenaOsnovneKarte,kinoSalaId,filmId")] Projekcija projekcija)
+          {
+
+              if (!_context.Film.Any(f => f.id == projekcija.filmId))
+              {
+                  ModelState.AddModelError("FilmId", "Film with the specified ID does not exist.");
+              }
+
+              if (!_context.KinoSala.Any(ks => ks.id == projekcija.kinoSalaId))
+              {
+                  ModelState.AddModelError("KinoSalaId", "Kino sala with the specified ID does not exist.");
+              }
+
+              var filmExists = _context.Film.Any(f => f.id == projekcija.filmId);
+              var kinoSalaExists = _context.KinoSala.Any(ks => ks.id == projekcija.kinoSalaId);
+
+              if (!filmExists)
+              {
+                  ModelState.AddModelError("filmId", "Film ID does not exist.");
+              }
+
+              if (!kinoSalaExists)
+              {
+                  ModelState.AddModelError("kinoSalaId", "Kino Sala ID does not exist.");
+              }
+
+              if (ModelState.IsValid)
+              {
+                  _context.Add(projekcija);
+                  await _context.SaveChangesAsync();
+                  return RedirectToAction(nameof(Index));
+              }
+
+              return View(projekcija);
+          }*/
+        [Authorize(Roles = "Administrator")]
         public IActionResult Create()
         {
             var filmoviList = _context.Film.ToList();
@@ -51,30 +106,16 @@ namespace CineTech.Controllers
 
             ViewBag.FilmoviList = filmoviList;
             ViewBag.KinoSaleList = kinoSaleList;
-            ViewBag.Filmovi = new SelectList(filmoviList, "id", "naziv");
-            ViewBag.KinoSale = new SelectList(kinoSaleList, "id", "naziv");
 
             return View();
         }
 
         // POST: Projekcijas/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Create([Bind("id,datum,vrijeme,cijenaOsnovneKarte,kinoSalaId,filmId")] Projekcija projekcija)
         {
-            /*
-            if (!_context.Film.Any(f => f.id == projekcija.filmId))
-            {
-                ModelState.AddModelError("FilmId", "Film with the specified ID does not exist.");
-            }
-
-            if (!_context.KinoSala.Any(ks => ks.id == projekcija.kinoSalaId))
-            {
-                ModelState.AddModelError("KinoSalaId", "Kino sala with the specified ID does not exist.");
-            }
-            */
             var filmExists = _context.Film.Any(f => f.id == projekcija.filmId);
             var kinoSalaExists = _context.KinoSala.Any(ks => ks.id == projekcija.kinoSalaId);
 
@@ -95,12 +136,23 @@ namespace CineTech.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
+            // Reload the lists if the model state is invalid
+            ViewBag.FilmoviList = _context.Film.ToList();
+            ViewBag.KinoSaleList = _context.KinoSala.ToList();
+
             return View(projekcija);
         }
 
+
         // GET: Projekcijas/Edit/5
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Edit(int? id)
         {
+            var filmoviList = _context.Film.ToList();
+            var kinoSaleList = _context.KinoSala.ToList();
+
+            ViewBag.FilmoviList = filmoviList;
+            ViewBag.KinoSaleList = kinoSaleList;
             if (id == null)
             {
                 return NotFound();
@@ -119,6 +171,7 @@ namespace CineTech.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Edit(int id, [Bind("id,datum,vrijeme,cijenaOsnovneKarte,kinoSalaId,filmId")] Projekcija projekcija)
         {
             if (id != projekcija.id)
@@ -146,10 +199,13 @@ namespace CineTech.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewBag.FilmoviList = _context.Film.ToList();
+            ViewBag.KinoSaleList = _context.KinoSala.ToList();
             return View(projekcija);
         }
 
         // GET: Projekcijas/Delete/5
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -168,6 +224,7 @@ namespace CineTech.Controllers
         }
 
         // POST: Projekcijas/Delete/5
+        [Authorize(Roles = "Administrator")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

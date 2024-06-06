@@ -8,6 +8,27 @@
 
 <h4>Projekcija</h4>
 <hr />
+<h4>Available Films</h4>
+<ul>
+    @foreach (var film in ViewBag.FilmoviList)
+    {
+        <div class="form-group">
+            <input type="radio" id="film_@film.id" name="filmIdRadio" value="@film.id" onclick="setFilmId(this.value)" />
+            <label for="film_@film.id">@film.naziv</label>
+        </div>
+    }
+</ul>
+
+<h4>Available Kino Sale</h4>
+<ul>
+    @foreach (var kinoSala in ViewBag.KinoSaleList)
+    {
+        <div class="form-group">
+            <input type="radio" id="kinoSala_@kinoSala.id" name="kinoSalaIdRadio" value="@kinoSala.id" onclick="setKinoSalaId(this.value)" />
+            <label for="kinoSala_@kinoSala.id">@kinoSala.naziv</label>
+        </div>
+    }
+</ul>
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
@@ -49,3 +70,28 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
+<script>
+    function allowOnlyOneCheckboxFilm(checkbox) {
+        var checkboxes = document.getElementsByName("filmovi");
+        checkboxes.forEach(function (item) {
+            if (item !== checkbox && item.checked) {
+                item.checked = false;
+            }
+        });
+    }
+    function allowOnlyOneCheckboxKinoSala(checkbox) {
+        var checkboxes = document.getElementsByName("kinosale");
+        checkboxes.forEach(function (item) {
+            if (item !== checkbox && item.checked) {
+                item.checked = false;
+            }
+        });
+    }
+    function setFilmId(value) {
+        document.getElementById("filmId").value = value;
+    }
+
+    function setKinoSalaId(value) {
+        document.getElementById("kinoSalaId").value = value;
+    }
+</script>

@@ -13,16 +13,21 @@
 <ul>
     @foreach (var film in ViewBag.FilmoviList)
     {
-        <li>Film ID: @film.id, Name: @film.naziv</li>
+        <div class="form-group">
+            <input type="radio" id="film_@film.id" name="filmIdRadio" value="@film.id" onclick="setFilmId(this.value)" />
+            <label for="film_@film.id">@film.naziv</label>
+        </div>
     }
 </ul>
 
 <h4>Available Kino Sale</h4>
 <ul>
-    
     @foreach (var kinoSala in ViewBag.KinoSaleList)
     {
-        <li>Kino Sala ID: @kinoSala.id, Name: @kinoSala.naziv</li>
+        <div class="form-group">
+            <input type="radio" id="kinoSala_@kinoSala.id" name="kinoSalaIdRadio" value="@kinoSala.id" onclick="setKinoSalaId(this.value)" />
+            <label for="kinoSala_@kinoSala.id">@kinoSala.naziv</label>
+        </div>
     }
 </ul>
 <div class="row">
@@ -46,12 +51,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="kinoSalaId" class="control-label"></label>
-                <input asp-for="kinoSalaId" class="form-control" />
+                <input asp-for="kinoSalaId" class="form-control" readonly/>
                 <span asp-validation-for="kinoSalaId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="filmId" class="control-label"></label>
-                <input asp-for="filmId" class=" form-control" />
+                <input asp-for="filmId" class=" form-control" readonly/>
                 <span asp-validation-for="filmId" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -65,3 +70,28 @@
 </div>
 
 
+<script>
+    function allowOnlyOneCheckboxFilm(checkbox) {
+        var checkboxes = document.getElementsByName("filmovi");
+        checkboxes.forEach(function (item) {
+            if (item !== checkbox && item.checked) {
+                item.checked = false;
+            }
+        });
+    }
+    function allowOnlyOneCheckboxKinoSala(checkbox) {
+        var checkboxes = document.getElementsByName("kinosale");
+        checkboxes.forEach(function (item) {
+            if (item !== checkbox && item.checked) {
+                item.checked = false;
+            }
+        });
+    }
+    function setFilmId(value) {
+        document.getElementById("filmId").value = value;
+    }
+
+    function setKinoSalaId(value) {
+        document.getElementById("kinoSalaId").value = value;
+    }
+</script>

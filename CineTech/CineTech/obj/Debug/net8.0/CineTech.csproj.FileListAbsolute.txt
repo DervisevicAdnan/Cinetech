@@ -1008,3 +1008,4 @@ C:\Users\HP Compaq\Desktop\tim27-cinetech\CineTech\CineTech\obj\Debug\net8.0\ref
 C:\Users\HP Compaq\Desktop\tim27-cinetech\CineTech\CineTech\obj\Debug\net8.0\CineTech.pdb
 C:\Users\HP Compaq\Desktop\tim27-cinetech\CineTech\CineTech\obj\Debug\net8.0\CineTech.genruntimeconfig.cache
 C:\Users\HP Compaq\Desktop\tim27-cinetech\CineTech\CineTech\obj\Debug\net8.0\ref\CineTech.dll
+C:\Users\AdiDr\OneDrive\Dokumenti\GitHub\tim27-cinetech\CineTech\CineTech\bin\Debug\net8.0\RestSharp.dll

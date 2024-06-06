@@ -23,6 +23,9 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+// Dodaj servise u DI kontejner
+//builder.Services.AddControllersWithViews();
+//builder.Services.AddScoped<MovieService>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

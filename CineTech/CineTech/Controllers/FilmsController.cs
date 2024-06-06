@@ -8,18 +8,25 @@ using Microsoft.EntityFrameworkCore;
 using CineTech.Data;
 using CineTech.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Linq;
+using System.Threading.Tasks;
+using Microsoft.DotNet.Scaffolding.Shared.CodeModifier.CodeChange;
+using RestSharp;
+using Newtonsoft.Json.Linq;
 
 namespace CineTech.Controllers
 {
     public class FilmsController : Controller
     {
         private readonly ApplicationDbContext _context;
+       // private readonly MovieService movieService;
 
-        public FilmsController(ApplicationDbContext context)
+        public FilmsController(ApplicationDbContext context /*MovieService movieService*/)
         {
             _context = context;
+           // this.movieService = movieService;
         }
-
         // GET: Films
         public async Task<IActionResult> Index()
         {
@@ -28,12 +35,13 @@ namespace CineTech.Controllers
             .ToListAsync();
             return View(aktuelniFilmovi);
         }
-
+        [Authorize(Roles = "Administrator")]
         public IActionResult AdminIndex()
         {
 
             return View();
         }
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> AdminFilmovi()
         {
             var filmovi = await _context.Film.OrderBy(f => f.StatusPrikazivanja == StatusPrikazivanja.Aktuelan ? 1 :
@@ -59,6 +67,7 @@ namespace CineTech.Controllers
 
             return View(film);
         }
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> AdminDetails(int? id)
         {
             if (id == null)
@@ -225,5 +234,12 @@ namespace CineTech.Controllers
             najgledanijiFilmovi = najgledanijiFilmovi.OrderBy(f => najgledanijiFilmoviIds.IndexOf(f.id)).ToList();
             return View(najgledanijiFilmovi.AsEnumerable());
         }
+        /*public async Task<IActionResult> NajgledanijiFilmoviUSvijetu()
+        {
+            var jsonData = await movieService.GetTopRatedMoviesAsync();
+            var movies = JObject.Parse(jsonData)["results"];
+
+            return View(movies);
+        }*/
     }
 }

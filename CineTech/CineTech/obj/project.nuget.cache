@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "jHRUn6VroZFUdIrmFvx/1CR0tCSRI4HUiGLtn4uucfml/8juUrWrKd4ufQGuxTFk8PD8Yzf0L9/8lgxUiRzYBg==",
+  "dgSpecHash": "xghv1q/kMEAcxcviIltp6nnpOYAME6vANHVrOVubH5ybeGIXW9nxpU9ekIEYN71f1f/KbMsglQjPzKpot/HqxA==",
   "success": true,
   "projectFilePath": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\CineTech.csproj",
   "expectedPackageFiles": [
@@ -136,6 +136,7 @@
     "C:\\Users\\AdiDr\\.nuget\\packages\\nuget.projectmodel\\6.9.1\\nuget.projectmodel.6.9.1.nupkg.sha512",
     "C:\\Users\\AdiDr\\.nuget\\packages\\nuget.protocol\\6.9.1\\nuget.protocol.6.9.1.nupkg.sha512",
     "C:\\Users\\AdiDr\\.nuget\\packages\\nuget.versioning\\6.9.1\\nuget.versioning.6.9.1.nupkg.sha512",
+    "C:\\Users\\AdiDr\\.nuget\\packages\\restsharp\\111.2.0\\restsharp.111.2.0.nupkg.sha512",
     "C:\\Users\\AdiDr\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.6\\sqlitepclraw.bundle_e_sqlite3.2.1.6.nupkg.sha512",
     "C:\\Users\\AdiDr\\.nuget\\packages\\sqlitepclraw.core\\2.1.6\\sqlitepclraw.core.2.1.6.nupkg.sha512",
     "C:\\Users\\AdiDr\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.1.6\\sqlitepclraw.lib.e_sqlite3.2.1.6.nupkg.sha512",
