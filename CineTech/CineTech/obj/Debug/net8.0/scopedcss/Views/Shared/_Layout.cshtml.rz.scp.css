@@ -5,10 +5,12 @@ a.navbar-brand[b-t0vcix8b0c] {
   white-space: normal;
   text-align: center;
   word-break: break-all;
+  background-color: #1b6ec2;
 }
 
 a[b-t0vcix8b0c] {
-  color: #0077cc;
+  color: #1b6ec2;
+  background-color: #1b6ec2;
 }
 
 .btn-primary[b-t0vcix8b0c] {
@@ -24,7 +26,7 @@ a[b-t0vcix8b0c] {
 }
 
 .border-top[b-t0vcix8b0c] {
-  border-top: 1px solid #e5e5e5;
+    border-top: 1px solid #1b6ec2;
 }
 .border-bottom[b-t0vcix8b0c] {
   border-bottom: 1px solid #e5e5e5;

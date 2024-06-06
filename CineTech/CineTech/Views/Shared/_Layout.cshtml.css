@@ -5,10 +5,12 @@ a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
+  background-color: #1b6ec2;
 }
 
 a {
-  color: #0077cc;
+  color: #1b6ec2;
+  background-color: #1b6ec2;
 }
 
 .btn-primary {
@@ -24,7 +26,7 @@ a {
 }
 
 .border-top {
-  border-top: 1px solid #e5e5e5;
+    border-top: 1px solid #1b6ec2;
 }
 .border-bottom {
   border-bottom: 1px solid #e5e5e5;
