@@ -7,18 +7,23 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CineTech.Data;
 using CineTech.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace CineTech.Controllers
 {
     public class TransakcijasController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly IEmailSender _emailSender;
 
-        public TransakcijasController(ApplicationDbContext context)
+        public TransakcijasController(ApplicationDbContext context, IEmailSender emailSender)
         {
             _context = context;
+            _emailSender = emailSender;
         }
 
+        //await _emailSender.SendEmailAsync(string,string,string);
         // GET: Transakcijas
         public async Task<IActionResult> Index()
         {

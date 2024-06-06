@@ -9,12 +9,15 @@ namespace CineTech.Models
         [Required]
         [Display(Name = "Naziv sale")]
         public String naziv { get; set; }
+
         [Required]
         [Display(Name = "Broj redova:")]
         public int brojRedova { get; set; }
+
         [Required]
         [Display(Name = "Broj kolona:")]
         public int brojKolona { get; set; }
+
         public KinoSala() { }
 }
 }

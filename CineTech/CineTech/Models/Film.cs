@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Newtonsoft.Json.Serialization;
+using System.ComponentModel.DataAnnotations;
 
 namespace CineTech.Models
 {
@@ -22,6 +23,7 @@ namespace CineTech.Models
         [Required]
         [Display(Name = "Glumci:")]
         public String glumci { get; set; }
+        [ValidateDate]
         [Required]
         [Display(Name = "Relese Date:")]
         [DataType(DataType.Date)]

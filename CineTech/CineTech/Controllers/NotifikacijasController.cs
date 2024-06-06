@@ -9,6 +9,7 @@ using CineTech.Data;
 using CineTech.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace CineTech.Controllers
 {
@@ -16,12 +17,14 @@ namespace CineTech.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<IdentityUser> _userManager;
+        private readonly IEmailSender _emailSender;
 
 
-        public NotifikacijasController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
+        public NotifikacijasController(ApplicationDbContext context, UserManager<IdentityUser> userManager, IEmailSender emailSender)
         {
             _context = context;
             _userManager = userManager;
+            _emailSender = emailSender;
         }
 
         // GET: Notifikacijas

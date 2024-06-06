@@ -13,16 +13,21 @@ namespace CineTech.Models
         [Range(minimum:1,maximum:5,ErrorMessage ="Ocjena mora biti između 1-5 !")]
         [Display(Name = "Ocjena:")]
         public int ocjenaFilma { get; set; }
+
         [StringLength(maximumLength:50,ErrorMessage = "Prekoračili ste dužinu od 50")]
         [Display(Name = "Komentar:")]
         public String komentar { get; set; }
+
         [DataType(DataType.Date)]
         public DateTime datum { get; set; }
+
         [ForeignKey("IdentityUser")]
         public String korisnikId { get; set; }
+
         //public IdentityUser korisnik { get; set; }
         [ForeignKey("Film")]
         public int FilmId { get; set; } 
+
         //public Film Film { get; set; }
         public Ocjena() { }
     }

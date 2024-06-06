@@ -8,17 +8,24 @@ namespace CineTech.Models
     {
         [Key]
         public int id { get; set; }
+
+        [DataType(DataType.Date)]
         [Display(Name = "Datum transakcije:")]
-        public DateOnly datum { get; set; }
+        public DateTime datum { get; set; }
+
+        [DataType(DataType.Time)]
         [Display(Name = "Vrijeme transakcije:")]
-        public TimeOnly vrijeme { get; set; }
+        public DateTime vrijeme { get; set; }
+
         [ForeignKey("IdentityUser")]
         [Display(Name = "KorisnikID")]
         public String KorisnikId { get; set; }
+
        // public IdentityUser Korisnik { get; set; }
         [ForeignKey("ZauzetaSjedista")]
-        [Display(Name = "Zauzeta sjedista")]
+        [Display(Name = "Zauzeta sjedista:")]
         public int ZauzetaSjedistaId {  get; set; }
+
         //public ZauzetaSjedista ZauzetaSjedista { get; set; }
         public Transakcija() { }
     }
