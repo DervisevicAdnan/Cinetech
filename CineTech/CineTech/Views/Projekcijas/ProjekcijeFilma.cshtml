@@ -1,0 +1,122 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model IEnumerable <CineTech.Models
+@inject UserManager<IdentityUser> UserManager
+@inject SignInManager<IdentityUser> SignInManager
+
+
+@{
+    if (SignInManager.IsSignedIn(User))
+    {
+        var currentUserId = await UserManager.GetUserAsync(User);
+        var korisnik = await UserManager.GetUserIdAsync(currentUserId);
+        //var username = await UserManager.GetUserNameAsync(currentUserId);
+
+    }
+    var isAdmin = User.IsInRole("Administrator");
+    async Task<string> GetUserNameAsync(string userId)
+    {
+        var user = await UserManager.FindByIdAsync(userId);
+        return user?.UserName;
+    }
+
+}
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Projekcija</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.datum)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.datum)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.vrijeme)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.vrijeme)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.cijenaOsnovneKarte)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cijenaOsnovneKarte)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.kinoSalaId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.kinoSalaId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.filmId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.filmId)
+        </dd>
+    </dl>
+</div>
+<div>
+    @if (User.IsInRole("Administrator"))
+    {
+        <a asp-action="Edit" asp-route-id="@Model?.id">Edit</a>
+    }
+    <a asp-action="Index">Back to List</a>
+</div>
+<h1>Projekcije filma</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.datum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.vrijeme)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.kinoSalaId)
+            </th>
+            <th>
+                Korisnicko ime
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.datum)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.vrijeme)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.kinoSalaId)
+                </td>
+                <td>
+                    @if (User.IsInRole("Administrator"))
+                    {
+                        @Html.DisplayFor(modelItem => item.filmId)
+                    }
+                </td>
+                <td>
+
+                    <a asp-action="Details" asp-route-id="@item.id">Details</a>
+
+
+                </td>
+
+            </tr>
+        }
+        <a asp-controller="Films" asp-action="Details" asp-route-id="@ViewBag.Ocjeneid">Back to list</a>
+    </tbody>
+</table>

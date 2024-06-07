@@ -213,8 +213,7 @@ namespace CineTech.Controllers
                 return NotFound();
             }
 
-            var projekcija = await _context.Projekcija
-                .FirstOrDefaultAsync(m => m.id == id);
+            var projekcija = await _context.Projekcija.Where(m => m.id == id).Select(m => m.id).ToListAsync();
             if (projekcija == null)
             {
                 return NotFound();
@@ -243,5 +242,7 @@ namespace CineTech.Controllers
         {
             return _context.Projekcija.Any(e => e.id == id);
         }
+
+     
     }
 }

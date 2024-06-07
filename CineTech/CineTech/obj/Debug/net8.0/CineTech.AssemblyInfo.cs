@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CineTech")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c5ec7465a94992b0fda3ddecb2c8409123df51e3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6162da438cad9a29c0886b1755ba30e5c0e5c60d")]
 [assembly: System.Reflection.AssemblyProductAttribute("CineTech")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CineTech")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
