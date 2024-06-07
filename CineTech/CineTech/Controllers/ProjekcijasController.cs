@@ -19,6 +19,56 @@ namespace CineTech.Controllers
         {
             _context = context;
         }
+        public async Task<IActionResult> OdabirSjedista(int? projekcijaId)
+        {
+            ViewBag.id = projekcijaId;
+
+           /* var projekcija = await _context.Projekcija
+                                               .FirstOrDefaultAsync(p => p.id == projekcijaId);
+
+            if (projekcija == null)
+            {
+                return NotFound();
+            }
+            var kinosala = _context.KinoSala
+                                   .FirstOrDefault(k => k.id == projekcija.kinoSalaId);
+
+            if (kinosala == null)
+            {
+                return NotFound();
+            }
+
+            var sviRedoviMjesta = from red in Enumerable.Range(1, kinosala.brojRedova)
+                                  from mjesto in Enumerable.Range(1, kinosala.brojKolona)
+                                  select new { Red = red, Mjesto = mjesto };
+
+            var rezervisanaMjesta = _context.ZauzetaSjedista
+                                            .Where(r => r.ProjekcijaId == projekcijaId)
+                                            .Select(r => new { Red = r.red, Mjesto = r.redniBrojSjedista })
+                                            .ToList();
+
+            var slobodnaMjesta = sviRedoviMjesta
+                                 .Where(m => !rezervisanaMjesta.Any(rm => rm.Red == m.Red && rm.Mjesto == m.Mjesto))
+                                 .ToList();
+           */
+            return View();
+        }
+
+        // POST: ZauzetaSjedistas/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> OdabirSjedista([Bind("red,redniBrojSjedista,ProjekcijaId")] ZauzetaSjedista zauzetaSjedista)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(zauzetaSjedista);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(zauzetaSjedista);
+        }
 
         // GET: Projekcijas
         public async Task<IActionResult> Index()
@@ -27,6 +77,7 @@ namespace CineTech.Controllers
         }
         public async Task<IActionResult> ProjekcijeFilma(int? id) 
         {
+            ViewBag.filmid = id;
             if (id == null)
             {
                 return NotFound();

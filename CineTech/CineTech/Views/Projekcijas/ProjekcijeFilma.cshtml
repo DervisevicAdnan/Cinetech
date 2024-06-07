@@ -69,13 +69,13 @@
                 </td>
                 <td>
 
-                    <a asp-action="Details" asp-route-id="@item.id">Details</a>
+                    <a asp-controller="ZauzetaSjedistas" asp-action="OdabirSjedista" asp-route-id="@Model.?id">Odaberi projekciju</a>
 
 
                 </td>
 
             </tr>
         }
-        <a asp-controller="Films" asp-action="Details" asp-route-id="@ViewBag.Ocjeneid">Back to list</a>
+        <a asp-controller="Films" asp-action="Details" asp-route-id="@ViewBag.filmid">Back to list</a>
     </tbody>
 </table>
