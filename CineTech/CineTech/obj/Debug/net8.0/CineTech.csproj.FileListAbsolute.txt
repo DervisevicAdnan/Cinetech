@@ -1009,3 +1009,11 @@ C:\Users\HP Compaq\Desktop\tim27-cinetech\CineTech\CineTech\obj\Debug\net8.0\Cin
 C:\Users\HP Compaq\Desktop\tim27-cinetech\CineTech\CineTech\obj\Debug\net8.0\CineTech.genruntimeconfig.cache
 C:\Users\HP Compaq\Desktop\tim27-cinetech\CineTech\CineTech\obj\Debug\net8.0\ref\CineTech.dll
 C:\Users\AdiDr\OneDrive\Dokumenti\GitHub\tim27-cinetech\CineTech\CineTech\bin\Debug\net8.0\RestSharp.dll
+C:\Users\HP Compaq\Desktop\tim27-cinetech\CineTech\CineTech\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\HP Compaq\Desktop\tim27-cinetech\CineTech\CineTech\bin\Debug\net8.0\RestSharp.dll
+C:\Users\HP Compaq\Desktop\tim27-cinetech\CineTech\CineTech\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\HP Compaq\Desktop\tim27-cinetech\CineTech\CineTech\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\HP Compaq\Desktop\tim27-cinetech\CineTech\CineTech\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\HP Compaq\Desktop\tim27-cinetech\CineTech\CineTech\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\Users\HP Compaq\Desktop\tim27-cinetech\CineTech\CineTech\bin\Debug\net8.0\MailKit.dll
+C:\Users\HP Compaq\Desktop\tim27-cinetech\CineTech\CineTech\bin\Debug\net8.0\MimeKit.dll
