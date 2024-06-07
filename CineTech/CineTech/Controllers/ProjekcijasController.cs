@@ -25,6 +25,23 @@ namespace CineTech.Controllers
         {
             return View(await _context.Projekcija.ToListAsync());
         }
+        public async Task<IActionResult> ProjekcijeFilma(int? id) 
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var projekcije = await _context.Projekcija
+                .Where(o => o.filmId == id)
+                .ToListAsync();
+
+            if (projekcije == null)
+            {
+                return NotFound();
+            }
+
+            return View(projekcije);
+        }
 
         // GET: Projekcijas/Details/5
         public async Task<IActionResult> Details(int? id)

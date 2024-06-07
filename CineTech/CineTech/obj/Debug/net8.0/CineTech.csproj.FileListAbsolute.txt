@@ -1025,3 +1025,10 @@ C:\Users\aNaToMiCaLL\Desktop\Fax\tim27-cinetech\CineTech\CineTech\bin\Debug\net8
 C:\Users\aNaToMiCaLL\Desktop\Fax\tim27-cinetech\CineTech\CineTech\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\aNaToMiCaLL\Desktop\Fax\tim27-cinetech\CineTech\CineTech\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\aNaToMiCaLL\Desktop\Fax\tim27-cinetech\CineTech\CineTech\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\AdiDr\OneDrive\Dokumenti\GitHub\tim27-cinetech\CineTech\CineTech\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\Users\AdiDr\OneDrive\Dokumenti\GitHub\tim27-cinetech\CineTech\CineTech\bin\Debug\net8.0\MailKit.dll
+C:\Users\AdiDr\OneDrive\Dokumenti\GitHub\tim27-cinetech\CineTech\CineTech\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\AdiDr\OneDrive\Dokumenti\GitHub\tim27-cinetech\CineTech\CineTech\bin\Debug\net8.0\MimeKit.dll
+C:\Users\AdiDr\OneDrive\Dokumenti\GitHub\tim27-cinetech\CineTech\CineTech\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\AdiDr\OneDrive\Dokumenti\GitHub\tim27-cinetech\CineTech\CineTech\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\AdiDr\OneDrive\Dokumenti\GitHub\tim27-cinetech\CineTech\CineTech\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll

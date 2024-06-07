@@ -1,5 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@model IEnumerable <CineTech.Models
+@using Microsoft.CodeAnalysis.Elfie.Serialization
+@model IEnumerable<CineTech.Models.Projekcija>
 @inject UserManager<IdentityUser> UserManager
 @inject SignInManager<IdentityUser> SignInManager
 
@@ -22,90 +23,48 @@
 }
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "ProjekcijeFilma";
 }
 
-<h1>Details</h1>
-
-<div>
-    <h4>Projekcija</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.datum)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.datum)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.vrijeme)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.vrijeme)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.cijenaOsnovneKarte)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.cijenaOsnovneKarte)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.kinoSalaId)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.kinoSalaId)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.filmId)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.filmId)
-        </dd>
-    </dl>
-</div>
-<div>
-    @if (User.IsInRole("Administrator"))
-    {
-        <a asp-action="Edit" asp-route-id="@Model?.id">Edit</a>
-    }
-    <a asp-action="Index">Back to List</a>
-</div>
 <h1>Projekcije filma</h1>
 <table class="table">
     <thead>
-        <tr>
+            <tr>
+                <th>
+                    Datum            
+                </th>
             <th>
-                @Html.DisplayNameFor(model => model.datum)
+                Vrijeme
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.vrijeme)
+                Kino Sala
             </th>
             <th>
-                @Html.DisplayFor(modelItem => item.kinoSalaId)
+                @if (User.IsInRole("Administrator"))
+                {
+                        @Html.DisplayNameFor(model => model.filmId)
+                    }
             </th>
-            <th>
-                Korisnicko ime
-            </th>
-            <th></th>
         </tr>
+
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.datum)
+                    @Html.DisplayFor(model => item.datum)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.vrijeme)
+                    @Html.DisplayFor(model => item.vrijeme)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.kinoSalaId)
+                    @Html.DisplayFor(model => item.kinoSalaId)
                 </td>
                 <td>
                     @if (User.IsInRole("Administrator"))
                     {
-                        @Html.DisplayFor(modelItem => item.filmId)
+                        @Html.DisplayFor(model => item.filmId)
                     }
                 </td>
                 <td>
