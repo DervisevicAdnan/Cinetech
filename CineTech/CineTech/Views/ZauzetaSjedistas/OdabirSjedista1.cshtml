@@ -67,6 +67,10 @@
 
 
                 </td>
+                <td>
+                    @item.id
+                    <a asp-controller="Kupovinas" asp-action="Create" asp-route-id="@item.id">Kupi</a>
+                </td>
 
             </tr>
         }

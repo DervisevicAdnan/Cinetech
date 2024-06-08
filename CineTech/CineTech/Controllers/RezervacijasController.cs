@@ -48,10 +48,10 @@ namespace CineTech.Controllers
         }
 
         // GET: Rezervacijas/Create
-        public async Task<IActionResult> CreateAsync(int?id)
+        public async Task<IActionResult> Create(int?id)
         {
             var user = await _userManager.GetUserAsync(User);
-            var korisnik1 = await _userManager.GetUserNameAsync(user);
+            var korisnik1 = await _userManager.GetUserIdAsync(user);
             ViewBag.KorisnikId = korisnik1;
             ViewBag.id = id;
             return View();
@@ -62,9 +62,9 @@ namespace CineTech.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(int id,[Bind("id,datum,vrijeme,KorisnikId,ZauzetaSjedistaId")] Rezervacija rezervacija)
+        public async Task<IActionResult> Create([Bind("datum,vrijeme,KorisnikId,ZauzetaSjedistaId")] Rezervacija rezervacija)
         {
-            ViewBag.id = id;
+            
             if (ModelState.IsValid)
             {
                 _context.Add(rezervacija);

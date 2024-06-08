@@ -14,27 +14,17 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="cijena" class="control-label"></label>
-                <input asp-for="cijena" class="form-control" />
+                <input asp-for="cijena"value="@ViewBag.cijena" class="form-control"readonly />
                 <span asp-validation-for="cijena" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="datum" class="control-label"></label>
-                <input asp-for="datum" class="form-control" />
-                <span asp-validation-for="datum" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="vrijeme" class="control-label"></label>
-                <input asp-for="vrijeme" class="form-control" />
-                <span asp-validation-for="vrijeme" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="KorisnikId" class="control-label"></label>
-                <input asp-for="KorisnikId" class="form-control" />
+                
+                <input type="hidden" asp-for="KorisnikId" value="@ViewBag.KorisnikId" class="form-control" />
                 <span asp-validation-for="KorisnikId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ZauzetaSjedistaId" class="control-label"></label>
-                <input asp-for="ZauzetaSjedistaId" class="form-control" />
+                <input asp-for="ZauzetaSjedistaId" value="@ViewBag.id" class="form-control" readonly />
                 <span asp-validation-for="ZauzetaSjedistaId" class="text-danger"></span>
             </div>
             <div class="form-group">

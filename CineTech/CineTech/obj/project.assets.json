@@ -8971,19 +8971,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\AdiDr\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\CineTech.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\slike\\tim27-cinetech\\CineTech\\CineTech\\CineTech.csproj",
       "projectName": "CineTech",
-      "projectPath": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\CineTech.csproj",
-      "packagesPath": "C:\\Users\\AdiDr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\obj\\",
+      "projectPath": "C:\\Users\\User\\Desktop\\slike\\tim27-cinetech\\CineTech\\CineTech\\CineTech.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\slike\\tim27-cinetech\\CineTech\\CineTech\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\AdiDr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8991,6 +8991,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
