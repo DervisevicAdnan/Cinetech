@@ -24,12 +24,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="KorisnikId" class="control-label"></label>
-                <input asp-for="KorisnikId" class="form-control" />
+                <input asp-for="KorisnikId" value="@ViewBag.KorisnikId" class="form-control" readonly/>
                 <span asp-validation-for="KorisnikId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ZauzetaSjedistaId" class="control-label"></label>
-                <input asp-for="ZauzetaSjedistaId" class="form-control" />
+                <input asp-for="ZauzetaSjedistaId" value="@ViewBag.id"  class="form-control"readonly />
                 <span asp-validation-for="ZauzetaSjedistaId" class="text-danger"></span>
             </div>
             <div class="form-group">

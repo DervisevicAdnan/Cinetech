@@ -2,6 +2,8 @@
 
 @{
     ViewData["Title"] = "Home Page";
+    var filmGenres = ViewBag.FilmGenres as Dictionary<int, List<Zanr>>;
+
 }
 
 <div class="text-center">
@@ -20,7 +22,16 @@
                         <h5 class="card-title">@film.naziv</h5>
                         <h6 class="card-subtitle mb-2 text-muted">@film.redatelj</h6>
                         <p class="card-text">
-                            <strong>Žanr:</strong> MORAM SKONTAT<br>
+                            <strong>Žanr:</strong>
+                            @if (filmGenres.ContainsKey(film.id))
+                            {
+                                @string.Join(", ", filmGenres[film.id])
+                            }
+                            else
+                            {
+                                @:N/A
+                            }
+                            <br><br>
                             <strong>Release date:</strong> @film.releseDate.ToString("MM/dd/yyyy")<br>
                             <strong>Glumci:</strong> @film.glumci<br>
                             <strong>Opis:</strong> @film.opis

@@ -1,0 +1,17 @@
+﻿@model CineTech.Models.Film
+
+@{
+    ViewData["Title"] = "Odabir Zanra";
+}
+@foreach (var film in ViewBag.zanrovi)
+{
+    <div class="form-group">
+        <input type="radio" id="film_@film.id" name="filmIdRadio" value="@film.id" onclick="setFilmId(this.value)" />
+        <label for="film_@film.id">@film.naziv</label>
+    </div>
+}
+<h1>Odabir Zanra</h1>
+
+<p>Film: @Model.naziv</p>
+<p>Film ID: @Model.id</p>
+

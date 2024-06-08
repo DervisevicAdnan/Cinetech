@@ -33,6 +33,18 @@ namespace CineTech.Controllers
             var aktuelniFilmovi = await _filmoviController.Film
             .Where(f => f.StatusPrikazivanja == StatusPrikazivanja.Aktuelan)
             .ToListAsync();
+            var filmGenres = new Dictionary<int, List<Zanr>>();
+
+            foreach (var film in aktuelniFilmovi)
+            {
+                var genres = await _filmoviController.ZanroviFilma
+                    .Where(z => z.idFilma == film.id)
+                    .Select(z => z.zanrFilma)
+                    .ToListAsync();
+                filmGenres[film.id] = genres;
+            }
+
+            ViewBag.FilmGenres = filmGenres;
             return View(aktuelniFilmovi);
         }
 

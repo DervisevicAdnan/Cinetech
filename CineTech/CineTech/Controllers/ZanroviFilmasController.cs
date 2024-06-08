@@ -7,29 +7,25 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CineTech.Data;
 using CineTech.Models;
-using Microsoft.AspNetCore.Identity;
 
 namespace CineTech.Controllers
 {
-    public class RezervacijasController : Controller
+    public class ZanroviFilmasController : Controller
     {
         private readonly ApplicationDbContext _context;
-        private readonly UserManager<IdentityUser> _userManager;
 
-
-        public RezervacijasController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
+        public ZanroviFilmasController(ApplicationDbContext context)
         {
             _context = context;
-            _userManager = userManager;
         }
 
-        // GET: Rezervacijas
+        // GET: ZanroviFilmas
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Rezervacija.ToListAsync());
+            return View(await _context.ZanroviFilma.ToListAsync());
         }
 
-        // GET: Rezervacijas/Details/5
+        // GET: ZanroviFilmas/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -37,44 +33,61 @@ namespace CineTech.Controllers
                 return NotFound();
             }
 
-            var rezervacija = await _context.Rezervacija
+            var zanroviFilma = await _context.ZanroviFilma
                 .FirstOrDefaultAsync(m => m.id == id);
-            if (rezervacija == null)
+            if (zanroviFilma == null)
             {
                 return NotFound();
             }
 
-            return View(rezervacija);
+            return View(zanroviFilma);
         }
 
-        // GET: Rezervacijas/Create
-        public async Task<IActionResult> CreateAsync(int?id)
+        // GET: ZanroviFilmas/Create
+        public IActionResult Create(int? id)
         {
-            var user = await _userManager.GetUserAsync(User);
-            var korisnik1 = await _userManager.GetUserNameAsync(user);
-            ViewBag.KorisnikId = korisnik1;
             ViewBag.id = id;
             return View();
         }
 
-        // POST: Rezervacijas/Create
+        // POST: ZanroviFilmas/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /*
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(int id,[Bind("id,datum,vrijeme,KorisnikId,ZauzetaSjedistaId")] Rezervacija rezervacija)
+        public async Task<IActionResult> Create([Bind("idFilma,zanrFilma")] ZanroviFilma zanroviFilma)
         {
-            ViewBag.id = id;
             if (ModelState.IsValid)
             {
-                _context.Add(rezervacija);
+                _context.Add(zanroviFilma);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(rezervacija);
+            return View(zanroviFilma);
+        }*/
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(int idFilma, List<Zanr> zanrFilma)
+        {
+            if (ModelState.IsValid)
+            {
+                foreach (var zanr in zanrFilma)
+                {
+                    var zanroviFilma = new ZanroviFilma
+                    {
+                        idFilma = idFilma,
+                        zanrFilma = zanr
+                    };
+                    _context.ZanroviFilma.Add(zanroviFilma);
+                }
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(new ZanroviFilma { idFilma = idFilma });
         }
 
-        // GET: Rezervacijas/Edit/5
+        // GET: ZanroviFilmas/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -82,22 +95,22 @@ namespace CineTech.Controllers
                 return NotFound();
             }
 
-            var rezervacija = await _context.Rezervacija.FindAsync(id);
-            if (rezervacija == null)
+            var zanroviFilma = await _context.ZanroviFilma.FindAsync(id);
+            if (zanroviFilma == null)
             {
                 return NotFound();
             }
-            return View(rezervacija);
+            return View(zanroviFilma);
         }
 
-        // POST: Rezervacijas/Edit/5
+        // POST: ZanroviFilmas/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,datum,vrijeme,KorisnikId,ZauzetaSjedistaId")] Rezervacija rezervacija)
+        public async Task<IActionResult> Edit(int id, [Bind("id,idFilma,zanrFilma")] ZanroviFilma zanroviFilma)
         {
-            if (id != rezervacija.id)
+            if (id != zanroviFilma.id)
             {
                 return NotFound();
             }
@@ -106,12 +119,12 @@ namespace CineTech.Controllers
             {
                 try
                 {
-                    _context.Update(rezervacija);
+                    _context.Update(zanroviFilma);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!RezervacijaExists(rezervacija.id))
+                    if (!ZanroviFilmaExists(zanroviFilma.id))
                     {
                         return NotFound();
                     }
@@ -122,10 +135,10 @@ namespace CineTech.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(rezervacija);
+            return View(zanroviFilma);
         }
 
-        // GET: Rezervacijas/Delete/5
+        // GET: ZanroviFilmas/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -133,34 +146,34 @@ namespace CineTech.Controllers
                 return NotFound();
             }
 
-            var rezervacija = await _context.Rezervacija
+            var zanroviFilma = await _context.ZanroviFilma
                 .FirstOrDefaultAsync(m => m.id == id);
-            if (rezervacija == null)
+            if (zanroviFilma == null)
             {
                 return NotFound();
             }
 
-            return View(rezervacija);
+            return View(zanroviFilma);
         }
 
-        // POST: Rezervacijas/Delete/5
+        // POST: ZanroviFilmas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var rezervacija = await _context.Rezervacija.FindAsync(id);
-            if (rezervacija != null)
+            var zanroviFilma = await _context.ZanroviFilma.FindAsync(id);
+            if (zanroviFilma != null)
             {
-                _context.Rezervacija.Remove(rezervacija);
+                _context.ZanroviFilma.Remove(zanroviFilma);
             }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool RezervacijaExists(int id)
+        private bool ZanroviFilmaExists(int id)
         {
-            return _context.Rezervacija.Any(e => e.id == id);
+            return _context.ZanroviFilma.Any(e => e.id == id);
         }
     }
 }

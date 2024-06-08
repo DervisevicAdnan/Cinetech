@@ -87,7 +87,7 @@ namespace CineTech.Controllers
 
         // GET: Films/Create
         [Authorize(Roles = "Administrator")]
-        public IActionResult Create()
+        public  IActionResult Create()
         {
             return View();
         }
@@ -104,11 +104,19 @@ namespace CineTech.Controllers
             {
                 _context.Add(film);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(AdminFilmovi));
+                return RedirectToAction("Create","ZanroviFilmas", new { id = film.id });
             }
             return View(film);
         }
-
+        public IActionResult OdabirZanra(int id)
+        {
+            // You can fetch the film using the id if necessary
+            var film = _context.Film.Find(id);
+            var zanrovi = _context.ZanroviFilma.ToList();
+            ViewBag.zanrovi = zanrovi;
+            // Pass the film or film ID to the view as needed
+            return View();
+        }
         // GET: Films/Edit/5
         [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Edit(int? id)

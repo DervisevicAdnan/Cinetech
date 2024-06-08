@@ -1,5 +1,4 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@using Microsoft.CodeAnalysis.Elfie.Serialization
 @model IEnumerable<CineTech.Models.ZauzetaSjedista>
 @inject UserManager<IdentityUser> UserManager
 @inject SignInManager<IdentityUser> SignInManager
@@ -63,7 +62,7 @@
                     }
                 </td>
                 <td>
-
+                    @item.id
                     <a asp-controller="Rezervacijas" asp-action="Create" asp-route-id="@item.id">Rezerviši</a>
 
 
