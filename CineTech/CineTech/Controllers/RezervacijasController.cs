@@ -56,6 +56,25 @@ namespace CineTech.Controllers
             ViewBag.id = id;
             return View();
         }
+        public async Task<IActionResult> CreateSjediste(int red,int redniBrojSjedista,int projekcijaId)
+        {
+            var user = await _userManager.GetUserAsync(User);
+            var korisnik1 = await _userManager.GetUserIdAsync(user);
+            ViewBag.KorisnikId = korisnik1;
+            var postjiZauzeta = _context.ZauzetaSjedista.Where(o => o.red == red && o.redniBrojSjedista == redniBrojSjedista && o.ProjekcijaId == projekcijaId);
+            if(postjiZauzeta.Any())
+            {
+                return NotFound(); //AKO VEC POSTOJI NAPRAVI VIEW 
+            }
+            var zauzmiSjediste = new ZauzetaSjedista { red = red, redniBrojSjedista = redniBrojSjedista, ProjekcijaId = projekcijaId };
+            _context.Add(zauzmiSjediste);
+            await _context.SaveChangesAsync();
+            var sjedisteId = _context.ZauzetaSjedista.FirstOrDefault(o => o.id == zauzmiSjediste.id);
+            var rezervacija = new Rezervacija { datum = DateTime.Now, vrijeme = DateTime.Now, KorisnikId = korisnik1, ZauzetaSjedistaId = sjedisteId.id };
+            _context.Add(rezervacija);
+            await _context.SaveChangesAsync();
+            return View(rezervacija);
+        }
 
         // POST: Rezervacijas/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
