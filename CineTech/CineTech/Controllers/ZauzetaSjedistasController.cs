@@ -45,16 +45,16 @@ namespace CineTech.Controllers
         [HttpGet]
 
         // GET: ZauzetaSjedistas/Create
-        public async Task<IActionResult> OdabirSjedista(int?projekcijaId)
+        public async Task<IActionResult> OdabirSjedista1(int? id)
         {
-            ViewBag.id = projekcijaId;
-            if (projekcijaId == null || projekcijaId <= 0)
+            ViewBag.id = id;
+            if (id == null)
             {
                 return BadRequest("Neispravan ID projekcije.");
             }
 
             var projekcija = await _context.Projekcija
-                                               .FirstOrDefaultAsync(p => p.id == projekcijaId);
+                                               .FirstOrDefaultAsync(p => p.id == id);
 
             if (projekcija == null)
             {
@@ -73,7 +73,7 @@ namespace CineTech.Controllers
                                   select new  { Red = red, Mjesto = mjesto };
 
             var rezervisanaMjesta = _context.ZauzetaSjedista
-                                            .Where(r => r.ProjekcijaId == projekcijaId)
+                                            .Where(r => r.ProjekcijaId == id)
                                             .Select(r => new { Red = r.red, Mjesto = r.redniBrojSjedista })
                                             .ToList();
 
@@ -81,8 +81,13 @@ namespace CineTech.Controllers
                                  .Where(m => !rezervisanaMjesta.Any(rm => rm.Red == m.Red && rm.Mjesto == m.Mjesto))
                                  .ToList();
 
-            return View();
+            var slobodnaMjestaNoviTip =  slobodnaMjesta
+    .Select(t => new ZauzetaSjedista { red = t.Red, redniBrojSjedista = t.Mjesto, ProjekcijaId=ViewBag.id })
+    .ToList();
+
+            return View(slobodnaMjestaNoviTip);
         }
+
 
         // POST: ZauzetaSjedistas/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.

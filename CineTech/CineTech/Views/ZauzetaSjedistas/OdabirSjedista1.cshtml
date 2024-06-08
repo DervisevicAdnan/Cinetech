@@ -1,6 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @using Microsoft.CodeAnalysis.Elfie.Serialization
-@model IEnumerable<CineTech.Models.Projekcija>
+@model IEnumerable<CineTech.Models.ZauzetaSjedista>
 @inject UserManager<IdentityUser> UserManager
 @inject SignInManager<IdentityUser> SignInManager
 
@@ -23,53 +23,52 @@
 }
 
 @{
-    ViewData["Title"] = "ProjekcijeFilma";
+    ViewData["Title"] = "ZauzetaSjedista";
 }
 
-<h1>Projekcije filma</h1>
+<h1>Slobodna sjedista</h1>
 <table class="table">
     <thead>
-            <tr>
-                <th>
-                    Datum            
-                </th>
+        <tr>
             <th>
-                Vrijeme
+                Red
             </th>
             <th>
-                Kino Sala
+                Redni broj sjedišta
             </th>
             <th>
                 @if (User.IsInRole("Administrator"))
                 {
-                        @Html.DisplayNameFor(model => model.filmId)
-                    }
+                    @Html.DisplayNameFor(model => model.ProjekcijaId)
+                }
             </th>
         </tr>
 
     </thead>
+   
     <tbody>
         @foreach (var item in Model)
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(model => item.datum)
+                    @Html.DisplayFor(model => item.red)
                 </td>
                 <td>
-                    @Html.DisplayFor(model => item.vrijeme)
-                </td>
-                <td>
-                    @Html.DisplayFor(model => item.kinoSalaId)
+                    @Html.DisplayFor(model => item.redniBrojSjedista)
                 </td>
                 <td>
                     @if (User.IsInRole("Administrator"))
                     {
-                        @Html.DisplayFor(model => item.filmId)
+                        @Html.DisplayFor(model => item.ProjekcijaId)
                     }
                 </td>
                 <td>
-                    <a asp-controller="ZauzetaSjedistas" asp-action="OdabirSjedista1" asp-route-id="@item.id">Odaberi projekciju</a>
+
+                    <a asp-controller="Rezervacijas" asp-action="Create" asp-route-id="@item.id">Rezerviši</a>
+
+
                 </td>
+
             </tr>
         }
         <a asp-controller="Films" asp-action="Details" asp-route-id="@ViewBag.filmid">Back to list</a>
