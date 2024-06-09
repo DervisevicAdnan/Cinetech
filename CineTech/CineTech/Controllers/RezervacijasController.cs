@@ -71,7 +71,7 @@ namespace CineTech.Controllers
             _context.Add(zauzmiSjediste);
             await _context.SaveChangesAsync();
             var sjedisteId = _context.ZauzetaSjedista.FirstOrDefault(o => o.id == zauzmiSjediste.id);
-            var rezervacija = new Rezervacija { datum = DateTime.Now, vrijeme = DateTime.Now, KorisnikId = korisnik1, ZauzetaSjedistaId = sjedisteId.id };
+            var rezervacija = new Rezervacija { datum = DateTime.Now, vrijeme = DateTime.Now, KorisnikId = korisnik1 };
             _context.Add(rezervacija);
             await _context.SaveChangesAsync();
             return View(rezervacija);
@@ -89,7 +89,7 @@ namespace CineTech.Controllers
                 _context.Add(zauzmiSjediste);
             }
             await _context.SaveChangesAsync();
-            var rezervacija = new Rezervacija { datum = DateTime.Now, vrijeme = DateTime.Now, KorisnikId = korisnik1, ZauzetaSjedistaId = 100 };
+            var rezervacija = new Rezervacija { datum = DateTime.Now, vrijeme = DateTime.Now, KorisnikId = korisnik1 };
             _context.Add(rezervacija);
             await _context.SaveChangesAsync();
             var rezervacijaId = _context.Rezervacija.FirstOrDefault(o => o.id == rezervacija.id);

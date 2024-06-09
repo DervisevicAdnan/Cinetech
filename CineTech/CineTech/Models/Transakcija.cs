@@ -21,12 +21,6 @@ namespace CineTech.Models
         [Display(Name = "KorisnikID")]
         public String KorisnikId { get; set; }
 
-       // public IdentityUser Korisnik { get; set; }
-        [ForeignKey("ZauzetaSjedista")]
-        [Display(Name = "Zauzeta sjedista:")]
-        public int ZauzetaSjedistaId {  get; set; }
-
-        //public ZauzetaSjedista ZauzetaSjedista { get; set; }
         public Transakcija() { }
     }
 }
