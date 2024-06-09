@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using CineTech.Data;
 using CineTech.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Tokens;
 
 namespace CineTech.Controllers
 {
@@ -74,6 +75,25 @@ namespace CineTech.Controllers
             _context.Add(rezervacija);
             await _context.SaveChangesAsync();
             return View(rezervacija);
+        }
+        [HttpPost]
+        public async Task<IActionResult> CreateSjediste([FromBody] List<int[]> sjedista)
+        {
+            if (sjedista.IsNullOrEmpty()) { return BadRequest("Niste odabrali mjesto"); }
+            var user = await _userManager.GetUserAsync(User);
+            var korisnik1 = await _userManager.GetUserIdAsync(user);
+            ViewBag.KorisnikId = korisnik1;
+            foreach (var element in sjedista)
+            {
+                var zauzmiSjediste = new ZauzetaSjedista { red = element[0], redniBrojSjedista = element[1], ProjekcijaId = element[2] };
+                _context.Add(zauzmiSjediste);
+            }
+            await _context.SaveChangesAsync();
+            var rezervacija = new Rezervacija { datum = DateTime.Now, vrijeme = DateTime.Now, KorisnikId = korisnik1, ZauzetaSjedistaId = 100 };
+            _context.Add(rezervacija);
+            await _context.SaveChangesAsync();
+            var rezervacijaId = _context.Rezervacija.FirstOrDefault(o => o.id == rezervacija.id);
+            return Ok(new { redirectUrl = Url.Action("Details", "Rezervacijas", new { id=rezervacijaId.id}) });
         }
 
         // POST: Rezervacijas/Create

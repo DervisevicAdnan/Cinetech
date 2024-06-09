@@ -1,0 +1,88 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model IEnumerable<CineTech.Models.ZauzetaSjedista>
+@inject UserManager<IdentityUser> UserManager
+@inject SignInManager<IdentityUser> SignInManager
+
+
+@{
+    if (SignInManager.IsSignedIn(User))
+    {
+        var currentUserId = await UserManager.GetUserAsync(User);
+        var korisnik = await UserManager.GetUserIdAsync(currentUserId);
+        //var username = await UserManager.GetUserNameAsync(currentUserId);
+
+    }
+    var isAdmin = User.IsInRole("Administrator");
+    async Task<string> GetUserNameAsync(string userId)
+    {
+        var user = await UserManager.FindByIdAsync(userId);
+        return user?.UserName;
+    }
+    var maxRed = Model.Max(o => o.red);
+    var maxSjediste = Model.Max(o => o.redniBrojSjedista);
+    var projekcijaID = Model.First().ProjekcijaId;
+    //List<(int, int,int)> OdabranaSjedista = new List<(int, int,int)>();
+}
+
+@{
+    ViewData["Title"] = "ZauzetaSjedista";
+}
+
+<h1>Slobodna sjedista</h1>
+<div class="row">
+    @for (var i = 1; i <= maxRed; i += 1)
+    {
+        <div style="display: flex;">
+            @for (var j = 1; j <=maxSjediste; j += 1)
+            {
+                @if (Model.Where(o => o.red == i && o.redniBrojSjedista == j).Any()) 
+                {
+                    <img id="seatImage_@i@j" src="https://cdn3.iconfinder.com/data/icons/movie-entertainment-flat-style/64/13_seat-movie-cinema-chair-theater-512.png"
+                 alt="Element" onclick="changeImage(@i, @j,@projekcijaID)" width="50" height="50" />
+                }
+                else
+                {
+                    <img src="https://cdn2.iconfinder.com/data/icons/bussines-1/512/bussines-09-512.png"
+                         alt="Element" onclick="Zauzeto" width="50" height="50" />
+                }
+            }
+         </div>
+    }
+</div>
+<button id="myButton">Click me</button>
+<script>
+    var OdabranaSjedista = [];
+    function changeImage(i,j,projekcijaId) {
+        var postoji = OdabranaSjedista.find(item => item[0] === i && item[1] === j);
+        if (!postoji) {
+            OdabranaSjedista.push([i, j, projekcijaId]);
+            const seatImage = document.getElementById('seatImage_' + i + j);
+            seatImage.src = 'https://cdn2.iconfinder.com/data/icons/work-office-13/24/office_chair_two_work_office_color_shadow_f-512.png';
+        }
+        else {
+            OdabranaSjedista=OdabranaSjedista.filter(item => item[0] !== i || item[1] !== j);
+            const seatImage = document.getElementById('seatImage_' + i + j);
+            seatImage.src = 'https://cdn3.iconfinder.com/data/icons/movie-entertainment-flat-style/64/13_seat-movie-cinema-chair-theater-512.png';
+        }
+    }
+    document.getElementById('myButton').addEventListener('click', function () {
+        var dataToSend = OdabranaSjedista;  // This should be an array of arrays
+        $.ajax({
+            type: 'POST',
+            url: '/Rezervacijas/CreateSjediste',
+            data: JSON.stringify(dataToSend),
+            contentType: 'application/json',
+            success: function (response) {
+                if (response.redirectUrl) {
+                    window.location.href = response.redirectUrl;  
+                } else {
+                    console.log('Data sent successfully:', response);
+                }
+            },
+            error: function (error) {
+                console.error('Error sending data:', error);
+            }
+        });
+    });
+
+</script>

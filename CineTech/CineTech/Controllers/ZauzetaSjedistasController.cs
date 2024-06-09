@@ -45,7 +45,7 @@ namespace CineTech.Controllers
         [HttpGet]
 
         // GET: ZauzetaSjedistas/Create
-        public async Task<IActionResult> OdabirSjedista1(int? id)
+        public async Task<IActionResult> OdabirSjedista2(int? id)
         {
             ViewBag.id = id;
             if (id == null)
