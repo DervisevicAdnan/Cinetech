@@ -93,6 +93,7 @@ namespace CineTech.Controllers
             _context.Add(rezervacija);
             await _context.SaveChangesAsync();
             var rezervacijaId = _context.Rezervacija.FirstOrDefault(o => o.id == rezervacija.id);
+            
             return Ok(new { redirectUrl = Url.Action("Details", "Rezervacijas", new { id=rezervacijaId.id}) });
         }
 
