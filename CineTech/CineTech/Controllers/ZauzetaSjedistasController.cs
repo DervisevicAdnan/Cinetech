@@ -42,6 +42,7 @@ namespace CineTech.Controllers
 
             return View(zauzetaSjedista);
         }
+
         [HttpGet]
 
         // GET: ZauzetaSjedistas/Create

@@ -10,6 +10,7 @@ using CineTech.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
+using Microsoft.IdentityModel.Tokens;
 
 namespace CineTech.Controllers
 {
@@ -69,7 +70,53 @@ namespace CineTech.Controllers
             }
                 return View();
         }
+        [HttpPost]
+        public async Task<IActionResult> CreateSjediste([FromBody] List<int[]> sjedista)
+        {
+            if (sjedista.IsNullOrEmpty()) { return BadRequest("Niste odabrali mjesto"); }
+            var user = await _userManager.GetUserAsync(User);
+            var korisnik1 = await _userManager.GetUserIdAsync(user);
+            ViewBag.KorisnikId = korisnik1;
+            var projekcija = await _context.Projekcija
+               .FirstOrDefaultAsync(m => m.id == sjedista[0][2]);
+            double nova_cijena = projekcija.cijenaOsnovneKarte*sjedista.Count();
+            if (DateTime.Today.DayOfWeek == DayOfWeek.Wednesday)
+            {
+                nova_cijena = nova_cijena * 0.9;
+            }
+            var kupovina = new Kupovina { datum = DateTime.Now, vrijeme = DateTime.Now, KorisnikId = korisnik1, cijena=nova_cijena };
+            _context.Add(kupovina);
+            await _context.SaveChangesAsync();
+            var kupovinaId = _context.Kupovina.FirstOrDefault(o => o.id == kupovina.id);
+            foreach (var element in sjedista)
+            {
+                var zauzmiSjediste = new ZauzetaSjedista { red = element[0], redniBrojSjedista = element[1], ProjekcijaId = element[2], TransakcijaId = kupovinaId.id };
+                _context.Add(zauzmiSjediste);
+            }
+            await _context.SaveChangesAsync();
+            return Ok(new { redirectUrl = Url.Action("UspjesnaKupovina", "Kupovinas", new { id = kupovinaId.id }) });
+        }
 
+        public async Task<IActionResult> UspjesnaKupovina(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var kupovina = await _context.Kupovina
+                .FirstOrDefaultAsync(m => m.id == id);
+            var zauzetaSjedista = _context.ZauzetaSjedista.Where(o => o.TransakcijaId == id).ToList();
+            var projekcija = _context.Projekcija.FirstOrDefault(o => o.id == zauzetaSjedista.FirstOrDefault().ProjekcijaId);
+            var film = await _context.Film.FirstOrDefaultAsync(o => o.id == projekcija.filmId);
+            var kinoSala = await _context.KinoSala.FirstOrDefaultAsync(o => o.id == projekcija.kinoSalaId);
+            if (kupovina == null)
+            {
+                return NotFound();
+            }
+            var uspjesnaKupovina = new Tuple<Kupovina, List<ZauzetaSjedista>, String, String,double>(kupovina, zauzetaSjedista, film.naziv, kinoSala.naziv,projekcija.cijenaOsnovneKarte);
+            return View(uspjesnaKupovina);
+        }
         // POST: Kupovinas/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.

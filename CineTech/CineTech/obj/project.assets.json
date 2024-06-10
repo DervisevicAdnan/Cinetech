@@ -8971,19 +8971,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\AdiDr\\.nuget\\packages\\": {}
+    "C:\\Users\\aNaToMiCaLL\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\CineTech.csproj",
+      "projectUniqueName": "C:\\Users\\aNaToMiCaLL\\Desktop\\Faks\\tim27-cinetech\\CineTech\\CineTech\\CineTech.csproj",
       "projectName": "CineTech",
-      "projectPath": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\CineTech.csproj",
-      "packagesPath": "C:\\Users\\AdiDr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\obj\\",
+      "projectPath": "C:\\Users\\aNaToMiCaLL\\Desktop\\Faks\\tim27-cinetech\\CineTech\\CineTech\\CineTech.csproj",
+      "packagesPath": "C:\\Users\\aNaToMiCaLL\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\aNaToMiCaLL\\Desktop\\Faks\\tim27-cinetech\\CineTech\\CineTech\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\AdiDr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\aNaToMiCaLL\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9084,7 +9084,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

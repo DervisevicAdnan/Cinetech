@@ -47,7 +47,26 @@ namespace CineTech.Controllers
 
             return View(rezervacija);
         }
+        public async Task<IActionResult> UspjesnaRezervacija(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
+            var rezervacija = await _context.Rezervacija
+                .FirstOrDefaultAsync(m => m.id == id);
+            var zauzetaSjedista = _context.ZauzetaSjedista.Where(o => o.TransakcijaId == id).ToList();
+            var projekcija = _context.Projekcija.FirstOrDefault(o => o.id == zauzetaSjedista.FirstOrDefault().ProjekcijaId);
+            var film = await _context.Film.FirstOrDefaultAsync(o => o.id == projekcija.filmId);
+            var kinoSala = await _context.KinoSala.FirstOrDefaultAsync(o => o.id == projekcija.kinoSalaId);
+            if (rezervacija == null)
+            {
+                return NotFound();
+            }
+            var uspjesnaRezervacija = new Tuple<Rezervacija, List<ZauzetaSjedista>, String, String>(rezervacija, zauzetaSjedista, film.naziv, kinoSala.naziv);
+            return View(uspjesnaRezervacija);
+        }
         // GET: Rezervacijas/Create
         public async Task<IActionResult> Create(int?id)
         {
@@ -83,18 +102,17 @@ namespace CineTech.Controllers
             var user = await _userManager.GetUserAsync(User);
             var korisnik1 = await _userManager.GetUserIdAsync(user);
             ViewBag.KorisnikId = korisnik1;
-            foreach (var element in sjedista)
-            {
-                var zauzmiSjediste = new ZauzetaSjedista { red = element[0], redniBrojSjedista = element[1], ProjekcijaId = element[2] };
-                _context.Add(zauzmiSjediste);
-            }
-            await _context.SaveChangesAsync();
             var rezervacija = new Rezervacija { datum = DateTime.Now, vrijeme = DateTime.Now, KorisnikId = korisnik1 };
             _context.Add(rezervacija);
             await _context.SaveChangesAsync();
             var rezervacijaId = _context.Rezervacija.FirstOrDefault(o => o.id == rezervacija.id);
-            
-            return Ok(new { redirectUrl = Url.Action("Details", "Rezervacijas", new { id=rezervacijaId.id}) });
+            foreach (var element in sjedista)
+            {
+                var zauzmiSjediste = new ZauzetaSjedista { red = element[0], redniBrojSjedista = element[1], ProjekcijaId = element[2] ,TransakcijaId=rezervacijaId.id};
+                _context.Add(zauzmiSjediste);
+            }
+            await _context.SaveChangesAsync();
+            return Ok(new { redirectUrl = Url.Action("UspjesnaRezervacija", "Rezervacijas", new { id=rezervacijaId.id}) });
         }
 
         // POST: Rezervacijas/Create

@@ -1,0 +1,82 @@
+﻿@model Tuple<Kupovina,List<ZauzetaSjedista>,String,String,double>
+
+@{
+    ViewData["Title"] = "Uspješna transakcija";
+}
+@{
+    var rezervacija = Model.Item1;
+    var zauzetaSjedista = Model.Item2;
+    var nazivFilma = Model.Item3;
+    var nazivSale = Model.Item4;
+    double cijena = Model.Item2.Count()*Model.Item5;
+}
+<h1>Uspješna transakcija</h1>
+
+<div>
+    <h4>Vaša kupovina</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Item1.datum)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item1.datum)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Item1.vrijeme)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Item1.vrijeme)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Item1.KorisnikId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Item1.KorisnikId)
+        </dd>
+        <dt class="col-sm-2">
+            Naziv filma:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item3)
+        </dd>
+        <dt class="col-sm-2">
+            Kino sala:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item4)
+        </dd>
+        <dt class="col-sm-2">
+            Cijena:
+        </dt>
+        <dd class="col-sm-10">
+            @cijena
+        </dd>
+    </dl>
+</div>
+<body>
+    <h4>Zauzeta sjedišta</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>Red</th>
+                <th></th>
+                <th>Redni broj</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var sjediste in zauzetaSjedista)
+            {
+                <tr>
+                    <td>@sjediste.red</td>
+                    <td></td>
+                    <td>@sjediste.redniBrojSjedista</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Item1?.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

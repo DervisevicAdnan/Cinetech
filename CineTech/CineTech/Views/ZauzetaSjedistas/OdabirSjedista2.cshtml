@@ -49,7 +49,9 @@
          </div>
     }
 </div>
-<button id="myButton">Click me</button>
+<button id="myButton">Rezerviši</button>
+<button id="myButton1">Kupi</button>
+
 <script>
     var OdabranaSjedista = [];
     function changeImage(i,j,projekcijaId) {
@@ -74,7 +76,7 @@
             contentType: 'application/json',
             success: function (response) {
                 if (response.redirectUrl) {
-                    window.location.href = response.redirectUrl;  
+                    window.location.href = response.redirectUrl;
                 } else {
                     console.log('Data sent successfully:', response);
                 }
@@ -85,4 +87,23 @@
         });
     });
 
+    document.getElementById('myButton1').addEventListener('click', function () {
+        var dataToSend = OdabranaSjedista;  // This should be an array of arrays
+        $.ajax({
+            type: 'POST',
+            url: '/Kupovinas/CreateSjediste',
+            data: JSON.stringify(dataToSend),
+            contentType: 'application/json',
+            success: function (response) {
+                if (response.redirectUrl) {
+                    window.location.href = response.redirectUrl;
+                } else {
+                    console.log('Data sent successfully:', response);
+                }
+            },
+            error: function (error) {
+                console.error('Error sending data:', error);
+            }
+        });
+    });
 </script>
