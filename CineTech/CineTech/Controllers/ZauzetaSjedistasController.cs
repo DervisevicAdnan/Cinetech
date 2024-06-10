@@ -85,8 +85,8 @@ namespace CineTech.Controllers
             var slobodnaMjestaNoviTip =  slobodnaMjesta
     .Select(t => new ZauzetaSjedista { red = t.Red, redniBrojSjedista = t.Mjesto, ProjekcijaId=ViewBag.id })
     .ToList();
-
-            return View(slobodnaMjestaNoviTip);
+            var sviPodaci = new Tuple<List<ZauzetaSjedista>, int, int>(slobodnaMjestaNoviTip, kinosala.brojRedova, kinosala.brojKolona);
+            return View(sviPodaci);
         }
 
 

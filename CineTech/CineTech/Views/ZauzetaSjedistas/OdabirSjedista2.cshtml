@@ -1,5 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@model IEnumerable<CineTech.Models.ZauzetaSjedista>
+@model Tuple<List<ZauzetaSjedista>,int,int>
 @inject UserManager<IdentityUser> UserManager
 @inject SignInManager<IdentityUser> SignInManager
 
@@ -18,9 +18,9 @@
         var user = await UserManager.FindByIdAsync(userId);
         return user?.UserName;
     }
-    var maxRed = Model.Max(o => o.red);
-    var maxSjediste = Model.Max(o => o.redniBrojSjedista);
-    var projekcijaID = Model.First().ProjekcijaId;
+    var maxRed = Model.Item2;
+    var maxSjediste = Model.Item3;
+    var projekcijaID = Model.Item1.First().ProjekcijaId;
     //List<(int, int,int)> OdabranaSjedista = new List<(int, int,int)>();
 }
 
@@ -35,7 +35,7 @@
         <div style="display: flex;">
             @for (var j = 1; j <=maxSjediste; j += 1)
             {
-                @if (Model.Where(o => o.red == i && o.redniBrojSjedista == j).Any()) 
+                @if (Model.Item1.Where(o => o.red == i && o.redniBrojSjedista == j).Any()) 
                 {
                     <img id="seatImage_@i@j" src="https://cdn3.iconfinder.com/data/icons/movie-entertainment-flat-style/64/13_seat-movie-cinema-chair-theater-512.png"
                  alt="Element" onclick="changeImage(@i, @j,@projekcijaID)" width="50" height="50" />
