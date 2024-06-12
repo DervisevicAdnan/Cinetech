@@ -22,5 +22,12 @@ namespace CineTech.Controllers
         {
             return _mailService.SendMail(mailData);
         }
+
+        [HttpPost]
+        [Route("SendHTMLMail")]
+        public bool SendHTMLMail(HTMLMailData htmlMailData)
+        {
+            return _mailService.SendHTMLMail(htmlMailData);
+        }
     }
 }

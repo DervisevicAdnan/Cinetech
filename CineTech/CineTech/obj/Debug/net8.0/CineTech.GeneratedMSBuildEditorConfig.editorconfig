@@ -17,411 +17,411 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CineTech
 build_property.RootNamespace = CineTech
-build_property.ProjectDir = C:\Users\AdiDr\OneDrive\Dokumenti\GitHub\tim27-cinetech\CineTech\CineTech\
+build_property.ProjectDir = C:\Users\HP Compaq\Desktop\tim27-cinetech\CineTech\CineTech\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\AdiDr\OneDrive\Dokumenti\GitHub\tim27-cinetech\CineTech\CineTech
+build_property.MSBuildProjectDirectory = C:\Users\HP Compaq\Desktop\tim27-cinetech\CineTech\CineTech
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Areas/Identity/Pages/Account/Login.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Areas/Identity/Pages/Account/Manage/Email.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Areas/Identity/Pages/Account/Manage/Email.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Areas/Identity/Pages/Account/Manage/Index.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Areas/Identity/Pages/Account/Manage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcUGVyc29uYWxEYXRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcU2V0UGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX01hbmFnZU5hdi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Areas/Identity/Pages/Account/Register.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3RlckNvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Areas/Identity/Pages/Account/ResetPassword.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Areas/Identity/Pages/Account/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkQ29uZmlybWF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Areas/Identity/Pages/_ViewImports.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Films/AdminDetails.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Films/AdminDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsbXNcQWRtaW5EZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Films/AdminFilmovi.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Films/AdminFilmovi.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsbXNcQWRtaW5GaWxtb3ZpLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Films/AdminIndex.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Films/AdminIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsbXNcQWRtaW5JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Films/Create.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Films/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsbXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Films/Delete.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Films/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsbXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Films/Details.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Films/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsbXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Films/Edit.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Films/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsbXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Films/NajavljeniFilmovi.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Films/NajavljeniFilmovi.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsbXNcTmFqYXZsamVuaUZpbG1vdmkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Films/NajgledanijiFilmovi.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Films/NajgledanijiFilmovi.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsbXNcTmFqZ2xlZGFuaWppRmlsbW92aS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Films/NajgledanijiFilmoviUSvijetu.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Films/NajgledanijiFilmoviUSvijetu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsbXNcTmFqZ2xlZGFuaWppRmlsbW92aVVTdmlqZXR1LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Films/OdabirZanra.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Films/OdabirZanra.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsbXNcT2RhYmlyWmFucmEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Films/TerminiView.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Films/TerminiView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsbXNcVGVybWluaVZpZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Films/tesrView.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Films/tesrView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsbXNcdGVzclZpZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Home/Index.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Home/KupovinaView.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Home/KupovinaView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxLdXBvdmluYVZpZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Home/Privacy.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Home/RezervacijaView.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Home/RezervacijaView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZXplcnZhY2lqYVZpZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Home/StatistikaView.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Home/StatistikaView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdGF0aXN0aWthVmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Home/SviKorisnici.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Home/SviKorisnici.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdmlLb3Jpc25pY2kuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Home/SviKorisniciEdit.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Home/SviKorisniciEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdmlLb3Jpc25pY2lFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/KinoSalas/Create.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/KinoSalas/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2lub1NhbGFzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/KinoSalas/Delete.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/KinoSalas/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2lub1NhbGFzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/KinoSalas/Details.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/KinoSalas/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2lub1NhbGFzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/KinoSalas/Edit.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/KinoSalas/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2lub1NhbGFzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/KinoSalas/Index.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/KinoSalas/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2lub1NhbGFzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Kupovinas/Create.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Kupovinas/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3Vwb3ZpbmFzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Kupovinas/Delete.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Kupovinas/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3Vwb3ZpbmFzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Kupovinas/Details.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Kupovinas/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3Vwb3ZpbmFzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Kupovinas/Edit.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Kupovinas/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3Vwb3ZpbmFzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Kupovinas/Index.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Kupovinas/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3Vwb3ZpbmFzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Kupovinas/UspjesnaKupovina.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Kupovinas/UspjesnaKupovina.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3Vwb3ZpbmFzXFVzcGplc25hS3Vwb3ZpbmEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Notifikacijas/Create.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Notifikacijas/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90aWZpa2FjaWphc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Notifikacijas/Delete.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Notifikacijas/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90aWZpa2FjaWphc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Notifikacijas/Details.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Notifikacijas/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90aWZpa2FjaWphc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Notifikacijas/Edit.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Notifikacijas/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90aWZpa2FjaWphc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Notifikacijas/Index.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Notifikacijas/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90aWZpa2FjaWphc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Notifikacijas/UserNotifikacije.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Notifikacijas/UserNotifikacije.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90aWZpa2FjaWphc1xVc2VyTm90aWZpa2FjaWplLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Ocjenas/Create.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Ocjenas/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2NqZW5hc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Ocjenas/Delete.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Ocjenas/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2NqZW5hc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Ocjenas/Details.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Ocjenas/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2NqZW5hc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Ocjenas/Edit.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Ocjenas/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2NqZW5hc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Ocjenas/Index.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Ocjenas/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2NqZW5hc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Ocjenas/OcijeniFilm.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Ocjenas/OcijeniFilm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2NqZW5hc1xPY2lqZW5pRmlsbS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Ocjenas/OcjeneFilma.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Ocjenas/OcjeneFilma.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2NqZW5hc1xPY2plbmVGaWxtYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Ocjenas/OcjeneFilmaNotLogged.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Ocjenas/OcjeneFilmaNotLogged.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2NqZW5hc1xPY2plbmVGaWxtYU5vdExvZ2dlZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Projekcijas/Create.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Projekcijas/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVrY2lqYXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Projekcijas/Delete.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Projekcijas/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVrY2lqYXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Projekcijas/Details.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Projekcijas/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVrY2lqYXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Projekcijas/Edit.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Projekcijas/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVrY2lqYXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Projekcijas/Index.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Projekcijas/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVrY2lqYXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Projekcijas/ProjekcijeFilma.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Projekcijas/ProjekcijeFilma.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVrY2lqYXNcUHJvamVrY2lqZUZpbG1hLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Rezervacijas/Create.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Rezervacijas/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV6ZXJ2YWNpamFzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Rezervacijas/CreateSjediste.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Rezervacijas/CreateSjediste.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV6ZXJ2YWNpamFzXENyZWF0ZVNqZWRpc3RlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Rezervacijas/Delete.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Rezervacijas/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV6ZXJ2YWNpamFzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Rezervacijas/Details.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Rezervacijas/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV6ZXJ2YWNpamFzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Rezervacijas/Edit.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Rezervacijas/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV6ZXJ2YWNpamFzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Rezervacijas/Index.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Rezervacijas/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV6ZXJ2YWNpamFzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Rezervacijas/UspjesnaRezervacija.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Rezervacijas/UspjesnaRezervacija.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV6ZXJ2YWNpamFzXFVzcGplc25hUmV6ZXJ2YWNpamEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Shared/Error.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Transakcijas/Create.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Transakcijas/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNha2NpamFzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Transakcijas/Delete.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Transakcijas/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNha2NpamFzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Transakcijas/Details.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Transakcijas/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNha2NpamFzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Transakcijas/Edit.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Transakcijas/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNha2NpamFzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Transakcijas/Index.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Transakcijas/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNha2NpamFzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/ZanroviFilmas/Create.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/ZanroviFilmas/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmFucm92aUZpbG1hc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/ZanroviFilmas/CreateAfter.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/ZanroviFilmas/CreateAfter.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmFucm92aUZpbG1hc1xDcmVhdGVBZnRlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/ZanroviFilmas/Delete.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/ZanroviFilmas/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmFucm92aUZpbG1hc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/ZanroviFilmas/Details.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/ZanroviFilmas/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmFucm92aUZpbG1hc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/ZanroviFilmas/Edit.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/ZanroviFilmas/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmFucm92aUZpbG1hc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/ZanroviFilmas/Index.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/ZanroviFilmas/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmFucm92aUZpbG1hc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/ZauzetaSjedistas/Create.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/ZauzetaSjedistas/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmF1emV0YVNqZWRpc3Rhc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/ZauzetaSjedistas/Delete.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/ZauzetaSjedistas/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmF1emV0YVNqZWRpc3Rhc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/ZauzetaSjedistas/Details.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/ZauzetaSjedistas/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmF1emV0YVNqZWRpc3Rhc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/ZauzetaSjedistas/Edit.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/ZauzetaSjedistas/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmF1emV0YVNqZWRpc3Rhc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/ZauzetaSjedistas/Index.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/ZauzetaSjedistas/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmF1emV0YVNqZWRpc3Rhc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/ZauzetaSjedistas/OdabirSjedista.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/ZauzetaSjedistas/OdabirSjedista.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmF1emV0YVNqZWRpc3Rhc1xPZGFiaXJTamVkaXN0YS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/ZauzetaSjedistas/OdabirSjedista1.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/ZauzetaSjedistas/OdabirSjedista1.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmF1emV0YVNqZWRpc3Rhc1xPZGFiaXJTamVkaXN0YTEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/ZauzetaSjedistas/OdabirSjedista2.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/ZauzetaSjedistas/OdabirSjedista2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmF1emV0YVNqZWRpc3Rhc1xPZGFiaXJTamVkaXN0YTIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/_ViewImports.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/_ViewStart.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/AdiDr/OneDrive/Dokumenti/GitHub/tim27-cinetech/CineTech/CineTech/Views/Shared/_Layout.cshtml]
+[C:/Users/HP Compaq/Desktop/tim27-cinetech/CineTech/CineTech/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-t0vcix8b0c
