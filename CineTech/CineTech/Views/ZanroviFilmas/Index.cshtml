@@ -1,4 +1,7 @@
 ﻿@model IEnumerable<CineTech.Models.ZanroviFilma>
+@using Microsoft.AspNetCore.Identity
+@using CineTech.Data;
+@inject ApplicationDbContext _context;
 
 @{
     ViewData["Title"] = "Index";
@@ -7,11 +10,14 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="CreateAfter" class="btn btn-primary">Dodaj novi žanr</a>
 </p>
 <table class="table">
     <thead>
         <tr>
+            <th>
+                Naziv filma
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.idFilma)
             </th>
@@ -25,17 +31,23 @@
 @foreach (var item in Model) {
         <tr>
             <td>
+                    @((await _context.Film.FindAsync(item.idFilma))?.naziv ?? "-")
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.idFilma)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.zanrFilma)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.id" class="btn btn-primary">Izmjeni</a> |
+                    <a asp-action="Details" asp-route-id="@item.id" class="btn btn-primary">Detalji</a> |
+                    <a asp-action="Delete" asp-route-id="@item.id" class="btn btn-primary">Obriši</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+<div>
+    <a asp-controller="Films" asp-action="AdminIndex" class="btn btn-primary">Nazad</a>
+</div>

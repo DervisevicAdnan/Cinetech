@@ -340,23 +340,10 @@ namespace CineTech.Controllers
             {
                 return RedirectToAction("OcjeneFilma", "Ocjenas", new { id = ocjena.FilmId });
             }
-            
+
 
             await _context.SaveChangesAsync();
             return RedirectToAction("OcjeneFilma", "Ocjenas", new { id = ocjena.FilmId });
-        }
-        private OcjeneFilma KreirajOcjenuFilma()
-        {
-            try
-            {
-                return Activator.CreateInstance<OcjeneFilma>();
-            }
-            catch
-            {
-                throw new InvalidOperationException($"Can't create an instance of '{nameof(Models.OcjeneFilma)}'. " +
-                    $"Ensure that '{nameof(Models.OcjeneFilma)}' is not an abstract class and has a parameterless constructor, or alternatively " +
-                    $"override the register page in /Areas/Identity/Pages/Account/Register.cshtml");
-            }
         }
         private bool OcjenaExists(int id)
         {

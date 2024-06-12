@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CineTech.Data;
 using CineTech.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CineTech.Controllers
 {
@@ -20,12 +21,14 @@ namespace CineTech.Controllers
         }
 
         // GET: ZanroviFilmas
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.ZanroviFilma.ToListAsync());
         }
 
         // GET: ZanroviFilmas/Details/5
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -44,9 +47,21 @@ namespace CineTech.Controllers
         }
 
         // GET: ZanroviFilmas/Create
+        [Authorize(Roles = "Administrator")]
         public IActionResult Create(int? id)
         {
             ViewBag.id = id;
+            var filmoviList = _context.Film.ToList();
+            ViewBag.FilmoviList = filmoviList;
+
+            return View();
+        }
+        [Authorize(Roles = "Administrator")]
+        public IActionResult CreateAfter()
+        {
+            var filmoviList = _context.Film.ToList();
+            ViewBag.FilmoviList = filmoviList;
+
             return View();
         }
 
@@ -68,7 +83,29 @@ namespace CineTech.Controllers
         }*/
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Create(int idFilma, List<Zanr> zanrFilma)
+        {
+            if (ModelState.IsValid)
+            {
+                foreach (var zanr in zanrFilma)
+                {
+                    var zanroviFilma = new ZanroviFilma
+                    {
+                        idFilma = idFilma,
+                        zanrFilma = zanr
+                    };
+                    _context.ZanroviFilma.Add(zanroviFilma);
+                }
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(new ZanroviFilma { idFilma = idFilma });
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
+        public async Task<IActionResult> CreateAfter(int idFilma, List<Zanr> zanrFilma)
         {
             if (ModelState.IsValid)
             {
@@ -88,6 +125,7 @@ namespace CineTech.Controllers
         }
 
         // GET: ZanroviFilmas/Edit/5
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -108,6 +146,7 @@ namespace CineTech.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Edit(int id, [Bind("id,idFilma,zanrFilma")] ZanroviFilma zanroviFilma)
         {
             if (id != zanroviFilma.id)
@@ -139,6 +178,7 @@ namespace CineTech.Controllers
         }
 
         // GET: ZanroviFilmas/Delete/5
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -159,6 +199,7 @@ namespace CineTech.Controllers
         // POST: ZanroviFilmas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var zanroviFilma = await _context.ZanroviFilma.FindAsync(id);
@@ -170,7 +211,7 @@ namespace CineTech.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
+        [Authorize(Roles = "Administrator")]
         private bool ZanroviFilmaExists(int id)
         {
             return _context.ZanroviFilma.Any(e => e.id == id);
