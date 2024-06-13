@@ -281,7 +281,7 @@ namespace CineTech.Controllers
                 return NotFound();
             }
 
-            var projekcija = await _context.Projekcija.Where(m => m.id == id).Select(m => m.id).ToListAsync();
+            var projekcija = await _context.Projekcija.FirstOrDefaultAsync(p => p.id == id);
             if (projekcija == null)
             {
                 return NotFound();
@@ -301,7 +301,14 @@ namespace CineTech.Controllers
             {
                 _context.Projekcija.Remove(projekcija);
             }
-
+            var zauzetaSjedista = await _context.ZauzetaSjedista.Where(o => o.ProjekcijaId == id).ToListAsync();
+            if (zauzetaSjedista != null)
+            {
+                foreach (var sjediste in zauzetaSjedista)
+                {
+                    _context.ZauzetaSjedista.Remove(sjediste);
+                }
+            }
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }

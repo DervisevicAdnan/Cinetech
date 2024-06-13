@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\aNaToMiCaLL\\Desktop\\Faks\\tim27-cinetech\\CineTech\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|c:\\users\\anatomicall\\desktop\\faks\\tim27-cinetech\\cinetech\\cinetech\\controllers\\projekcijascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|solutionrelative:cinetech\\controllers\\projekcijascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|c:\\users\\anatomicall\\desktop\\faks\\tim27-cinetech\\cinetech\\cinetech\\controllers\\rezervacijascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|solutionrelative:cinetech\\controllers\\rezervacijascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|c:\\users\\anatomicall\\desktop\\faks\\tim27-cinetech\\cinetech\\cinetech\\views\\projekcijas\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|solutionrelative:cinetech\\views\\projekcijas\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|c:\\users\\anatomicall\\desktop\\faks\\tim27-cinetech\\cinetech\\cinetech\\views\\projekcijas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|solutionrelative:cinetech\\views\\projekcijas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|c:\\users\\anatomicall\\desktop\\faks\\tim27-cinetech\\cinetech\\cinetech\\controllers\\kupovinascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|solutionrelative:cinetech\\controllers\\kupovinascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -18,11 +34,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\aNaToMiCaLL\\Desktop\\Faks\\tim27-cinetech\\CineTech\\CineTech\\Views\\Projekcijas\\Delete.cshtml",
+              "RelativeDocumentMoniker": "CineTech\\Views\\Projekcijas\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\aNaToMiCaLL\\Desktop\\Faks\\tim27-cinetech\\CineTech\\CineTech\\Views\\Projekcijas\\Delete.cshtml",
+              "RelativeToolTip": "CineTech\\Views\\Projekcijas\\Delete.cshtml",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-13T08:19:06.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\aNaToMiCaLL\\Desktop\\Faks\\tim27-cinetech\\CineTech\\CineTech\\Views\\Projekcijas\\Index.cshtml",
+              "RelativeDocumentMoniker": "CineTech\\Views\\Projekcijas\\Index.cshtml",
+              "ToolTip": "C:\\Users\\aNaToMiCaLL\\Desktop\\Faks\\tim27-cinetech\\CineTech\\CineTech\\Views\\Projekcijas\\Index.cshtml",
+              "RelativeToolTip": "CineTech\\Views\\Projekcijas\\Index.cshtml",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-13T08:04:40.753Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "RezervacijasController.cs",
+              "DocumentMoniker": "C:\\Users\\aNaToMiCaLL\\Desktop\\Faks\\tim27-cinetech\\CineTech\\CineTech\\Controllers\\RezervacijasController.cs",
+              "RelativeDocumentMoniker": "CineTech\\Controllers\\RezervacijasController.cs",
+              "ToolTip": "C:\\Users\\aNaToMiCaLL\\Desktop\\Faks\\tim27-cinetech\\CineTech\\CineTech\\Controllers\\RezervacijasController.cs",
+              "RelativeToolTip": "CineTech\\Controllers\\RezervacijasController.cs",
+              "ViewState": "AQIAAFIAAAAAAAAAAAAUwGUAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T07:48:45.265Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProjekcijasController.cs",
+              "DocumentMoniker": "C:\\Users\\aNaToMiCaLL\\Desktop\\Faks\\tim27-cinetech\\CineTech\\CineTech\\Controllers\\ProjekcijasController.cs",
+              "RelativeDocumentMoniker": "CineTech\\Controllers\\ProjekcijasController.cs",
+              "ToolTip": "C:\\Users\\aNaToMiCaLL\\Desktop\\Faks\\tim27-cinetech\\CineTech\\CineTech\\Controllers\\ProjekcijasController.cs",
+              "RelativeToolTip": "CineTech\\Controllers\\ProjekcijasController.cs",
+              "ViewState": "AQIAAAQBAAAAAAAAAADwvyQBAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T08:04:09.893Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "UspjesnaKupovina.cshtml",
               "DocumentMoniker": "C:\\Users\\aNaToMiCaLL\\Desktop\\Faks\\tim27-cinetech\\CineTech\\CineTech\\Views\\Kupovinas\\UspjesnaKupovina.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Kupovinas\\UspjesnaKupovina.cshtml",
@@ -30,18 +98,17 @@
               "RelativeToolTip": "CineTech\\Views\\Kupovinas\\UspjesnaKupovina.cshtml",
               "ViewState": "AQIAAA8AAAAAAAAAAAAAABUAAABJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-13T07:35:14.918Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-13T07:35:14.918Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "KupovinasController.cs",
               "DocumentMoniker": "C:\\Users\\aNaToMiCaLL\\Desktop\\Faks\\tim27-cinetech\\CineTech\\CineTech\\Controllers\\KupovinasController.cs",
               "RelativeDocumentMoniker": "CineTech\\Controllers\\KupovinasController.cs",
               "ToolTip": "C:\\Users\\aNaToMiCaLL\\Desktop\\Faks\\tim27-cinetech\\CineTech\\CineTech\\Controllers\\KupovinasController.cs",
               "RelativeToolTip": "CineTech\\Controllers\\KupovinasController.cs",
-              "ViewState": "AQIAAGYAAAAAAAAAAAA6wIAAAAAMAAAA",
+              "ViewState": "AQIAAGcAAAAAAAAAAAAiwIAAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-13T06:20:41.521Z",
               "EditorCaption": ""
