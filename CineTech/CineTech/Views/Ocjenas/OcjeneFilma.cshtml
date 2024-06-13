@@ -3,96 +3,73 @@
 @inject UserManager<IdentityUser> UserManager
 @inject SignInManager<IdentityUser> SignInManager
 
-
-
 @{
-    if(SignInManager.IsSignedIn(User)){
+    if (SignInManager.IsSignedIn(User))
+    {
         var currentUserId = await UserManager.GetUserAsync(User);
         var korisnik = await UserManager.GetUserIdAsync(currentUserId);
-        //var username = await UserManager.GetUserNameAsync(currentUserId);
-
     }
+
     var isAdmin = User.IsInRole("Administrator");
+
     async Task<string> GetUserNameAsync(string userId)
     {
         var user = await UserManager.FindByIdAsync(userId);
         return user?.UserName;
     }
-
 }
 
 @{
-    
-        ViewData["Title"] = "OcjeneFilma";
-    
+    ViewData["Title"] = "Ocjene Filma";
 }
 
 <h1>Ocjene filma</h1>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ocjenaFilma)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.komentar)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.datum)
-            </th>
-            <th>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Ocjena Filma</th>
+                <th>Komentar</th>
+                <th>Datum</th>
                 @if (User.IsInRole("Administrator"))
                 {
-
-                    @Html.DisplayNameFor(model => model.korisnikId)
+                    <th>Korisnik ID</th>
+                    <th>Korisničko ime</th>
                 }
-            </th>
-            <th>
-                Korisnicko ime
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ocjenaFilma)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.komentar)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.datum)
-                </td>
-                <td>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.ocjenaFilma)</td>
+                    <td>@Html.DisplayFor(modelItem => item.komentar)</td>
+                    <td>@Html.DisplayFor(modelItem => item.datum)</td>
                     @if (User.IsInRole("Administrator"))
                     {
-                        @Html.DisplayFor(modelItem => item.korisnikId)
+                        <td>@Html.DisplayFor(modelItem => item.korisnikId)</td>
+                        <td>
+                            @{
+                                var username = await GetUserNameAsync(item.korisnikId);
+                                @username
+                            }
+                        </td>
                     }
-                </td>
-                <td>
-                    @{
-                        var username = await GetUserNameAsync(item.korisnikId);
-                        @username
-                    }
-                </td>
-                <td>
-                    @if (User.IsInRole("Administrator")||User.IsInRole("Korisnik"))
-                    {
-                        @if (@SignInManager.UserManager.Users.First(user => user.UserName == User.Identity.Name).Id == item.korisnikId || isAdmin)
+                    <td>
+                        @if (User.IsInRole("Administrator") || User.IsInRole("Korisnik"))
                         {
-                            <a asp-action="Edit" asp-route-id="@item.id">Edit</a>
-                            <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                            @if (SignInManager.UserManager.Users.First(user => user.UserName == User.Identity.Name).Id == item.korisnikId || isAdmin)
+                            {
+                                <a asp-action="Edit" asp-route-id="@item.id" class="btn btn-sm btn-primary">Edit</a>
+                                <a asp-action="Delete" asp-route-id="@item.id" class="btn btn-sm btn-danger">Delete</a>
+                            }
                         }
-                    }<a asp-action="Details" asp-route-id="@item.id">Details</a>
-
-
-                </td>
-
-            </tr>
+                        <a asp-action="Details" asp-route-id="@item.id" class="btn btn-sm btn-info">Details</a>
+                    </td>
+                </tr>
             }
-            <a asp-controller="Films" asp-action="Details" asp-route-id="@ViewBag.Ocjeneid">Back to list</a>
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>
+<a asp-controller="Films" asp-action="Details" asp-route-id="@ViewBag.Ocjeneid" class="btn btn-secondary">Back to list</a>

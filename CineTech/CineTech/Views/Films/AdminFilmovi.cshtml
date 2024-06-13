@@ -4,23 +4,22 @@
     ViewData["Title"] = "AdminFilmovi";
 }
 
-<h1>Dodavanje, brisanje i izmjena informacija o filmovima</h1>
+<h1 class="text-center my-4">Dodavanje, brisanje i izmjena informacija o filmovima</h1>
 
 <p>
     @if (User.IsInRole("Administrator"))
     {
-        <a asp-action="Create" class="btn btn-primary">Dodaj Film</a>
+        <a asp-action="Create" class="btn btn-success mb-3">Dodaj Film</a>
     }
 </p>
-<table class="table">
-    <thead>
+<table class="table table-bordered table-striped table-hover">
+    <thead class="thead-dark">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.naziv)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.naslovnaSlika)
-
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.opis)
@@ -40,7 +39,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.StatusPrikazivanja)
             </th>
-            <th></th>
+            <th>Akcije</th>
         </tr>
     </thead>
     <tbody>
@@ -51,7 +50,7 @@
                     @Html.DisplayFor(modelItem => item.naziv)
                 </td>
                 <td>
-                    <img src=@item.naslovnaSlika />
+                    <img src="@item.naslovnaSlika" class="img-thumbnail" style="max-width: 100px;" />
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.opis)
@@ -66,7 +65,7 @@
                     @Html.DisplayFor(modelItem => item.releseDate)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.trailer)
+                    <a href="@item.trailer" target="_blank" class="btn btn-outline-info btn-sm">Trailer</a>
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.StatusPrikazivanja)
@@ -74,17 +73,15 @@
                 <td>
                     @if (User.IsInRole("Administrator"))
                     {
-                        <a asp-action="Edit" asp-route-id="@item.id">Izmjeni film</a>
-                        <a asp-action="Delete" asp-route-id="@item.id"> Obriši film </a>
+                        <a asp-action="Edit" asp-route-id="@item.id" class="btn btn-warning btn-sm">Izmjeni</a>
+                        <a asp-action="Delete" asp-route-id="@item.id" class="btn btn-danger btn-sm">Obriši</a>
                     }
-                    <a asp-action="AdminDetails" asp-route-id="@item.id"> Detalji </a>
+                    <a asp-action="AdminDetails" asp-route-id="@item.id" class="btn btn-primary btn-sm">Detalji</a>
                 </td>
-
             </tr>
-            
         }
-            <div>
-                <a asp-action="AdminIndex" class="btn btn-primary">Nazad</a>
-            </div>
     </tbody>
 </table>
+<div class="text-center">
+    <a asp-action="AdminIndex" class="btn btn-secondary mt-3">Nazad</a>
+</div>

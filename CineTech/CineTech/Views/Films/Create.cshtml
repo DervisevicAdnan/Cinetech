@@ -4,12 +4,12 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Dodavanje filma</h1>
+<h1 class="text-center my-4">Dodavanje filma</h1>
 
-<h4>Film</h4>
+<h4 class="mb-4">Film</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="row justify-content-center">
+    <div class="col-md-6">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -24,7 +24,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="opis" class="control-label"></label>
-                <input asp-for="opis" class="form-control" />
+                <textarea asp-for="opis" class="form-control"></textarea>
                 <span asp-validation-for="opis" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -49,20 +49,22 @@
             </div>
             <div class="form-group">
                 <label asp-for="StatusPrikazivanja" class="control-label"></label>
-                <select asp-for="StatusPrikazivanja" class="form-control"asp-items="Html.GetEnumSelectList<StatusPrikazivanja>()"></select>
+                <select asp-for="StatusPrikazivanja" class="form-control" asp-items="Html.GetEnumSelectList<StatusPrikazivanja>()"></select>
                 <span asp-validation-for="StatusPrikazivanja" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+            <div class="form-group text-center">
+                <input type="submit" value="Dodaj film" class="btn btn-success" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="AdminFilmovi" class="btn btn-primary">Nazad</a>
+<div class="text-center mt-4">
+    <a asp-action="AdminFilmovi" class="btn btn-secondary">Nazad</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

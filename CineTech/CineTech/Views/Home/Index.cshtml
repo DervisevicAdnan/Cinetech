@@ -3,12 +3,71 @@
 @{
     ViewData["Title"] = "Home Page";
     var filmGenres = ViewBag.FilmGenres as Dictionary<int, List<Zanr>>;
-
 }
+
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    .jumbotron {
+        background-size: cover;
+        color: blue;
+        text-shadow: 2px 2px 4px #000000;
+        padding: 100px 0;
+        margin-bottom: 20px;
+    }
+
+    .card {
+        background-color: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        border-radius: 0;
+        margin-bottom: 20px;
+        transition: all 0.3s;
+    }
+
+        .card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+    .card-img-top {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    }
+
+    .card-title {
+        font-size: 1.4em;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    .card-subtitle {
+        color: #6c757d;
+    }
+
+    .card-text {
+        font-size: 0.9em;
+    }
+
+    .card-footer {
+        background-color: #ffffff;
+        border-top: 1px solid rgba(0, 0, 0, 0.125);
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+</style>
 
 <div class="text-center">
     <h1 class="display-4">Dobrodošli u CineTech kino.</h1>
-    <p>Filmovi koji se trenutno emituju:</a></p>
+    <p class="lead">Filmovi koji se trenutno emituju:</p>
 </div>
 
 <div class="container">
@@ -20,7 +79,7 @@
                     <a asp-controller="Films" asp-action="Details" asp-route-id="@film.id"><img class="card-img-top" src="@film.naslovnaSlika" alt="@film.naziv" /></a>
                     <div class="card-body">
                         <h5 class="card-title">@film.naziv</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">@film.redatelj</h6>
+                        <h6 class="card-subtitle mb-2">@film.redatelj</h6>
                         <p class="card-text">
                             <strong>Žanr:</strong>
                             @if (filmGenres.ContainsKey(film.id))
@@ -37,7 +96,7 @@
                             <strong>Opis:</strong> @film.opis
                         </p>
                     </div>
-                    <div class="card-footer">
+                    <div class="card-footer d-flex justify-content-between">
                         <a href="@film.trailer" class="btn btn-primary" target="_blank">Pogledaj trailer</a>
                     </div>
                 </div>

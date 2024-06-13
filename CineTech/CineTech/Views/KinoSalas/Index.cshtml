@@ -4,50 +4,45 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1 class="text-center">Index</h1>
 
-<p>
-    @if (User.IsInRole("Administrator"))
-    {
-        <a asp-action="Create">Create New</a>
-    }
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.naziv)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.brojRedova)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.brojKolona)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.naziv)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.brojRedova)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.brojKolona)
-            </td>
-            <td>
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <p class="text-right">
                 @if (User.IsInRole("Administrator"))
                 {
-                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> 
-                <a asp-action="Delete" asp-route-id="@item.id">Delete</a> 
+                    <a asp-action="Create" class="btn btn-primary">Create New</a>
                 }
-                <a asp-action="Details" asp-route-id="@item.id">Details</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+            </p>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Naziv</th>
+                        <th>Broj redova</th>
+                        <th>Broj kolona</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.naziv)</td>
+                            <td>@Html.DisplayFor(modelItem => item.brojRedova)</td>
+                            <td>@Html.DisplayFor(modelItem => item.brojKolona)</td>
+                            <td>
+                                @if (User.IsInRole("Administrator"))
+                                {
+                                    <a asp-action="Edit" asp-route-id="@item.id" class="btn btn-primary btn-sm">Edit</a>
+                                    <a asp-action="Delete" asp-route-id="@item.id" class="btn btn-danger btn-sm">Delete</a>
+                                }
+                                <a asp-action="Details" asp-route-id="@item.id" class="btn btn-info btn-sm">Details</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

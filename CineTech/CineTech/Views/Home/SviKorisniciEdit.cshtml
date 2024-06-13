@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "SviKorisniciEdit";
     var userId = ViewBag.UserId as string;
     var userName = ViewBag.UserName as string;
@@ -7,37 +6,39 @@
     var userRoles = ViewBag.UserRoles as IList<string>;
 }
 
-<h1>SviKorisniciEdit</h1>
-
-<h1>Mjenjanje rola za korisnika : @userName</h1>
+<h1 class="text-center">Mjenjanje rola za korisnika: @userName</h1>
 <form asp-action="SviKorisniciEdit" method="post">
     <input type="hidden" name="username" value="@userName" />
 
-    <div class="form-group">
-        <label class="control-label">User Roles</label>
-        @foreach (var role in roles)
-        {
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" name="selectedRoles" value="@role.Name" onclick="allowOnlyOneCheckbox(this)" @(userRoles.Contains(role.Name) ? "checked" : "") />
-                    @role.Name
-                </label>
-            </div>
-        }
-    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="form-group">
+                    <label for="userRoles" class="control-label">User Roles</label>
+                    @foreach (var role in roles)
+                    {
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="role-@role.Name" name="selectedRoles" value="@role.Name" @(userRoles.Contains(role.Name) ? "checked" : "")>
+                            <label class="form-check-label" for="role-@role.Name">@role.Name</label>
+                        </div>
+                    }
+                </div>
 
-    <div class="form-group">
-        <input type="submit" value="Save" class="btn btn-primary" />
-        <a asp-action="SviKorisnici" class="btn btn-primary">Nazad</a>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <a asp-action="SviKorisnici" class="btn btn-primary">Nazad</a>
+                </div>
+            </div>
+        </div>
     </div>
 </form>
-<script>
-    function allowOnlyOneCheckbox(checkbox) {
-        var checkboxes = document.getElementsByName("selectedRoles");
-        checkboxes.forEach(function (item) {
-            if (item !== checkbox && item.checked) {
-                item.checked = false;
-            }
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('input[type="checkbox"]').on('change', function () {
+                $('input[type="checkbox"]').not(this).prop('checked', false);
+            });
         });
-    }
-</script>
+    </script>
+}

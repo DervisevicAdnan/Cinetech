@@ -4,66 +4,73 @@
     ViewData["Title"] = "AdminDetails";
 }
 
-<h1>Details</h1>
+<h1 class="text-center my-4">Detalji filma</h1>
 
-<div>
-    <h4>Film</h4>
+<div class="container">
+    <h4 class="mb-4">Film</h4>
     <hr />
     <dl class="row">
-        <dt class="col-sm-2">
+        <dt class="col-sm-3 font-weight-bold">
             @Html.DisplayNameFor(model => model.naziv)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-sm-9">
             @Html.DisplayFor(model => model.naziv)
         </dd>
-        <dt class="col-sm-2">
-            <img src=@Model.naslovnaSlika>
+
+        <dt class="col-sm-3 font-weight-bold">
+            Naslovna slika
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.naslovnaSlika)
+        <dd class="col-sm-9">
+            <img src="@Model.naslovnaSlika" class="img-fluid img-thumbnail" alt="Naslovna slika filma" />
         </dd>
-        <dt class="col-sm-2">
+
+        <dt class="col-sm-3 font-weight-bold">
             @Html.DisplayNameFor(model => model.opis)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-sm-9">
             @Html.DisplayFor(model => model.opis)
         </dd>
-        <dt class="col-sm-2">
+
+        <dt class="col-sm-3 font-weight-bold">
             @Html.DisplayNameFor(model => model.redatelj)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-sm-9">
             @Html.DisplayFor(model => model.redatelj)
         </dd>
-        <dt class="col-sm-2">
+
+        <dt class="col-sm-3 font-weight-bold">
             @Html.DisplayNameFor(model => model.glumci)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-sm-9">
             @Html.DisplayFor(model => model.glumci)
         </dd>
-        <dt class="col-sm-2">
+
+        <dt class="col-sm-3 font-weight-bold">
             @Html.DisplayNameFor(model => model.releseDate)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-sm-9">
             @Html.DisplayFor(model => model.releseDate)
         </dd>
-        <dt class="col-sm-2">
+
+        <dt class="col-sm-3 font-weight-bold">
             @Html.DisplayNameFor(model => model.trailer)
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.trailer)
+        <dd class="col-sm-9">
+            <a href="@Model.trailer" target="_blank" class="btn btn-outline-info">Pogledaj trailer</a>
         </dd>
-        <dt class="col-sm-2">
+
+        <dt class="col-sm-3 font-weight-bold">
             @Html.DisplayNameFor(model => model.StatusPrikazivanja)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-sm-9">
             @Html.DisplayFor(model => model.StatusPrikazivanja)
         </dd>
     </dl>
 </div>
-<div>
+<div class="text-center mt-4">
     @if (User.IsInRole("Administrator"))
     {
-        <a asp-action="Edit" asp-route-id="@Model?.id" class="btn btn-primary">Edit</a>
+        <a asp-action="Edit" asp-route-id="@Model?.id" class="btn btn-warning mx-2">Izmijeni</a>
     }
-    <a asp-controller="Films" asp-action="AdminFilmovi" class="btn btn-primary">Nazad</a>
+    <a asp-controller="Films" asp-action="AdminFilmovi" class="btn btn-secondary mx-2">Nazad</a>
 </div>

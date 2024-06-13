@@ -12,10 +12,13 @@ namespace CineTech.Models
 
         [Required]
         [Display(Name = "Broj redova:")]
+        [Range(0, int.MaxValue, ErrorMessage = "Broj redova ne može biti manji od 0.")]
         public int brojRedova { get; set; }
 
         [Required]
         [Display(Name = "Broj kolona:")]
+        [Range(0, int.MaxValue, ErrorMessage = "Broj redova ne može biti manji od 0.")]
+
         public int brojKolona { get; set; }
 
         public KinoSala() { }

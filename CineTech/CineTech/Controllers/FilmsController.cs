@@ -210,8 +210,19 @@ namespace CineTech.Controllers
              var najavljeniFilmovi = await _context.Film
             .Where(f => f.StatusPrikazivanja == StatusPrikazivanja.UNajavi)
             .ToListAsync();
+            var filmGenres = new Dictionary<int, List<Zanr>>();
 
-             return View(najavljeniFilmovi);
+            foreach (var film in najavljeniFilmovi)
+            {
+                var genres = await _context.ZanroviFilma
+                    .Where(z => z.idFilma == film.id)
+                    .Select(z => z.zanrFilma)
+                    .ToListAsync();
+                filmGenres[film.id] = genres;
+            }
+            ViewBag.FilmGenres = filmGenres;
+
+            return View(najavljeniFilmovi);
         }
         private bool FilmExists(int id)
         {

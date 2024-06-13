@@ -4,84 +4,84 @@
 @inject UserManager<IdentityUser> UserManager
 @inject SignInManager<IdentityUser> SignInManager
 
-
 @{
     ViewData["Title"] = "Details";
-    var isAktuelan = false;
-    if(Model.StatusPrikazivanja == StatusPrikazivanja.Aktuelan)
-    {
-        isAktuelan = true;
-    }
+    var isAktuelan = Model.StatusPrikazivanja == StatusPrikazivanja.Aktuelan;
 }
 
-<h1>Detalji filma</h1>
+<h1 class="text-center my-4">Detalji filma</h1>
 
-<div>
-    <h4>Film</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.naziv)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.naziv)
-        </dd>
-        <dt class = "col-sm-2">
-            <img src=@Model.naslovnaSlika>
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.naslovnaSlika)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.opis)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.opis)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.redatelj)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.redatelj)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.glumci)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.glumci)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.releseDate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.releseDate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.trailer)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.trailer)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.StatusPrikazivanja)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.StatusPrikazivanja)
-        </dd>
-    </dl>
+<div class="card mb-4 shadow-sm">
+    <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Film</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.naziv)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.naziv)
+            </dd>
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.naslovnaSlika)
+            </dt>
+            <dd class="col-sm-9">
+                <img src="@Model.naslovnaSlika" class="img-thumbnail" alt="Naslovna Slika" />
+            </dd>
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.opis)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.opis)
+            </dd>
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.redatelj)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.redatelj)
+            </dd>
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.glumci)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.glumci)
+            </dd>
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.releseDate)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.releseDate)
+            </dd>
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.trailer)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.trailer)
+            </dd>
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.StatusPrikazivanja)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.StatusPrikazivanja)
+            </dd>
+        </dl>
+    </div>
 </div>
-<div>
-    <a asp-controller="Home" asp-action="Index" class="btn btn-primary" >Nazad</a>
-    @if (User.IsInRole("Administrator")||(User.IsInRole("Korisnik")))
+
+<div class="d-flex justify-content-center mb-4">
+    <a asp-controller="Home" asp-action="Index" class="btn btn-secondary mr-2">Nazad</a>
+    @if (User.IsInRole("Administrator") || User.IsInRole("Korisnik"))
     {
-        if (isAktuelan)
+        @if (isAktuelan)
         {
-            <a asp-controller="Ocjenas" asp-action="OcijeniFilm" asp-route-id="@Model.id" class="btn btn-primary">Ocijenite film</a>
-            <a asp-controller="Projekcijas" asp-action="ProjekcijeFilma" asp-route-id="@Model.id" class="btn btn-primary">Prikazi termine</a>
+            <a asp-controller="Ocjenas" asp-action="OcijeniFilm" asp-route-id="@Model.id" class="btn btn-primary mr-2">Ocijenite film</a>
+            <a asp-controller="Projekcijas" asp-action="ProjekcijeFilma" asp-route-id="@Model.id" class="btn btn-primary mr-2">Prikaži termine</a>
         }
     }
-    @if (User.IsInRole("Administrator")){
-        <a asp-controller="Ocjenas" asp-action="Index" class="btn btn-primary">Ocjene sve</a>
+    @if (User.IsInRole("Administrator"))
+    {
+        <a asp-controller="Ocjenas" asp-action="Index" class="btn btn-primary mr-2">Sve ocjene</a>
     }
     <a asp-controller="Ocjenas" asp-action="OcjeneFilma" asp-route-id="@Model.id" class="btn btn-primary">Pogledajte ocjene filma</a>
 </div>

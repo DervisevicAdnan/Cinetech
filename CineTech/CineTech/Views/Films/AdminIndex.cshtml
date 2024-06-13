@@ -4,29 +4,35 @@
     ViewData["Title"] = "AdminIndex";
 }
 
-<h1>Administratorska kontrolna ploča</h1>
+<h1 class="text-center my-4">Administratorska kontrolna ploča</h1>
 
-<p>
-<div>
-        <a asp-action="AdminFilmovi" class="btn btn-primary">Panel za filmove</a>
-</div>
-<p></p>
-<div>
-        <a asp-controller="KinoSalas" asp-action="Index" class="btn btn-primary">Panel za Kino sale</a>
-</div>
-<p></p>
-<div>
-        <a asp-controller="Projekcijas" asp-action="Index" class="btn btn-primary">Panel za Projekcije</a>
-</div>
-<p></p>
- <div>
-        <a asp-controller="Ocjenas" asp-action="Index" class="btn btn-primary">Panel ocjena</a>
-</div>
-<p></p>
-<div>
-    <a asp-controller="Home" asp-action="SviKorisnici" class="btn btn-primary">Panel korisnika</a>
-</div>
-<p></p>
-<div>
-    <a asp-controller="ZanroviFilmas" asp-action="Index" class="btn btn-primary">Panel zanrova za filmove</a>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm border-0 rounded-lg">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <a asp-action="AdminFilmovi" class="btn btn-primary btn-block">Panel za filmove</a>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <a asp-controller="KinoSalas" asp-action="Index" class="btn btn-primary btn-block">Panel za Kino sale</a>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <a asp-controller="Projekcijas" asp-action="Index" class="btn btn-primary btn-block">Panel za Projekcije</a>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <a asp-controller="Ocjenas" asp-action="Index" class="btn btn-primary btn-block">Panel ocjena</a>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <a asp-controller="Home" asp-action="SviKorisnici" class="btn btn-primary btn-block">Panel korisnika</a>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <a asp-controller="ZanroviFilmas" asp-action="Index" class="btn btn-primary btn-block">Panel zanrova za filmove</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

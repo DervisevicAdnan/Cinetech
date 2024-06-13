@@ -9,29 +9,27 @@
 <h4>Notifikacija</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
         <form asp-action="Create">
             <input type="hidden" name="filmId" value="@ViewBag.proslijedi" />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="KorisnikId" class="control-label"></label>
-                <input asp-for="KorisnikId" value="@ViewBag.korisnikid" class="form-control" readonly/>
+                <label asp-for="KorisnikId" class="control-label">Korisnik ID</label>
+                <input asp-for="KorisnikId" value="@ViewBag.korisnikid" class="form-control" readonly />
                 <span asp-validation-for="KorisnikId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PeriodNotifikacije" class="control-label"></label>
-                <select asp-for="PeriodNotifikacije" class="form-control" asp-items="Html.GetEnumSelectList<PeriodNotifikacije>()"></select>
+                <label asp-for="PeriodNotifikacije" class="control-label">Period Notifikacije</label>
+                <select asp-for="PeriodNotifikacije" class="form-control" asp-items="Html.GetEnumSelectList<PeriodNotifikacije>()">
+                    <option value="">Odaberite period</option>
+                </select>
                 <span asp-validation-for="PeriodNotifikacije" class="text-danger"></span>
             </div>
-           
+
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <button type="submit" class="btn btn-primary">Create</button>
+                <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">Natrag na početnu</a>
             </div>
         </form>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-

@@ -6,13 +6,9 @@
 @inject SignInManager<IdentityUser> SignInManager
 @inject ApplicationDbContext _context;
 
-
-
-
 @{
     var currentUserId = await UserManager.GetUserAsync(User);
     var korisnik = await UserManager.GetUserIdAsync(currentUserId);
-    //var username = await UserManager.GetUserNameAsync(currentUserId);
     var isAdmin = User.IsInRole("Administrator");
     async Task<string> GetUserNameAsync(string userId)
     {
@@ -25,70 +21,52 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1 class="display-4">Index</h1>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                ID Filma
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ocjenaFilma)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.komentar)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.datum)
-            </th>
-            <th>
-                @if (User.IsInRole("Administrator")){
-
-                @Html.DisplayNameFor(model => model.korisnikId)
-                }
-            </th>
-            <th>
-                Korisnicko ime
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                    @((await _context.Film.FindAsync(item.FilmId))?.naziv ?? "-")
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ocjenaFilma)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.komentar)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.datum)
-            </td>
-            <td>
-                @if (User.IsInRole("Administrator"))
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID Filma</th>
+                <th>Ocjena Filma</th>
+                <th>Komentar</th>
+                <th>Datum</th>
+                @if (isAdmin)
                 {
-                @Html.DisplayFor(modelItem => item.korisnikId)
+                    <th>Korisnik ID</th>
+                    <th>Korisničko ime</th>
                 }
-            </td>
-                <td>
-                    @{
-                        var username = await GetUserNameAsync(item.korisnikId);
-                        @username
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@((await _context.Film.FindAsync(item.FilmId))?.naziv ?? "-")</td>
+                    <td>@Html.DisplayFor(modelItem => item.ocjenaFilma)</td>
+                    <td>@Html.DisplayFor(modelItem => item.komentar)</td>
+                    <td>@Html.DisplayFor(modelItem => item.datum)</td>
+                    @if (isAdmin)
+                    {
+                        <td>@Html.DisplayFor(modelItem => item.korisnikId)</td>
+                        <td>
+                            @{
+                                var username = await GetUserNameAsync(item.korisnikId);
+                                @username
+                            }
+                        </td>
                     }
-                </td>
-            <td>
-                @if (@SignInManager.UserManager.Users.First(user => user.UserName == User.Identity.Name).Id == item.korisnikId || isAdmin){
-                    <a asp-action="Edit" asp-route-id="@item.id">Edit</a> 
-                    <a asp-action="Details" asp-route-id="@item.id">Details</a> 
-                    <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
-                }
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+                    <td>
+                        @if (SignInManager.UserManager.Users.First(user => user.UserName == User.Identity.Name).Id == item.korisnikId || isAdmin)
+                        {
+                            <a asp-action="Edit" asp-route-id="@item.id" class="btn btn-sm btn-primary">Edit</a>
+                            <a asp-action="Details" asp-route-id="@item.id" class="btn btn-sm btn-info">Details</a>
+                            <a asp-action="Delete" asp-route-id="@item.id" class="btn btn-sm btn-danger">Delete</a>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

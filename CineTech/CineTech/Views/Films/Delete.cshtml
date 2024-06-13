@@ -4,66 +4,70 @@
     ViewData["Title"] = "Delete";
 }
 
-<h1>Delete</h1>
+<h1 class="text-center my-4">Obriši Film</h1>
 
-<h3>Da li ste sigurni da želite obrisati ovaj film?</h3>
-<div>
-    <h4>Film</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.naziv)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.naziv)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.naslovnaSlika)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.naslovnaSlika)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.opis)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.opis)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.redatelj)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.redatelj)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.glumci)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.glumci)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.releseDate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.releseDate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.trailer)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.trailer)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.StatusPrikazivanja)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.StatusPrikazivanja)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="AdminFilmovi" class=" btn btn-primary">Nazad</a>
-    </form>
+<h3 class="text-center text-danger">Da li ste sigurni da želite obrisati ovaj film?</h3>
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <h4 class="mb-4">Film</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.naziv)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.naziv)
+            </dd>
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.naslovnaSlika)
+            </dt>
+            <dd class="col-sm-9">
+                <img src="@Model.naslovnaSlika" class="img-thumbnail" alt="Naslovna Slika" />
+            </dd>
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.opis)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.opis)
+            </dd>
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.redatelj)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.redatelj)
+            </dd>
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.glumci)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.glumci)
+            </dd>
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.releseDate)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.releseDate)
+            </dd>
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.trailer)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.trailer)
+            </dd>
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.StatusPrikazivanja)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.StatusPrikazivanja)
+            </dd>
+        </dl>
+        <form asp-action="Delete" class="mt-4">
+            <input type="hidden" asp-for="id" />
+            <div class="form-group text-center">
+                <input type="submit" value="Obriši" class="btn btn-danger" /> |
+                <a asp-action="AdminFilmovi" class="btn btn-secondary">Nazad</a>
+            </div>
+        </form>
+    </div>
 </div>

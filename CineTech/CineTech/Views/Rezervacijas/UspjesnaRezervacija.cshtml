@@ -1,77 +1,70 @@
-﻿@model Tuple<Rezervacija,List<ZauzetaSjedista>,String,String>
+﻿@model Tuple<Rezervacija, List<ZauzetaSjedista>, string, string>
 
 @{
     ViewData["Title"] = "Uspješna transakcija";
-}
-@{
     var rezervacija = Model.Item1;
     var zauzetaSjedista = Model.Item2;
     var nazivFilma = Model.Item3;
     var nazivSale = Model.Item4;
 }
-<h1>Uspješna transakcija</h1>
 
-<div>
-    <h4>Vaša rezervacija</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Item1.datum)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Item1.datum)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Item1.vrijeme)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Item1.vrijeme)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Item1.KorisnikId)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Item1.KorisnikId)
-        </dd>
-        <dt class="col-sm-2">
-            Naziv filma:
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Item3)
-        </dd>
-        <dt class="col-sm-2">
-            Kino sala:
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Item4)
-        </dd>
-    </dl>
-</div>
-<body>
-    <h4>Zauzeta sjedišta</h4>
-    <table>
-        <thead>
-            <tr>
-                <th>Red</th>
-                <th></th>
-                <th>Redni broj</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var sjediste in zauzetaSjedista)
-            {
-                <tr>
-                    <td>@sjediste.red</td>
-                    <td></td>
-                    <td>@sjediste.redniBrojSjedista</td>
-                </tr>
-            }
-        </tbody>
-    </table>
-</body>
-<div>
-    @if (User.IsInRole("Administrator")){
-    <a asp-action="Edit" asp-route-id="@Model.Item1?.id">Edit</a> 
-    }
-    <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Nazad na početnu</a>
+<h1 class="text-center my-4">Uspješna transakcija</h1>
+
+<div class="container">
+    <div class="card">
+        <div class="card-header bg-success text-white">
+            <h4 class="mb-0">Vaša rezervacija</h4>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">Datum</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Item1.datum)</dd>
+
+                <dt class="col-sm-3">Vrijeme</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Item1.vrijeme)</dd>
+
+                <dt class="col-sm-3">Korisnik ID</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Item1.KorisnikId)</dd>
+
+                <dt class="col-sm-3">Naziv filma</dt>
+                <dd class="col-sm-9">@nazivFilma</dd>
+
+                <dt class="col-sm-3">Kino sala</dt>
+                <dd class="col-sm-9">@nazivSale</dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="card mt-4">
+        <div class="card-header bg-info text-white">
+            <h4 class="mb-0">Zauzeta sjedišta</h4>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Red</th>
+                        <th>Redni broj</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var sjediste in zauzetaSjedista)
+                    {
+                        <tr>
+                            <td>@sjediste.red</td>
+                            <td>@sjediste.redniBrojSjedista</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        @if (User.IsInRole("Administrator"))
+        {
+            <a asp-action="Edit" asp-route-id="@Model.Item1?.id" class="btn btn-warning mx-2">Edit</a>
+        }
+        <a asp-controller="Home" asp-action="Index" class="btn btn-primary mx-2">Nazad na početnu</a>
+    </div>
 </div>

@@ -1,74 +1,80 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@model Tuple<List<ZauzetaSjedista>,int,int>
+@model Tuple<List<ZauzetaSjedista>, int, int>
 @inject UserManager<IdentityUser> UserManager
 @inject SignInManager<IdentityUser> SignInManager
-
 
 @{
     if (SignInManager.IsSignedIn(User))
     {
         var currentUserId = await UserManager.GetUserAsync(User);
         var korisnik = await UserManager.GetUserIdAsync(currentUserId);
-        //var username = await UserManager.GetUserNameAsync(currentUserId);
-
     }
+
     var isAdmin = User.IsInRole("Administrator");
+
     async Task<string> GetUserNameAsync(string userId)
     {
         var user = await UserManager.FindByIdAsync(userId);
         return user?.UserName;
     }
+
     var maxRed = Model.Item2;
     var maxSjediste = Model.Item3;
     var projekcijaID = Model.Item1.First().ProjekcijaId;
-    //List<(int, int,int)> OdabranaSjedista = new List<(int, int,int)>();
 }
 
 @{
-    ViewData["Title"] = "ZauzetaSjedista";
+    ViewData["Title"] = "Zauzeta Sjedista";
 }
 
-<h1>Slobodna sjedista</h1>
-<div class="row">
-    @for (var i = 1; i <= maxRed; i += 1)
-    {
-        <div style="display: flex;">
-            @for (var j = 1; j <=maxSjediste; j += 1)
-            {
-                @if (Model.Item1.Where(o => o.red == i && o.redniBrojSjedista == j).Any()) 
+<h1 class="text-center my-4">Slobodna sjedista</h1>
+
+<div class="container">
+    <div class="row justify-content-center">
+        @for (var i = 1; i <= maxRed; i++)
+        {
+            <div class="d-flex justify-content-center mb-2">
+                @for (var j = 1; j <= maxSjediste; j++)
                 {
-                    <img id="seatImage_@i@j" src="https://cdn3.iconfinder.com/data/icons/movie-entertainment-flat-style/64/13_seat-movie-cinema-chair-theater-512.png"
-                 alt="Element" onclick="changeImage(@i, @j,@projekcijaID)" width="50" height="50" />
+                    @if (Model.Item1.Any(o => o.red == i && o.redniBrojSjedista == j))
+                    {
+                        <img id="seatImage_@i@j" class="m-1" src="https://cdn3.iconfinder.com/data/icons/movie-entertainment-flat-style/64/13_seat-movie-cinema-chair-theater-512.png"
+                             alt="Zauzeto Sjediste" onclick="changeImage(@i, @j, @projekcijaID)" width="50" height="50" />
+                    }
+                    else
+                    {
+                        <img class="m-1" src="https://cdn2.iconfinder.com/data/icons/bussines-1/512/bussines-09-512.png"
+                             alt="Slobodno Sjediste" onclick="Zauzeto()" width="50" height="50" />
+                    }
                 }
-                else
-                {
-                    <img src="https://cdn2.iconfinder.com/data/icons/bussines-1/512/bussines-09-512.png"
-                         alt="Element" onclick="Zauzeto" width="50" height="50" />
-                }
-            }
-         </div>
-    }
+            </div>
+        }
+    </div>
 </div>
-<button id="myButton">Rezerviši</button>
-<button id="myButton1">Kupi</button>
+
+<div class="text-center mt-4">
+    <button id="myButton" class="btn btn-success mx-2">Rezerviši</button>
+    <button id="myButton1" class="btn btn-primary mx-2">Kupi</button>
+</div>
 
 <script>
     var OdabranaSjedista = [];
-    function changeImage(i,j,projekcijaId) {
+
+    function changeImage(i, j, projekcijaId) {
         var postoji = OdabranaSjedista.find(item => item[0] === i && item[1] === j);
+        var seatImage = document.getElementById('seatImage_' + i + j);
+
         if (!postoji) {
             OdabranaSjedista.push([i, j, projekcijaId]);
-            const seatImage = document.getElementById('seatImage_' + i + j);
             seatImage.src = 'https://cdn2.iconfinder.com/data/icons/work-office-13/24/office_chair_two_work_office_color_shadow_f-512.png';
-        }
-        else {
-            OdabranaSjedista=OdabranaSjedista.filter(item => item[0] !== i || item[1] !== j);
-            const seatImage = document.getElementById('seatImage_' + i + j);
+        } else {
+            OdabranaSjedista = OdabranaSjedista.filter(item => item[0] !== i || item[1] !== j);
             seatImage.src = 'https://cdn3.iconfinder.com/data/icons/movie-entertainment-flat-style/64/13_seat-movie-cinema-chair-theater-512.png';
         }
     }
+
     document.getElementById('myButton').addEventListener('click', function () {
-        var dataToSend = OdabranaSjedista;  // This should be an array of arrays
+        var dataToSend = OdabranaSjedista;
         $.ajax({
             type: 'POST',
             url: '/Rezervacijas/CreateSjediste',
@@ -88,7 +94,7 @@
     });
 
     document.getElementById('myButton1').addEventListener('click', function () {
-        var dataToSend = OdabranaSjedista;  // This should be an array of arrays
+        var dataToSend = OdabranaSjedista;
         $.ajax({
             type: 'POST',
             url: '/Kupovinas/CreateSjediste',

@@ -1,35 +1,48 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "KupovinaView";
 }
 
-<h1>Upišite podatke vaše kartice</h1>
-<body>
-    <div class="container">
-        <div class="col-md-4 mb-4">
-            <div class="card h-100">
-        <div class="left-section">
-        <img src="~/img/logoCinetechCrni.png" height="100px" />
-        <h3>Za platiti:</h3>
-            <p>Cijena</p>
-        </div>
-        <div class="right-section">
-            <h2>Dovršite kupovinu karata</h2>
-            <p>Unesite sve podatke kartice</p>
-            <form action="#">
-                <input type="text" placeholder="Broj kartice" required>
-                        <div class="form-floating mb-3">
-                            <input type=text placeholder="Važi do (MM/GGGG)" required>
-                            <input type=text placeholder="CVV" required>
+<h1 class="text-center">Upišite podatke vaše kartice</h1>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="~/img/logoCinetechCrni.png" alt="CineTech Logo" height="100px" />
+                            <h3>Za platiti:</h3>
+                            <p>Cijena</p>
+                        </div>
+                        <div class="col-md-8">
+                            <h2 class="text-center">Dovršite kupovinu karata</h2>
+                            <p class="text-center">Unesite sve podatke kartice</p>
+                            <form action="#">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="cardNumber" placeholder="Broj kartice" required>
+                                    <label for="cardNumber">Broj kartice</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="validUntil" placeholder="Važi do (MM/GGGG)" required>
+                                    <label for="validUntil">Važi do (MM/GGGG)</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="cvv" placeholder="CVV" required>
+                                    <label for="cvv">CVV</label>
+                                </div>
+                                <div class="text-center">
+                                    <img src="~/img/VISA.jpg" alt="Visa Card" height="50px" />
+                                    <img src="~/img/Mastercard.png" alt="Mastercard" height="50px" />
+                                </div>
+                                <div class="text-center mt-3">
+                                    <button type="submit" class="btn btn-primary">Plati</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <div class="cards">
-                    <img src="~/img/VISA.jpg" height="50px" />
-                    <img src="~/img/Mastercard.png" height="50px" />
-                </div>
-            <right><a asp-controller="Home" asp-action="Index" class="btn btn-primary">Plati</a></right>
-         </form>
+            </div>
         </div>
     </div>
-    </<div>
-    </div>
-</body>
+</div>

@@ -2,96 +2,113 @@
 
 @{
     ViewData["Title"] = "Create";
-
 }
 
-<h1>Create</h1>
+<h1 class="text-center my-4">Kreiraj novu projekciju</h1>
 
-<h4>Projekcija</h4>
-<hr />
-<h4>Available Films</h4>
-<ul>
-    @foreach (var film in ViewBag.FilmoviList)
-    {
-        <div class="form-group">
-            <input type="radio" id="film_@film.id" name="filmIdRadio" value="@film.id" onclick="setFilmId(this.value)" />
-            <label for="film_@film.id">@film.naziv</label>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Dostupni filmovi</h4>
+            <ul class="list-group mb-4">
+                @foreach (var film in ViewBag.FilmoviList)
+                {
+                    <li class="list-group-item">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="film_@film.id" name="filmIdRadio" value="@film.id" onclick="setFilmId(this.value)" />
+                            <label class="form-check-label" for="film_@film.id">@film.naziv</label>
+                        </div>
+                    </li>
+                }
+            </ul>
         </div>
-    }
-</ul>
 
-<h4>Available Kino Sale</h4>
-<ul>
-    @foreach (var kinoSala in ViewBag.KinoSaleList)
-    {
-        <div class="form-group">
-            <input type="radio" id="kinoSala_@kinoSala.id" name="kinoSalaIdRadio" value="@kinoSala.id" onclick="setKinoSalaId(this.value)" />
-            <label for="kinoSala_@kinoSala.id">@kinoSala.naziv</label>
+        <div class="col-md-6">
+            <h4>Dostupne kino sale</h4>
+            <ul class="list-group mb-4">
+                @foreach (var kinoSala in ViewBag.KinoSaleList)
+                {
+                    <li class="list-group-item">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="kinoSala_@kinoSala.id" name="kinoSalaIdRadio" value="@kinoSala.id" onclick="setKinoSalaId(this.value)" />
+                            <label class="form-check-label" for="kinoSala_@kinoSala.id">@kinoSala.naziv</label>
+                        </div>
+                    </li>
+                }
+            </ul>
         </div>
-    }
-</ul>
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="datum" class="control-label"></label>
-                <input asp-for="datum" class="form-control" />
-                <span asp-validation-for="datum" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="vrijeme" class="control-label"></label>
-                <input asp-for="vrijeme" class="form-control" />
-                <span asp-validation-for="vrijeme" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="cijenaOsnovneKarte" class="control-label"></label>
-                <input asp-for="cijenaOsnovneKarte" class="form-control" />
-                <span asp-validation-for="cijenaOsnovneKarte" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="kinoSalaId" class="control-label"></label>
-                <input asp-for="kinoSalaId" class="form-control" readonly/>
-                <span asp-validation-for="kinoSalaId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="filmId" class="control-label"></label>
-                <input asp-for="filmId" class=" form-control" readonly/>
-                <span asp-validation-for="filmId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="datum" class="control-label">Datum</label>
+                    <input asp-for="datum" class="form-control" />
+                    <span asp-validation-for="datum" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="vrijeme" class="control-label">Vrijeme</label>
+                    <input asp-for="vrijeme" class="form-control" />
+                    <span asp-validation-for="vrijeme" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="cijenaOsnovneKarte" class="control-label">Cijena osnovne karte</label>
+                    <input asp-for="cijenaOsnovneKarte" class="form-control" />
+                    <span asp-validation-for="cijenaOsnovneKarte" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="kinoSalaId" class="control-label">ID Kino Sale</label>
+                    <input asp-for="kinoSalaId" id="kinoSalaId" class="form-control" readonly />
+                    <span asp-validation-for="kinoSalaId" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="filmId" class="control-label">ID Filma</label>
+                    <input asp-for="filmId" id="filmId" class="form-control" readonly />
+                    <span asp-validation-for="filmId" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Kreiraj" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a asp-action="Index" class="btn btn-secondary">Nazad na listu</a>
     </div>
 </div>
-<div>
-    <a asp-action="Index" class="btn btn-primary">Nazad</a>
-</div>
 
+@section Scripts {
+    <script>
+        function allowOnlyOneCheckboxFilm(checkbox) {
+            var checkboxes = document.getElementsByName("filmovi");
+            checkboxes.forEach(function (item) {
+                if (item !== checkbox && item.checked) {
+                    item.checked = false;
+                }
+            });
+        }
+        function allowOnlyOneCheckboxKinoSala(checkbox) {
+            var checkboxes = document.getElementsByName("kinosale");
+            checkboxes.forEach(function (item) {
+                if (item !== checkbox && item.checked) {
+                    item.checked = false;
+                }
+            });
+        }
+        function setFilmId(value) {
+            document.getElementById("filmId").value = value;
+        }
 
-<script>
-    function allowOnlyOneCheckboxFilm(checkbox) {
-        var checkboxes = document.getElementsByName("filmovi");
-        checkboxes.forEach(function (item) {
-            if (item !== checkbox && item.checked) {
-                item.checked = false;
-            }
-        });
-    }
-    function allowOnlyOneCheckboxKinoSala(checkbox) {
-        var checkboxes = document.getElementsByName("kinosale");
-        checkboxes.forEach(function (item) {
-            if (item !== checkbox && item.checked) {
-                item.checked = false;
-            }
-        });
-    }
-    function setFilmId(value) {
-        document.getElementById("filmId").value = value;
-    }
-
-    function setKinoSalaId(value) {
-        document.getElementById("kinoSalaId").value = value;
-    }
-</script>
+        function setKinoSalaId(value) {
+            document.getElementById("kinoSalaId").value = value;
+        }
+    </script>
+}

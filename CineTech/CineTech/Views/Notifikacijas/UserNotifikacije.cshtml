@@ -6,52 +6,64 @@
 @inject SignInManager<IdentityUser> SignInManager
 @inject ApplicationDbContext _context;
 
-
-
-
 @{
     ViewBag.Title = "Moje Notifikacije";
-    //var filmovi = ViewBag.Filmovi as Dictionary<int, string>;
     var notifikacijeWithFilms = ViewBag.NotifikacijeWithFilms;
 }
 
-<h1>Moje Notifikacije</h1>
- @if (notifikacijeWithFilms != null)
-        {
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Period Notifikacije
-            </th>
-            <th>
-                Status Notifikacije
-            </th>
-            <th>
-                Film
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in notifikacijeWithFilms)
-        {
-            <tr>
-                <td>
-                    @item.Notifikacija.PeriodNotifikacije
-                </td>
-                <td>
-                    @item.Notifikacija.StatusNotifikacije
-                </td>
-                <td>
-                        @((await _context.Film.FindAsync(item.FilmId))?.naziv ?? "-")
-                </td>
-            </tr>
-        }
-    </tbody>
-    </table>
+<h1 class="text-center my-4">Moje Notifikacije</h1>
+
+@if (notifikacijeWithFilms != null && notifikacijeWithFilms.Count > 0)
+{
+    <div class="container">
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Period Notifikacije</th>
+                    <th>Status Notifikacije</th>
+                    <th>Film</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in notifikacijeWithFilms)
+                {
+                    <tr>
+                        <td>@item.Notifikacija.PeriodNotifikacije</td>
+                        <td>@item.Notifikacija.StatusNotifikacije</td>
+                        <td>@((await _context.Film.FindAsync(item.FilmId))?.naziv ?? "-")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 }
 else
 {
-    <p>Error</p>
+    <div class="container text-center">
+        <p class="alert alert-info">Nema notifikacija</p>
+    </div>
 }
+
+<style>
+    h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+
+    .table {
+        margin-top: 20px;
+    }
+
+    .thead-dark th {
+        background-color: #343a40;
+        color: white;
+    }
+
+    .alert-info {
+        margin-top: 20px;
+        padding: 15px;
+        border-radius: 5px;
+        background-color: #d1ecf1;
+        color: #0c5460;
+    }
+</style>

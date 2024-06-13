@@ -1,45 +1,65 @@
 ﻿@model CineTech.Models.Ocjena
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalji ocjene";
     var filmid = Model.FilmId;
     var ocjenaid = Model.id;
 }
 
-<h1>Details</h1>
+<h1 class="text-center my-4">Detalji ocjene</h1>
 
-<div>
-    <h4>Ocjena</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ocjenaFilma)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ocjenaFilma)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.komentar)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.komentar)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.datum)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.datum)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.korisnikId)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.korisnikId)
-        </dd>
-    </dl>
+<div class="container">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Ocjena</h4>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">Ocjena filma</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.ocjenaFilma)</dd>
+
+                <dt class="col-sm-3">Komentar</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.komentar)</dd>
+
+                <dt class="col-sm-3">Datum</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.datum)</dd>
+
+                <dt class="col-sm-3">Korisnik ID</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.korisnikId)</dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a asp-controller="Ocjenas" asp-action="OcjeneFilma" asp-route-id="@filmid" class="btn btn-secondary">Nazad na listu</a>
+    </div>
 </div>
-<div>
-   
-    <a asp-controller="Ocjenas" asp-action="OcjeneFilma" asp-route-id="@filmid">Back to list</a>
-   
-</div>
+
+<style>
+    .card {
+        border-radius: 15px;
+    }
+
+    .card-header {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+    .card-body dt {
+        font-weight: bold;
+    }
+
+    .card-body dd {
+        margin-bottom: 0.5rem;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border-color: #6c757d;
+    }
+
+        .btn-secondary:hover {
+            background-color: #565e64;
+            border-color: #51585e;
+        }
+</style>

@@ -1,77 +1,60 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@using Microsoft.CodeAnalysis.Elfie.Serialization
 @model IEnumerable<CineTech.Models.Projekcija>
 @inject UserManager<IdentityUser> UserManager
 @inject SignInManager<IdentityUser> SignInManager
 
-
 @{
     if (SignInManager.IsSignedIn(User))
     {
-        var currentUserId = await UserManager.GetUserAsync(User);
-        var korisnik = await UserManager.GetUserIdAsync(currentUserId);
-        //var username = await UserManager.GetUserNameAsync(currentUserId);
-
+        var currentUser = await UserManager.GetUserAsync(User);
+        var korisnikId = await UserManager.GetUserIdAsync(currentUser);
     }
+
     var isAdmin = User.IsInRole("Administrator");
+
     async Task<string> GetUserNameAsync(string userId)
     {
         var user = await UserManager.FindByIdAsync(userId);
         return user?.UserName;
     }
 
+    ViewData["Title"] = "Projekcije Filma";
 }
 
-@{
-    ViewData["Title"] = "ProjekcijeFilma";
-}
+<h1 class="text-center my-4">Projekcije Filma</h1>
 
-<h1>Projekcije filma</h1>
-<table class="table">
-    <thead>
-            <tr>
-                <th>
-                    Datum            
-                </th>
-            <th>
-                Vrijeme
-            </th>
-            <th>
-                Kino Sala
-            </th>
-            <th>
-                @if (User.IsInRole("Administrator"))
-                {
-                        @Html.DisplayNameFor(model => model.filmId)
-                    }
-            </th>
+<table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th>Datum</th>
+            <th>Vrijeme</th>
+            <th>Kino Sala</th>
+            @if (isAdmin)
+            {
+                <th>@Html.DisplayNameFor(model => model.filmId)</th>
+            }
+            <th>Akcija</th>
         </tr>
-
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
             <tr>
+                <td>@Html.DisplayFor(modelItem => item.datum)</td>
+                <td>@Html.DisplayFor(modelItem => item.vrijeme)</td>
+                <td>@Html.DisplayFor(modelItem => item.kinoSalaId)</td>
+                @if (isAdmin)
+                {
+                    <td>@Html.DisplayFor(modelItem => item.filmId)</td>
+                }
                 <td>
-                    @Html.DisplayFor(model => item.datum)
-                </td>
-                <td>
-                    @Html.DisplayFor(model => item.vrijeme)
-                </td>
-                <td>
-                    @Html.DisplayFor(model => item.kinoSalaId)
-                </td>
-                <td>
-                    @if (User.IsInRole("Administrator"))
-                    {
-                        @Html.DisplayFor(model => item.filmId)
-                    }
-                </td>
-                <td>
-                    <a asp-controller="ZauzetaSjedistas" asp-action="OdabirSjedista2" asp-route-id="@item.id">Odaberi projekciju</a>
+                    <a class="btn btn-primary" asp-controller="ZauzetaSjedistas" asp-action="OdabirSjedista2" asp-route-id="@item.id">Odaberi projekciju</a>
                 </td>
             </tr>
         }
-        <a asp-controller="Films" asp-action="Details" asp-route-id="@ViewBag.filmid">Back to list</a>
     </tbody>
 </table>
+
+<div class="text-center mt-4">
+    <a class="btn btn-secondary" asp-controller="Films" asp-action="Details" asp-route-id="@ViewBag.filmid">Nazad na listu</a>
+</div>

@@ -2,36 +2,48 @@
 
 @{
     ViewData["Title"] = "NajavljeniFilmovi";
+    var filmGenres = ViewBag.FilmGenres as Dictionary<int, List<Zanr>>;
 }
 
-<h1>Filmovi u najavi</h1>
+<h1 class="text-center my-4">Filmovi u najavi</h1>
 
 <div class="container">
     <div class="row">
-    @foreach (var film in Model)
-    {
-        <div class="col-md-4 mb-4">
-            <div class="card h-100">
-                <a asp-controller="Films" asp-action="Details" asp-route-id="@film.id"><img class="card-img-top" src="@film.naslovnaSlika" alt="@film.naziv" /></a>
-                <div class="card-body">
-                    <h5 class="card-title">@film.naziv</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">@film.redatelj</h6>
-                    <p class="card-text">
-                        <strong>Žanr:</strong> MORAM SKONTAT<br>
-                        <strong>Release date:</strong> @film.releseDate.ToString("MM/dd/yyyy")<br>
-                        <strong>Glumci:</strong> @film.glumci<br>
-                        <strong>Opis:</strong> @film.opis
-                    </p>
-                </div>
-                <div class="card-footer">
-                    <a href="@film.trailer" class="btn btn-primary">Pogledaj trailer</a>
-                      @if ((User.IsInRole("Administrator")) || (User.IsInRole("Korisnik")))
-                      {
-                     <a asp-controller="Notifikacijas" asp-action="Create" asp-route-id="@film.id" class="btn btn-primary">Postavi notifikaciju</a>
-                      }
+        @foreach (var film in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <a asp-controller="Films" asp-action="Details" asp-route-id="@film.id">
+                        <img class="card-img-top" src="@film.naslovnaSlika" alt="@film.naziv" />
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">@film.naziv</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">@film.redatelj</h6>
+                        <p class="card-text">
+                            <strong>Žanr:</strong>
+                            @if (filmGenres != null && filmGenres.ContainsKey(film.id))
+                            {
+                                @string.Join(", ", filmGenres[film.id])
+                            }
+                            else
+                            {
+                                <span>N/A</span>
+                            }
+                            <br />
+                            <strong>Release date:</strong> @film.releseDate.ToString("MM/dd/yyyy")<br />
+                            <strong>Glumci:</strong> @film.glumci<br />
+                            <strong>Opis:</strong> @film.opis
+                        </p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <a href="@film.trailer" class="btn btn-primary">Pogledaj trailer</a>
+                        @if (User.IsInRole("Administrator") || User.IsInRole("Korisnik"))
+                        {
+                            <a asp-controller="Notifikacijas" asp-action="Create" asp-route-id="@film.id" class="btn btn-secondary">Postavi notifikaciju</a>
+                        }
+                    </div>
                 </div>
             </div>
-        </div>
-    }
+        }
     </div>
 </div>
