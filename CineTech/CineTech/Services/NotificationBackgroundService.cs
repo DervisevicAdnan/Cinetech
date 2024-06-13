@@ -17,7 +17,7 @@
                 while (!stoppingToken.IsCancellationRequested)
                 {
                     await notifikacijaService.NotifyAsync();
-                    await Task.Delay(TimeSpan.FromMinutes(15), stoppingToken); // Proverava svakog dana
+                    await Task.Delay(TimeSpan.FromMinutes(5), stoppingToken); // Proverava svakog dana
                 }
             }
         }

@@ -14,10 +14,11 @@
             <input type="hidden" name="filmId" value="@ViewBag.proslijedi" />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="KorisnikId" class="control-label">Korisnik ID</label>
-                <input asp-for="KorisnikId" value="@ViewBag.korisnikid" class="form-control" readonly />
-                <span asp-validation-for="KorisnikId" class="text-danger"></span>
+                <label class="control-label">Korisnik ID</label>
+                <input value="@ViewBag.username" class="form-control" readonly />
+                <span class="text-danger"></span>
             </div>
+            <input asp-for="KorisnikId" type="hidden" value="@ViewBag.korisnikId" />
             <div class="form-group">
                 <label asp-for="PeriodNotifikacije" class="control-label">Period Notifikacije</label>
                 <select asp-for="PeriodNotifikacije" class="form-control" asp-items="Html.GetEnumSelectList<PeriodNotifikacije>()">

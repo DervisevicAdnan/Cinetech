@@ -52,22 +52,36 @@ namespace CineTech.Services
 
                         if (danZaNotifikaciju == danas)
                         {
-                            var user = await _context.Korisnik.FindAsync(notifikacija.id);
-                            NotifikacijaMailData mailData = new NotifikacijaMailData();
-                            mailData.EmailToId = user.Email;
-                            mailData.EmailToName = "";
-                            mailData.NazivFilma = film.naziv;
-                            mailData.DatumPredstavljanja = film.releseDate.Date.ToString();
-                            _mailService.SendNotifikacijaMail(mailData);
+                            try
+                            {
+                                var user = await _context.Korisnik.FindAsync(notifikacija.KorisnikId);
+                                if (user == null)
+                                {
+                                    throw new Exception($"User with ID {notifikacija.KorisnikId} not found.");
+                                }
+                                NotifikacijaMailData mailData = new NotifikacijaMailData();
+                                mailData.EmailToId = user.Email;
+                                mailData.EmailToName = "";
+                                mailData.NazivFilma = film.naziv;
+                                mailData.DatumPredstavljanja = film.releseDate.Date.ToString();
+                                _mailService.SendNotifikacijaMail(mailData);
 
-                            notifikacija.StatusNotifikacije = StatusNotifikacije.Dostavljena;
-                            _context.Notifikacija.Update(notifikacija);
+                                notifikacija.StatusNotifikacije = StatusNotifikacije.Dostavljena;
+                                _context.Notifikacija.Update(notifikacija);
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine($"Greeeessskaaaaaaaaa: {ex.Message}");
+                            }
+
+
                         }
                     }
                 }
             }
 
             await _context.SaveChangesAsync();
+        
         }
     }
 }

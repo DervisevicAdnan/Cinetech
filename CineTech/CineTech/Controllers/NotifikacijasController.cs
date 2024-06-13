@@ -61,8 +61,9 @@ namespace CineTech.Controllers
         {
             var user = await _userManager.GetUserAsync(User);
             var korisnik1 = await _userManager.GetUserNameAsync(user);
-            ViewBag.korisnikid = korisnik1;
+            ViewBag.username = korisnik1;
             ViewBag.proslijedi = id;
+            ViewBag.korisnikId = user.Id;
             return View();
         }
 
@@ -102,7 +103,7 @@ namespace CineTech.Controllers
 
             // Combine retrievals using JOINs
             var notifikacijeWithFilms = await _context.Notifikacija
-               // .Where(n => n.KorisnikId == korisnikId)
+                .Where(n => n.KorisnikId == korisnikId)
                 .Join(_context.NotifikacijeFilma, n => n.id, nf => nf.NotifikacijaId, (n, nf) => new
                 {
                     Notifikacija = n,
