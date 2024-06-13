@@ -130,14 +130,26 @@ namespace CineTech.Services
                     MailboxAddress emailTo = new MailboxAddress(htmlMailData.EmailToName, htmlMailData.EmailToId);
                     emailMessage.To.Add(emailTo);
 
-                    emailMessage.Subject = "Račun: "+htmlMailData.NazivFilma;
+                    emailMessage.Subject = "Račun: " + htmlMailData.NazivFilma;
 
                     string filePath = Directory.GetCurrentDirectory() + "\\Templates\\Racun.html";
                     string emailTemplateText = File.ReadAllText(filePath);
 
                     //DateTime.Today.Date.ToShortDateString()
 
-                    emailTemplateText = string.Format(emailTemplateText, htmlMailData.NazivFilma, htmlMailData.TerminProjekcije, htmlMailData.NazivSale);
+                    string sjedista = "";
+                    int b = 1;
+                    foreach(ZauzetaSjedista z in htmlMailData.ZauzetaSjedista)
+                    {
+                        sjedista += "                <tr>\r\n" +
+                                    "                   <td>" + b + "</td>\r\n" +
+                                    "                   <td>Red " + z.red.ToString() + "</td>\r\n" +
+                                    "                   <td>Sjedište " + z.redniBrojSjedista.ToString() + "</td>\r\n" +
+                                    "                </tr>";
+                        b++;
+                    }
+
+                    emailTemplateText = string.Format(emailTemplateText, htmlMailData.NazivFilma, htmlMailData.TerminProjekcije, htmlMailData.NazivSale,sjedista);
 
                     BodyBuilder emailBodyBuilder = new BodyBuilder();
                     emailBodyBuilder.HtmlBody = emailTemplateText;

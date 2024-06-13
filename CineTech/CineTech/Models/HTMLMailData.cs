@@ -7,6 +7,7 @@
         public string NazivFilma { get; set; }
         public string TerminProjekcije { get; set; }
         public string NazivSale { get; set; }
+        public List<ZauzetaSjedista> ZauzetaSjedista { get; set; }
 
     }
 }

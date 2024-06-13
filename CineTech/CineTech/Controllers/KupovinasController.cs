@@ -123,10 +123,11 @@ namespace CineTech.Controllers
             mailData.EmailToId = user.Email;
             mailData.EmailToName = "user.imePrezime";
             mailData.NazivFilma = film.naziv;
-            mailData.TerminProjekcije = projekcija.datum.ToShortDateString() + projekcija.vrijeme.ToShortTimeString();
+            mailData.TerminProjekcije = projekcija.datum.ToShortDateString() + ", " + projekcija.vrijeme.ToShortTimeString();
             mailData.NazivSale = kinoSala.naziv;
-            //mailData.ZauzetaSjedista = zauzetaSjedista;
+            mailData.ZauzetaSjedista = zauzetaSjedista;
             _mailService.SendHTMLMail(mailData);
+
 
             var uspjesnaKupovina = new Tuple<Kupovina, List<ZauzetaSjedista>, String, String>(kupovina, zauzetaSjedista, film.naziv, kinoSala.naziv);
             return View(uspjesnaKupovina);
