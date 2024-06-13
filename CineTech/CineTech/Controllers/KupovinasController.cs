@@ -128,7 +128,7 @@ namespace CineTech.Controllers
             //mailData.ZauzetaSjedista = zauzetaSjedista;
             _mailService.SendHTMLMail(mailData);
 
-            var uspjesnaKupovina = new Tuple<Kupovina, List<ZauzetaSjedista>, String, String,double>(kupovina, zauzetaSjedista, film.naziv, kinoSala.naziv,projekcija.cijenaOsnovneKarte);
+            var uspjesnaKupovina = new Tuple<Kupovina, List<ZauzetaSjedista>, String, String>(kupovina, zauzetaSjedista, film.naziv, kinoSala.naziv);
             return View(uspjesnaKupovina);
         }
         // POST: Kupovinas/Create

@@ -1,4 +1,4 @@
-﻿@model Tuple<Kupovina, List<ZauzetaSjedista>, string, string, double>
+﻿@model Tuple<Kupovina, List<ZauzetaSjedista>, string, string>
 
 @{
     ViewData["Title"] = "Uspješna transakcija";
@@ -6,7 +6,7 @@
     var zauzetaSjedista = Model.Item2;
     var nazivFilma = Model.Item3;
     var nazivSale = Model.Item4;
-    double cijena = Model.Item2.Count * Model.Item5;
+    double cijena = Model.Item1.cijena;
 }
 
 <h1 class="text-center my-4">Uspješna transakcija</h1>
