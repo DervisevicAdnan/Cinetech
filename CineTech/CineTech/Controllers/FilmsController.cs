@@ -14,6 +14,8 @@ using System.Threading.Tasks;
 using Microsoft.DotNet.Scaffolding.Shared.CodeModifier.CodeChange;
 using RestSharp;
 using Newtonsoft.Json.Linq;
+using CineTech.Services;
+using System.Collections;
 
 namespace CineTech.Controllers
 {
@@ -253,12 +255,30 @@ namespace CineTech.Controllers
             najgledanijiFilmovi = najgledanijiFilmovi.OrderBy(f => najgledanijiFilmoviIds.IndexOf(f.id)).ToList();
             return View(najgledanijiFilmovi.AsEnumerable());
         }
-        /*public async Task<IActionResult> NajgledanijiFilmoviUSvijetu()
+        public async Task<IActionResult> NajgledanijiFilmoviUSvijetu()
         {
-            var jsonData = await movieService.GetTopRatedMoviesAsync();
-            var movies = JObject.Parse(jsonData)["results"];
+            var apiKey = "770d50d3bf1a676bc83f8fca0279e015";
+            var tmdbService = new TmdbService(apiKey);
 
-            return View(movies);
-        }*/
+            var popularMovies = await tmdbService.GetPopularMoviesAsync();
+            var topRatedMovies = await tmdbService.GetTopRatedMoviesAsync();
+
+           /* Console.WriteLine("Popular Movies:");
+            foreach (var movie in popularMovies.Results)
+            {
+
+
+                Console.WriteLine($"{movie.Title} (Rating: {movie.VoteAverage})");
+            }
+
+            Console.WriteLine("\nTop Rated Movies:");
+            foreach (var movie in topRatedMovies.Results)
+            {
+                Console.WriteLine($"{movie.Title} (Rating: {movie.VoteAverage})");
+            }*/
+            
+
+            return View(popularMovies.Results);
+        }
     }
 }

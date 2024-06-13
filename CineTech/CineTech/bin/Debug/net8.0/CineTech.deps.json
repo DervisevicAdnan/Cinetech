@@ -16,6 +16,7 @@
           "Microsoft.EntityFrameworkCore.Sqlite": "8.0.4",
           "Microsoft.EntityFrameworkCore.Tools": "8.0.4",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.2",
+          "Newtonsoft.Json": "13.0.3",
           "RestSharp": "111.2.0",
           "Swashbuckle.AspNetCore.Swagger": "6.6.2",
           "Swashbuckle.AspNetCore.SwaggerGen": "6.6.2",
