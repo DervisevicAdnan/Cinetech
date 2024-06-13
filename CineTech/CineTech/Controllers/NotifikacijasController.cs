@@ -102,6 +102,7 @@ namespace CineTech.Controllers
 
             // Combine retrievals using JOINs
             var notifikacijeWithFilms = await _context.Notifikacija
+               // .Where(n => n.KorisnikId == korisnikId)
                 .Join(_context.NotifikacijeFilma, n => n.id, nf => nf.NotifikacijaId, (n, nf) => new
                 {
                     Notifikacija = n,
