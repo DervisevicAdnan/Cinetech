@@ -9,6 +9,7 @@ using CineTech.Data;
 using CineTech.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
+using CineTech.Services;
 
 namespace CineTech.Controllers
 {
@@ -16,12 +17,13 @@ namespace CineTech.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<IdentityUser> _userManager;
+        private readonly IMailService _mailService;
 
-
-        public RezervacijasController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
+        public RezervacijasController(ApplicationDbContext context, UserManager<IdentityUser> userManager, IMailService mailService)
         {
             _context = context;
             _userManager = userManager;
+            _mailService = mailService;
         }
 
         // GET: Rezervacijas
@@ -64,6 +66,15 @@ namespace CineTech.Controllers
             {
                 return NotFound();
             }
+            var user = await _userManager.GetUserAsync(User);
+            HTMLMailData mailData = new HTMLMailData();
+            mailData.EmailToId = user.Email;
+            mailData.EmailToName = "";
+            mailData.NazivFilma = film.naziv;
+            mailData.TerminProjekcije = projekcija.datum.ToShortDateString() + ", " + projekcija.vrijeme.ToShortTimeString();
+            mailData.NazivSale = kinoSala.naziv;
+            mailData.ZauzetaSjedista = zauzetaSjedista;
+            _mailService.SendRezervacijaMail(mailData);
             var uspjesnaRezervacija = new Tuple<Rezervacija, List<ZauzetaSjedista>, String, String>(rezervacija, zauzetaSjedista, film.naziv, kinoSala.naziv);
             return View(uspjesnaRezervacija);
         }

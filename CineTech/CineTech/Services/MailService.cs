@@ -174,5 +174,60 @@ namespace CineTech.Services
                 return false;
             }
         }
+
+        public bool SendRezervacijaMail(HTMLMailData htmlMailData)
+        {
+            try
+            {
+                using (MimeMessage emailMessage = new MimeMessage())
+                {
+                    MailboxAddress emailFrom = new MailboxAddress(_mailSettings.SenderName, _mailSettings.SenderEmail);
+                    emailMessage.From.Add(emailFrom);
+
+                    MailboxAddress emailTo = new MailboxAddress(htmlMailData.EmailToName, htmlMailData.EmailToId);
+                    emailMessage.To.Add(emailTo);
+
+                    emailMessage.Subject = "Rezervacija: " + htmlMailData.NazivFilma;
+
+                    string filePath = Directory.GetCurrentDirectory() + "\\Templates\\Rezervacija.html";
+                    string emailTemplateText = File.ReadAllText(filePath);
+
+                    string sjedista = "";
+                    int b = 1;
+                    foreach (ZauzetaSjedista z in htmlMailData.ZauzetaSjedista)
+                    {
+                        sjedista += "                <tr>\r\n" +
+                                    "                   <td>" + b + "</td>\r\n" +
+                                    "                   <td>Red " + z.red.ToString() + "</td>\r\n" +
+                                    "                   <td>Sjedište " + z.redniBrojSjedista.ToString() + "</td>\r\n" +
+                                    "                </tr>";
+                        b++;
+                    }
+
+                    emailTemplateText = string.Format(emailTemplateText, htmlMailData.NazivFilma, htmlMailData.TerminProjekcije, htmlMailData.NazivSale, sjedista);
+
+                    BodyBuilder emailBodyBuilder = new BodyBuilder();
+                    emailBodyBuilder.HtmlBody = emailTemplateText;
+                    emailBodyBuilder.TextBody = "Plain Text goes here to avoid marked as spam for some email servers.";
+
+                    emailMessage.Body = emailBodyBuilder.ToMessageBody();
+
+                    using (SmtpClient mailClient = new SmtpClient())
+                    {
+                        mailClient.Connect(_mailSettings.Server, _mailSettings.Port, MailKit.Security.SecureSocketOptions.StartTls);
+                        mailClient.Authenticate(_mailSettings.SenderEmail, _mailSettings.Password);
+                        mailClient.Send(emailMessage);
+                        mailClient.Disconnect(true);
+                    }
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // Exception Details
+                return false;
+            }
+        }
     }
 }

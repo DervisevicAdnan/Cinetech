@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {{
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }}
+
+        .container {{
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            padding: 20px;
+        }}
+
+        .header {{
+            text-align: center;
+            border-bottom: 1px solid #dddddd;
+            padding-bottom: 10px;
+        }}
+
+        .header img {{
+            max-width: 150px;
+            height: auto;
+        }}
+
+        .details {{
+            margin: 20px 0;
+        }}
+
+        .details h2 {{
+            margin: 0;
+            color: #333333;
+        }}
+
+        .details p {{
+            margin: 5px 0;
+            color: #666666;
+        }}
+
+        .seats {{
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }}
+
+        .seats th, .seats td {{
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }}
+
+        .seats th {{
+            background-color: #f2f2f2;
+        }}
+
+        .footer {{
+            text-align: center;
+            margin-top: 20px;
+            color: #999999;
+        }}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://i.ibb.co/Trjr29Z/logoSivi.png" alt="Cinetech Logo">
+        </div>
+        <div class="details">
+            <h2>Rezervacija</h2>
+            <p><strong>Ime filma:</strong> {0}</p>
+            <p><strong>Vrijeme projekcije:</strong> {1}</p>
+            <p><strong>Sala:</strong> {2}</p>
+        </div>
+        <table class="seats">
+            <thead>
+                <tr>
+                    <th>Redni broj</th>
+                    <th>Red</th>
+                    <th>Broj sjedišta</th>
+                </tr>
+            </thead>
+            <tbody>
+                {3}
+            </tbody>
+        </table>
+        <div class="footer">
+            <p>Hvala na rezervaciji! Uživajte u filmu.</p>
+            <p>&copy; 2024 Vaš Cinetech. Sva prava pridržana.</p>
+        </div>
+    </div>
+</body>
+</html>

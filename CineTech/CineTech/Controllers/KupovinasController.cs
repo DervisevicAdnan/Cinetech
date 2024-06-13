@@ -121,7 +121,7 @@ namespace CineTech.Controllers
             var user = await _userManager.GetUserAsync(User);
             HTMLMailData mailData = new HTMLMailData();
             mailData.EmailToId = user.Email;
-            mailData.EmailToName = "user.imePrezime";
+            mailData.EmailToName = "";
             mailData.NazivFilma = film.naziv;
             mailData.TerminProjekcije = projekcija.datum.ToShortDateString() + ", " + projekcija.vrijeme.ToShortTimeString();
             mailData.NazivSale = kinoSala.naziv;
