@@ -63,6 +63,45 @@ namespace CineTech.Controllers
             .ToListAsync();
             return View(aktuelniFilmovi);
         }
+        [Authorize(Roles = "Administrator")]
+        public async Task<IActionResult> StatistikaView()
+        {
+            var totalMovies = await _filmoviController.Film.CountAsync();
+
+            var genres = await _filmoviController.ZanroviFilma
+                .GroupBy(z => z.zanrFilma)
+                .Select(g => new
+                {
+                    Genre = g.Key.ToString(),
+                    Count = g.Count()
+                }).ToListAsync();
+
+            var totalEarnings = await _filmoviController.Kupovina.SumAsync(t => t.cijena);
+            var totalTicketsSold = await _filmoviController.Kupovina.CountAsync();
+            var totalRegisteredUsers = await _userManager.Users.CountAsync();
+
+            var monthlyProfits = await _filmoviController.Kupovina
+                .GroupBy(t => new { t.datum.Year, t.datum.Month })
+                .Select(g => new
+                {
+                    Year = g.Key.Year,
+                    Month = g.Key.Month,
+                    Profit = g.Sum(t => t.cijena)
+                })
+                .OrderByDescending(mp => mp.Year)
+                .ThenByDescending(mp => mp.Month)
+                .Take(6) // Last 6 months
+                .ToListAsync();
+
+            ViewBag.TotalMovies = totalMovies;
+            ViewBag.Genres = genres;
+            ViewBag.TotalEarnings = totalEarnings;
+            ViewBag.TotalTicketsSold = totalTicketsSold;
+            ViewBag.TotalRegisteredUsers = totalRegisteredUsers;
+            ViewBag.MonthlyProfits = monthlyProfits;
+
+            return View();
+        }
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)

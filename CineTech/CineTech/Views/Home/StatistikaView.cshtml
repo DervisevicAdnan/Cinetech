@@ -3,5 +3,71 @@
     ViewData["Title"] = "StatistikaView";
 }
 
-<h1>StatistikaView</h1>
+<h1 class="text-center my-4">Admin Statistics</h1>
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Broj filmova</h3>
+            <p>@ViewBag.TotalMovies</p>
+        </div>
+        <div class="col-md-4">
+            <h3>Ukupna zarada</h3>
+            <p>@((decimal)ViewBag.TotalEarnings) KM</p>
+        </div>
+        <div class="col-md-4">
+            <h3>Broj prodanih karata</h3>
+            <p>@ViewBag.TotalTicketsSold</p>
+        </div>
+        <div class="col-md-4">
+            <h3>Broj registrovanih korisnika</h3>
+            <p>@ViewBag.TotalRegisteredUsers</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Žanrovi</h3>
+            <canvas id="genreChart"></canvas>
+        </div>
+        <div class="col-md-6">
+            <h3>Mjesečna zarada</h3>
+            <canvas id="profitChart"></canvas>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var genreCtx = document.getElementById('genreChart').getContext('2d');
+        var genreChart = new Chart(genreCtx, {
+            type: 'bar',
+            data: {
+                labels: @Html.Raw(Json.Serialize(((IEnumerable<dynamic>)ViewBag.Genres).Select(g => g.Genre))),
+                datasets: [{
+                    label: 'Žanrovi',
+                    data: @Html.Raw(Json.Serialize(((IEnumerable<dynamic>)ViewBag.Genres).Select(g => g.Count))),
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            }
+        });
+
+        var profitCtx = document.getElementById('profitChart').getContext('2d');
+        var profitChart = new Chart(profitCtx, {
+            type: 'line',
+            data: {
+                labels: @Html.Raw(Json.Serialize(((IEnumerable<dynamic>)ViewBag.MonthlyProfits).Select(mp => mp.Month ))),
+                datasets: [{
+                    label: 'Mjesečna zarada',
+                    data: @Html.Raw(Json.Serialize(((IEnumerable<dynamic>)ViewBag.MonthlyProfits).Select(mp => mp.Profit))),
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            }
+        });
+    </script>
+}
