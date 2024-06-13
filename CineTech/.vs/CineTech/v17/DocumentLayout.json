@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|c:\\users\\hp compaq\\desktop\\tim27-cinetech\\cinetech\\cinetech\\services\\mailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|solutionrelative:cinetech\\services\\mailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|c:\\users\\hp compaq\\desktop\\tim27-cinetech\\cinetech\\cinetech\\templates\\racun.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|solutionrelative:cinetech\\templates\\racun.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|c:\\users\\hp compaq\\desktop\\tim27-cinetech\\cinetech\\cinetech\\models\\htmlmaildata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|solutionrelative:cinetech\\models\\htmlmaildata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|c:\\users\\hp compaq\\desktop\\tim27-cinetech\\cinetech\\cinetech\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|solutionrelative:cinetech\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -219,24 +231,12 @@
       "RelativeMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|solutionrelative:cinetech\\areas\\identity\\pages\\account\\manage\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|c:\\users\\hp compaq\\desktop\\tim27-cinetech\\cinetech\\cinetech\\templates\\racun.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|solutionrelative:cinetech\\templates\\racun.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|c:\\users\\hp compaq\\desktop\\tim27-cinetech\\cinetech\\cinetech\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|solutionrelative:cinetech\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|c:\\users\\hp compaq\\desktop\\tim27-cinetech\\cinetech\\cinetech\\services\\mailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|solutionrelative:cinetech\\services\\mailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|c:\\users\\hp compaq\\desktop\\tim27-cinetech\\cinetech\\cinetech\\services\\imailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|solutionrelative:cinetech\\services\\imailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|c:\\users\\hp compaq\\desktop\\tim27-cinetech\\cinetech\\cinetech\\models\\htmlmaildata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|solutionrelative:cinetech\\models\\htmlmaildata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|c:\\users\\hp compaq\\desktop\\tim27-cinetech\\cinetech\\cinetech\\controllers\\mailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -250,47 +250,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "AdminIndex.cshtml",
-              "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Films\\AdminIndex.cshtml",
-              "RelativeDocumentMoniker": "CineTech\\Views\\Films\\AdminIndex.cshtml",
-              "ToolTip": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Films\\AdminIndex.cshtml",
-              "RelativeToolTip": "CineTech\\Views\\Films\\AdminIndex.cshtml",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAqwCYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-12T22:11:36.864Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "AdminDetails.cshtml",
-              "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Films\\AdminDetails.cshtml",
-              "RelativeDocumentMoniker": "CineTech\\Views\\Films\\AdminDetails.cshtml",
-              "ToolTip": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Films\\AdminDetails.cshtml",
-              "RelativeToolTip": "CineTech\\Views\\Films\\AdminDetails.cshtml",
-              "ViewState": "AQIAADAAAAAAAAAAAAAqwEwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-12T22:15:07.784Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\KinoSalas\\Index.cshtml",
-              "RelativeDocumentMoniker": "CineTech\\Views\\KinoSalas\\Index.cshtml",
-              "ToolTip": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\KinoSalas\\Index.cshtml",
-              "RelativeToolTip": "CineTech\\Views\\KinoSalas\\Index.cshtml",
-              "ViewState": "AQIAABEAAAAAAAAAAAAqwDAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-12T22:57:32.893Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Projekcijas\\Delete.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Projekcijas\\Delete.cshtml",
@@ -302,7 +266,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "NajavljeniFilmovi.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Films\\NajavljeniFilmovi.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Films\\NajavljeniFilmovi.cshtml",
@@ -310,12 +274,11 @@
               "RelativeToolTip": "CineTech\\Views\\Films\\NajavljeniFilmovi.cshtml",
               "ViewState": "AQIAABUAAAAAAAAAAAAAAAwAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-12T22:21:23.349Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-12T22:21:23.349Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Home\\Index.cshtml",
@@ -327,7 +290,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Shared\\_Layout.cshtml",
@@ -340,7 +303,82 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "MailService.cs",
+              "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Services\\MailService.cs",
+              "RelativeDocumentMoniker": "CineTech\\Services\\MailService.cs",
+              "ToolTip": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Services\\MailService.cs",
+              "RelativeToolTip": "CineTech\\Services\\MailService.cs",
+              "ViewState": "AQIAAHoAAAAAAAAAAAAIwIQAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T20:15:37.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Racun.html",
+              "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Templates\\Racun.html",
+              "RelativeDocumentMoniker": "CineTech\\Templates\\Racun.html",
+              "ToolTip": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Templates\\Racun.html",
+              "RelativeToolTip": "CineTech\\Templates\\Racun.html",
+              "ViewState": "AQIAAFQAAAAAAAAAAAAAAHsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-06-12T20:19:12.52Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HTMLMailData.cs",
+              "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Models\\HTMLMailData.cs",
+              "RelativeDocumentMoniker": "CineTech\\Models\\HTMLMailData.cs",
+              "ToolTip": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Models\\HTMLMailData.cs",
+              "RelativeToolTip": "CineTech\\Models\\HTMLMailData.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T20:20:25.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\KinoSalas\\Index.cshtml",
+              "RelativeDocumentMoniker": "CineTech\\Views\\KinoSalas\\Index.cshtml",
+              "ToolTip": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\KinoSalas\\Index.cshtml",
+              "RelativeToolTip": "CineTech\\Views\\KinoSalas\\Index.cshtml",
+              "ViewState": "AQIAABEAAAAAAAAAAAAqwDAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-12T22:57:32.893Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AdminDetails.cshtml",
+              "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Films\\AdminDetails.cshtml",
+              "RelativeDocumentMoniker": "CineTech\\Views\\Films\\AdminDetails.cshtml",
+              "ToolTip": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Films\\AdminDetails.cshtml",
+              "RelativeToolTip": "CineTech\\Views\\Films\\AdminDetails.cshtml",
+              "ViewState": "AQIAADAAAAAAAAAAAAAqwEwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-12T22:15:07.784Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AdminIndex.cshtml",
+              "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Films\\AdminIndex.cshtml",
+              "RelativeDocumentMoniker": "CineTech\\Views\\Films\\AdminIndex.cshtml",
+              "ToolTip": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Films\\AdminIndex.cshtml",
+              "RelativeToolTip": "CineTech\\Views\\Films\\AdminIndex.cshtml",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAqwCYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-12T22:11:36.864Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Projekcijas\\Index.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Projekcijas\\Index.cshtml",
@@ -352,7 +390,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "ProjekcijeFilma.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Projekcijas\\ProjekcijeFilma.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Projekcijas\\ProjekcijeFilma.cshtml",
@@ -364,7 +402,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 21,
               "Title": "RezervacijasController.cs",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Controllers\\RezervacijasController.cs",
               "RelativeDocumentMoniker": "CineTech\\Controllers\\RezervacijasController.cs",
@@ -377,7 +415,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 25,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Ocjenas\\Index.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Ocjenas\\Index.cshtml",
@@ -389,7 +427,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Ocjenas\\Details.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Ocjenas\\Details.cshtml",
@@ -401,7 +439,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Projekcijas\\Create.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Projekcijas\\Create.cshtml",
@@ -413,7 +451,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Projekcijas\\Details.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Projekcijas\\Details.cshtml",
@@ -425,7 +463,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Projekcijas\\Edit.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Projekcijas\\Edit.cshtml",
@@ -437,7 +475,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "UspjesnaKupovina.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Kupovinas\\UspjesnaKupovina.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Kupovinas\\UspjesnaKupovina.cshtml",
@@ -449,7 +487,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "NajgledanijiFilmovi.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Films\\NajgledanijiFilmovi.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Films\\NajgledanijiFilmovi.cshtml",
@@ -461,7 +499,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Notifikacijas\\Edit.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Notifikacijas\\Edit.cshtml",
@@ -473,7 +511,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "UserNotifikacije.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Notifikacijas\\UserNotifikacije.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Notifikacijas\\UserNotifikacije.cshtml",
@@ -485,7 +523,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 24,
               "Title": "OcjeneFilma.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Ocjenas\\OcjeneFilma.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Ocjenas\\OcjeneFilma.cshtml",
@@ -497,7 +535,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "UspjesnaRezervacija.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Rezervacijas\\UspjesnaRezervacija.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Rezervacijas\\UspjesnaRezervacija.cshtml",
@@ -509,7 +547,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 23,
               "Title": "OdabirSjedista1.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\ZauzetaSjedistas\\OdabirSjedista1.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\ZauzetaSjedistas\\OdabirSjedista1.cshtml",
@@ -521,7 +559,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 22,
               "Title": "OdabirSjedista2.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\ZauzetaSjedistas\\OdabirSjedista2.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\ZauzetaSjedistas\\OdabirSjedista2.cshtml",
@@ -533,7 +571,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 26,
               "Title": "OcijeniFilm.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Ocjenas\\OcijeniFilm.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Ocjenas\\OcijeniFilm.cshtml",
@@ -545,7 +583,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 29,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Notifikacijas\\Details.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Notifikacijas\\Details.cshtml",
@@ -557,7 +595,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 30,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Notifikacijas\\Delete.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Notifikacijas\\Delete.cshtml",
@@ -569,7 +607,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 27,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Notifikacijas\\Index.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Notifikacijas\\Index.cshtml",
@@ -581,7 +619,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 28,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Notifikacijas\\Create.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Notifikacijas\\Create.cshtml",
@@ -593,7 +631,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 31,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Kupovinas\\Index.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Kupovinas\\Index.cshtml",
@@ -605,7 +643,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 32,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Kupovinas\\Details.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Kupovinas\\Details.cshtml",
@@ -617,7 +655,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 33,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Kupovinas\\Delete.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Kupovinas\\Delete.cshtml",
@@ -629,7 +667,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 34,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Kupovinas\\Create.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Kupovinas\\Create.cshtml",
@@ -641,7 +679,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 35,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\KinoSalas\\Edit.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\KinoSalas\\Edit.cshtml",
@@ -653,7 +691,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 36,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\KinoSalas\\Details.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\KinoSalas\\Details.cshtml",
@@ -665,7 +703,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 37,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\KinoSalas\\Delete.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\KinoSalas\\Delete.cshtml",
@@ -677,7 +715,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 38,
               "Title": "KinoSala.cs",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Models\\KinoSala.cs",
               "RelativeDocumentMoniker": "CineTech\\Models\\KinoSala.cs",
@@ -689,7 +727,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 39,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\KinoSalas\\Create.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\KinoSalas\\Create.cshtml",
@@ -701,7 +739,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 40,
               "Title": "SviKorisniciEdit.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Home\\SviKorisniciEdit.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Home\\SviKorisniciEdit.cshtml",
@@ -713,7 +751,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 41,
               "Title": "SviKorisnici.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Home\\SviKorisnici.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Home\\SviKorisnici.cshtml",
@@ -725,7 +763,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 43,
               "Title": "Privacy.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Home\\Privacy.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Home\\Privacy.cshtml",
@@ -737,7 +775,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 44,
               "Title": "KupovinaView.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Home\\KupovinaView.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Home\\KupovinaView.cshtml",
@@ -749,7 +787,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 45,
               "Title": "FilmsController.cs",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Controllers\\FilmsController.cs",
               "RelativeDocumentMoniker": "CineTech\\Controllers\\FilmsController.cs",
@@ -761,7 +799,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 42,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "CineTech\\Controllers\\HomeController.cs",
@@ -773,7 +811,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 47,
               "Title": "NajgledanijiFilmoviUSvijetu.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Films\\NajgledanijiFilmoviUSvijetu.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Films\\NajgledanijiFilmoviUSvijetu.cshtml",
@@ -785,7 +823,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 46,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Films\\Create.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Films\\Create.cshtml",
@@ -797,7 +835,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 48,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Films\\Edit.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Films\\Edit.cshtml",
@@ -809,7 +847,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 49,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Films\\Details.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Films\\Details.cshtml",
@@ -821,7 +859,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 50,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Films\\Delete.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Films\\Delete.cshtml",
@@ -833,7 +871,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 51,
               "Title": "AdminFilmovi.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Films\\AdminFilmovi.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Films\\AdminFilmovi.cshtml",
@@ -845,7 +883,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 53,
               "Title": "site.css",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "CineTech\\wwwroot\\css\\site.css",
@@ -857,7 +895,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 54,
               "Title": "_ManageNav.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Areas\\Identity\\Pages\\Account\\Manage\\_ManageNav.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Areas\\Identity\\Pages\\Account\\Manage\\_ManageNav.cshtml",
@@ -869,7 +907,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 56,
               "Title": "Index.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml.cs",
               "RelativeDocumentMoniker": "CineTech\\Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml.cs",
@@ -881,7 +919,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 55,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml",
@@ -893,7 +931,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 57,
               "Title": "_LoginPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Shared\\_LoginPartial.cshtml",
               "RelativeDocumentMoniker": "CineTech\\Views\\Shared\\_LoginPartial.cshtml",
@@ -905,7 +943,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 52,
               "Title": "_Layout.cshtml.css",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Views\\Shared\\_Layout.cshtml.css",
               "RelativeDocumentMoniker": "CineTech\\Views\\Shared\\_Layout.cshtml.css",
@@ -930,30 +968,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 58,
-              "Title": "HTMLMailData.cs",
-              "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Models\\HTMLMailData.cs",
-              "RelativeDocumentMoniker": "CineTech\\Models\\HTMLMailData.cs",
-              "ToolTip": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Models\\HTMLMailData.cs",
-              "RelativeToolTip": "CineTech\\Models\\HTMLMailData.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T20:20:25.084Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 54,
-              "Title": "Racun.html",
-              "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Templates\\Racun.html",
-              "RelativeDocumentMoniker": "CineTech\\Templates\\Racun.html",
-              "ToolTip": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Templates\\Racun.html",
-              "RelativeToolTip": "CineTech\\Templates\\Racun.html",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABcAAAAHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-06-12T20:19:12.52Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 57,
               "Title": "IMailService.cs",
               "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Services\\IMailService.cs",
               "RelativeDocumentMoniker": "CineTech\\Services\\IMailService.cs",
@@ -962,18 +976,6 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-12T20:16:12.726Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 56,
-              "Title": "MailService.cs",
-              "DocumentMoniker": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Services\\MailService.cs",
-              "RelativeDocumentMoniker": "CineTech\\Services\\MailService.cs",
-              "ToolTip": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\Services\\MailService.cs",
-              "RelativeToolTip": "CineTech\\Services\\MailService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAIwAAABCAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T20:15:37.391Z"
             }
           ]
         }

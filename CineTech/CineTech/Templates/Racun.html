@@ -9,16 +9,125 @@
 </body>
 </html>
     -->
-
-<head>
+<!--<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Hello</title>
 </head>
 <body>
-    <h1>Hello fellow coder {0}!</h1>
+    <h1>Hello fellow coder !</h1>
     <p>
         We hope this tutorial will come in handy for your ASP.NET Core project 🙂
     </p>
     <p>Thanks for reading!</p>
-    <p>{1}</p>
+    <p></p>
+</body>-->
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {{
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }}
+
+        .container {{
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            padding: 20px;
+        }}
+
+        .header {{
+            text-align: center;
+            border-bottom: 1px solid #dddddd;
+            padding-bottom: 10px;
+        }}
+
+        .header img {{
+            max-width: 150px;
+            height: auto;
+        }}
+
+        .details {{
+            margin: 20px 0;
+        }}
+
+        .details h2 {{
+            margin: 0;
+            color: #333333;
+        }}
+
+        .details p {{
+            margin: 5px 0;
+            color: #666666;
+        }}
+
+        .seats {{
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }}
+
+        .seats th, .seats td {{
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }}
+
+        .seats th {{
+            background-color: #f2f2f2;
+        }}
+
+        .footer {{
+            text-align: center;
+            margin-top: 20px;
+            color: #999999;
+        }}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="~/img/logoSivi.png" alt="Cinetech Logo">
+        </div>
+        <div class="details">
+            <h2>Račun</h2>
+            <p><strong>Ime filma:</strong> {0}</p>
+            <p><strong>Vrijeme projekcije:</strong> {1}</p>
+            <p><strong>Sala:</strong> {2}</p>
+        </div>
+        <table class="seats">
+            <thead>
+                <tr>
+                    <th>Sjedište</th>
+                    <th>Red</th>
+                    <th>Kolona</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Sjedalo 1</td>
+                    <td>Red 1</td>
+                    <td>Kolona 5</td>
+                </tr>
+                <tr>
+                    <td>Sjedalo 2</td>
+                    <td>Red 1</td>
+                    <td>Kolona 6</td>
+                </tr>
+
+            </tbody>
+        </table>
+        <div class="footer">
+            <p>Hvala na kupovini! Uživajte u filmu.</p>
+            <p>&copy; 2024 Vaš Cinetech. Sva prava pridržana.</p>
+        </div>
+    </div>
 </body>
+</html>
