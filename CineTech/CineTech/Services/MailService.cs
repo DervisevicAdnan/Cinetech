@@ -229,5 +229,48 @@ namespace CineTech.Services
                 return false;
             }
         }
+
+        public bool SendNotifikacijaMail(NotifikacijaMailData htmlMailData)
+        {
+            try
+            {
+                using (MimeMessage emailMessage = new MimeMessage())
+                {
+                    MailboxAddress emailFrom = new MailboxAddress(_mailSettings.SenderName, _mailSettings.SenderEmail);
+                    emailMessage.From.Add(emailFrom);
+
+                    MailboxAddress emailTo = new MailboxAddress(htmlMailData.EmailToName, htmlMailData.EmailToId);
+                    emailMessage.To.Add(emailTo);
+
+                    emailMessage.Subject = "Premijera: " + htmlMailData.NazivFilma;
+
+                    string filePath = Directory.GetCurrentDirectory() + "\\Templates\\Notifikacija.html";
+                    string emailTemplateText = File.ReadAllText(filePath);
+
+                    emailTemplateText = string.Format(emailTemplateText, htmlMailData.NazivFilma, htmlMailData.DatumPredstavljanja);
+
+                    BodyBuilder emailBodyBuilder = new BodyBuilder();
+                    emailBodyBuilder.HtmlBody = emailTemplateText;
+                    emailBodyBuilder.TextBody = "Plain Text goes here to avoid marked as spam for some email servers.";
+
+                    emailMessage.Body = emailBodyBuilder.ToMessageBody();
+
+                    using (SmtpClient mailClient = new SmtpClient())
+                    {
+                        mailClient.Connect(_mailSettings.Server, _mailSettings.Port, MailKit.Security.SecureSocketOptions.StartTls);
+                        mailClient.Authenticate(_mailSettings.SenderEmail, _mailSettings.Password);
+                        mailClient.Send(emailMessage);
+                        mailClient.Disconnect(true);
+                    }
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // Exception Details
+                return false;
+            }
+        }
     }
 }

@@ -8,5 +8,6 @@ namespace CineTech.Services
         Task<bool> SendMailAsync(MailData mailData);
         bool SendHTMLMail(HTMLMailData htmlMailData);
         bool SendRezervacijaMail(HTMLMailData htmlMailData);
+        bool SendNotifikacijaMail(NotifikacijaMailData htmlMailData);
     }
 }

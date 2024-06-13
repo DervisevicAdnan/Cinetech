@@ -50,6 +50,10 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
 builder.Services.AddTransient<CineTech.Services.IMailService, CineTech.Services.MailService>();
 
+builder.Services.AddTransient<NotifikacijeServis>();
+builder.Services.AddHostedService<NotificationBackgroundService>();
+
+
 var app = builder.Build();
 // Dodaj servise u DI kontejner
 //builder.Services.AddControllersWithViews();
