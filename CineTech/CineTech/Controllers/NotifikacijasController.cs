@@ -76,7 +76,8 @@ namespace CineTech.Controllers
 
         public async Task<IActionResult> Create([Bind("KorisnikId,PeriodNotifikacije,StatusNotifikacije")] Notifikacija notifikacija,int filmId)
         {
-
+            var user = await _userManager.FindByIdAsync(notifikacija.KorisnikId);
+            var username = user.UserName;
             if (ModelState.IsValid)
             {
                 _context.Add(notifikacija);
@@ -89,8 +90,7 @@ namespace CineTech.Controllers
                 };
                 _context.NotifikacijeFilma.Add(notifikacijeFilma);
                 await _context.SaveChangesAsync();
-
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("UserNotifikacije","Notifikacijas", new { username = User.Identity.Name});
             }
             return View(notifikacija);
         }
