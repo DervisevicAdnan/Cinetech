@@ -1,6 +1,13 @@
 # CineTech - Aplikacija za kino
 ## Tim 27 - SCS
 
+**Podaci:**
+- Konekcioni string: "Data Source=SQL6032.site4now.net;Initial Catalog=db_aa87d8_cinetechooad;User Id=db_aa87d8_cinetechooad_admin;Password=Cinetech1."
+- Admin acc: Username: adrakovac2, Password: 88FKp6MPEUWW.d7
+- Korisnik acc: Username: beko, Password: jA8SaZH62.tegjV
+- Podaci koje je potrebno (ponekad) unijeti prilikom PUBLISH aplikacije: username: 11175896, pass: 60-dayfreetrial
+- Stranica: http://adi187-001-site1.btempurl.com/
+
 ![Imgur image](https://i.imgur.com/Dcqttej.png)
 
 **Naziv aplikacije:** CineTech
