@@ -28,7 +28,7 @@ namespace CineTech.Controllers
         }
 
         // GET: Notifikacijas
-        [Authorize(Roles = "Administrator, Korisnik")]
+        [Authorize(Roles = "Administrator")]
 
         public async Task<IActionResult> Index()
         {
@@ -36,7 +36,7 @@ namespace CineTech.Controllers
         }
 
         // GET: Notifikacijas/Details/5
-        [Authorize(Roles = "Administrator, Korisnik")]
+        [Authorize(Roles = "Administrator")]
 
         public async Task<IActionResult> Details(int? id)
         {
@@ -122,7 +122,7 @@ namespace CineTech.Controllers
             return View(notifikacijeWithFilms);
         }
 
-        [Authorize(Roles = "Administrator, Korisnik")]
+        [Authorize(Roles = "Administrator")]
 
         // GET: Notifikacijas/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -145,7 +145,7 @@ namespace CineTech.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Administrator, Korisnik")]
+        [Authorize(Roles = "Administrator")]
 
         public async Task<IActionResult> Edit(int id, [Bind("id,KorisnikId,PeriodNotifikacije,StatusNotifikacije")] Notifikacija notifikacija)
         {
@@ -176,7 +176,7 @@ namespace CineTech.Controllers
             }
             return View(notifikacija);
         }
-        [Authorize(Roles = "Administrator, Korisnik")]
+        [Authorize(Roles = "Administrator")]
 
         // GET: Notifikacijas/Delete/5
         public async Task<IActionResult> Delete(int? id)
@@ -199,7 +199,7 @@ namespace CineTech.Controllers
         // POST: Notifikacijas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Administrator, Korisnik")]
+        [Authorize(Roles = "Administrator")]
 
         public async Task<IActionResult> DeleteConfirmed(int id)
         {

@@ -56,11 +56,14 @@ namespace CineTech.Controllers
         {
             return View();
         }
+        [Authorize(Roles = "Administrator, Korisnik")]
         public IActionResult KupovinaView()
         {
             return View();
         }
         [HttpPost]
+        [Authorize(Roles = "Administrator, Korisnik")]
+
         public async Task<IActionResult> KupovinaView([FromBody] List<int[]> sjedista)
         {
             var projekcija = _context.Projekcija.FirstOrDefault(o => o.id == sjedista[0][2]);
@@ -141,6 +144,8 @@ namespace CineTech.Controllers
 
             return View(film);
         }
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> Edit(int id)
         {
             var film = await _filmoviController.Film.FindAsync(id);

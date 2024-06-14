@@ -29,12 +29,16 @@ namespace CineTech.Controllers
         }
 
         // GET: Kupovinas
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> Index()
         {
             return View(await _context.Kupovina.ToListAsync());
         }
 
         // GET: Kupovinas/Details/5
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -53,6 +57,8 @@ namespace CineTech.Controllers
         }
 
         // GET: Kupovinas/Create
+        [Authorize(Roles = "Administrator, Korisnik")]
+
         public async Task<IActionResult> Create(int? id)
         {
             var user = await _userManager.GetUserAsync(User);
@@ -73,6 +79,8 @@ namespace CineTech.Controllers
                 return View();
         }
         [HttpPost]
+        [Authorize(Roles = "Administrator, Korisnik")]
+
         public async Task<IActionResult> CreateSjediste([FromBody] List<int[]> sjedista)
         {
             if (sjedista.IsNullOrEmpty()) { return BadRequest("Niste odabrali mjesto"); }
@@ -98,6 +106,8 @@ namespace CineTech.Controllers
             await _context.SaveChangesAsync();
             return Ok(new { redirectUrl = Url.Action("UspjesnaKupovina", "Kupovinas", new { id = kupovinaId.id }) });
         }
+        [Authorize(Roles = "Administrator, Korisnik")]
+
         public async Task<IActionResult> UspjesnaKupovina(int? id)
         {
             if (id == null)
@@ -135,6 +145,8 @@ namespace CineTech.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> Create([Bind("cijena,datum,vrijeme,KorisnikId,ZauzetaSjedistaId")] Kupovina kupovina)
         {
             ViewBag.cijena = kupovina.cijena;
@@ -153,6 +165,8 @@ namespace CineTech.Controllers
         }
 
         // GET: Kupovinas/Edit/5
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -173,6 +187,8 @@ namespace CineTech.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> Edit(int id, [Bind("cijena,id,datum,vrijeme,KorisnikId,ZauzetaSjedistaId")] Kupovina kupovina)
         {
             if (id != kupovina.id)
@@ -204,6 +220,8 @@ namespace CineTech.Controllers
         }
 
         // GET: Kupovinas/Delete/5
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -224,6 +242,8 @@ namespace CineTech.Controllers
         // POST: Kupovinas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var kupovina = await _context.Kupovina.FindAsync(id);

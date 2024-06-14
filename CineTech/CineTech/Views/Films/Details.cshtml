@@ -76,8 +76,11 @@
         @if (isAktuelan)
         {
             <a asp-controller="Ocjenas" asp-action="OcijeniFilm" asp-route-id="@Model.id" class="btn btn-primary mr-2">Ocijenite film</a>
-            <a asp-controller="Projekcijas" asp-action="ProjekcijeFilma" asp-route-id="@Model.id" class="btn btn-primary mr-2">Prikaži termine</a>
         }
+    }
+    @if (isAktuelan)
+    {
+        <a asp-controller="Projekcijas" asp-action="ProjekcijeFilma" asp-route-id="@Model.id" class="btn btn-primary mr-2">Prikaži termine</a>
     }
     @if (User.IsInRole("Administrator"))
     {

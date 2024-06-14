@@ -10,6 +10,7 @@ using CineTech.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using CineTech.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CineTech.Controllers
 {
@@ -27,12 +28,16 @@ namespace CineTech.Controllers
         }
 
         // GET: Rezervacijas
+        [Authorize(Roles="Administrator")]
+
         public async Task<IActionResult> Index()
         {
             return View(await _context.Rezervacija.ToListAsync());
         }
 
         // GET: Rezervacijas/Details/5
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -49,6 +54,8 @@ namespace CineTech.Controllers
 
             return View(rezervacija);
         }
+        [Authorize(Roles = "Administrator,Korisnik")]
+
         public async Task<IActionResult> UspjesnaRezervacija(int? id)
         {
             if (id == null)
@@ -79,6 +86,8 @@ namespace CineTech.Controllers
             return View(uspjesnaRezervacija);
         }
         // GET: Rezervacijas/Create
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> Create(int?id)
         {
             var user = await _userManager.GetUserAsync(User);
@@ -87,6 +96,7 @@ namespace CineTech.Controllers
             ViewBag.id = id;
             return View();
         }
+        [Authorize(Roles = "Administrator,Korisnik")]
         public async Task<IActionResult> CreateSjediste(int red,int redniBrojSjedista,int projekcijaId)
         {
             var user = await _userManager.GetUserAsync(User);
@@ -107,6 +117,8 @@ namespace CineTech.Controllers
             return View(rezervacija);
         }
         [HttpPost]
+        [Authorize(Roles = "Administrator,Korisnik")]
+
         public async Task<IActionResult> CreateSjediste([FromBody] List<int[]> sjedista)
         {
             if (sjedista.IsNullOrEmpty()) { return BadRequest("Niste odabrali mjesto"); }
@@ -131,6 +143,8 @@ namespace CineTech.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> Create([Bind("datum,vrijeme,KorisnikId,ZauzetaSjedistaId")] Rezervacija rezervacija)
         {
             
@@ -144,6 +158,8 @@ namespace CineTech.Controllers
         }
 
         // GET: Rezervacijas/Edit/5
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -164,6 +180,8 @@ namespace CineTech.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> Edit(int id, [Bind("id,datum,vrijeme,KorisnikId,ZauzetaSjedistaId")] Rezervacija rezervacija)
         {
             if (id != rezervacija.id)
@@ -195,6 +213,8 @@ namespace CineTech.Controllers
         }
 
         // GET: Rezervacijas/Delete/5
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -215,6 +235,8 @@ namespace CineTech.Controllers
         // POST: Rezervacijas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var rezervacija = await _context.Rezervacija.FindAsync(id);

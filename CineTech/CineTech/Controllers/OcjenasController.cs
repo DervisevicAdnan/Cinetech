@@ -39,6 +39,8 @@ namespace CineTech.Controllers
         }
 
         // GET: Ocjenas
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> Index(int ?id)
 
         {
@@ -46,6 +48,7 @@ namespace CineTech.Controllers
         }
 
         // GET: Ocjenas/Details/5
+
         public async Task<IActionResult> Details(int? id)
         {
             ViewBag.ocjenaid = id;
@@ -66,6 +69,7 @@ namespace CineTech.Controllers
 
         //[Authorize(Roles="Administrator, Korisnik")]
         // GET: Ocjenas/OcjeneFilma/5
+
         public async Task<IActionResult> OcjeneFilma(int? id)
         {
             ViewBag.Ocjeneid = id;
@@ -88,6 +92,8 @@ namespace CineTech.Controllers
 
         // GET: Ocjenas/OcijeniFilm/5
         [HttpGet]
+        [Authorize(Roles = "Administrator, Korisnik")]
+
         public async Task<IActionResult> OcijeniFilm(int? id)
         {
             var film = await _context.Film.FindAsync(id);
@@ -115,6 +121,8 @@ namespace CineTech.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator, Korisnik")]
+
         public async Task<IActionResult> OcijeniFilm([Bind("ocjenaFilma,komentar,datum,korisnikId,FilmId")] Ocjena ocjena)
         {
             var user = await _userManager.GetUserAsync(User);
@@ -151,68 +159,7 @@ namespace CineTech.Controllers
         }
 
 
-        // GET: Ocjenas/Create
-        /*[HttpGet]
-
-        public async Task<IActionResult> Create(int?id)
-        {
-            var user = await _userManager.GetUserAsync(User);
-            var korisnik1 = await _userManager.GetUserNameAsync(user);
-            var korisnik = await _userManager.GetUserIdAsync(user);
-            ViewBag.KorisnikId = korisnik1;
-            ViewBag.FilmId = id;
-            return View();
-        }
-
-        // POST: Ocjenas/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-
-        public async Task<IActionResult> Create([Bind("id,ocjenaFilma,komentar,datum,korisnikId,FilmId")] Ocjena ocjena)
-        {
-            var user = await _userManager.GetUserAsync(User);
-            var korisnik = await _userManager.GetUserIdAsync(user);          
-            ocjena.datum = DateTime.Today;
-            ocjena.korisnikId = korisnik;
-
-            
-            if (ModelState.IsValid)
-            {
-
-                if (ocjena.korisnikId != korisnik)
-                {
-                    return NotFound();
-                }
-                _context.Add(ocjena);
-                await _context.SaveChangesAsync();
-                /*var ocjeneFilma = new OcjeneFilma
-                {
-                    FilmId = 3, 
-                    OcjenaId = ocjena.id 
-                };
-
-                //_context.OcjeneFilma.Add(ocjeneFilma);
-                //await _context.SaveChangesAsync();
-
-                //var film = await _context.Film.FirstOrDefaultAsync();
-                //          ocjeneFilma.FilmId = film.id;
-                //          ocjeneFilma.OcjenaId = ocjena.id;
-                //          _context.OcjeneFilma.Add(ocjeneFilma);
-                //          await _context.SaveChangesAsync();
-                return RedirectToAction("Index");
-            }
-            if (ModelState.IsValid)
-            {
-                _context.Add(ocjena);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(ocjena);
-            return View(ocjena);
-        }*/
-
+       
         // GET: Ocjenas/Edit/5
         [Authorize(Roles = "Administrator, Korisnik")]
         public async Task<IActionResult> Edit(int? id)
@@ -249,6 +196,8 @@ namespace CineTech.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator, Korisnik")]
+
         public async Task<IActionResult> Edit(int id, [Bind("id,ocjenaFilma,komentar,datum,korisnikId,FilmId")] Ocjena ocjena)
         {
             if (id != ocjena.id)
@@ -292,6 +241,8 @@ namespace CineTech.Controllers
         }
 
         // GET: Ocjenas/Delete/5
+        [Authorize(Roles = "Administrator, Korisnik")]
+
 
         public async Task<IActionResult> Delete(int? id)
         {
@@ -323,6 +274,7 @@ namespace CineTech.Controllers
         // POST: Ocjenas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator, Korisnik")]
 
         public async Task<IActionResult> DeleteConfirmed(int id)
         {

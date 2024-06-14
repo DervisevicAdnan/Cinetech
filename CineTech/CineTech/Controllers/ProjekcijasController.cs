@@ -19,6 +19,8 @@ namespace CineTech.Controllers
         {
             _context = context;
         }
+        [Authorize(Roles = "Administrator, Korisnik")]
+
         public async Task<IActionResult> OdabirSjedista(int? projekcijaId)
         {
             ViewBag.id = projekcijaId;
@@ -59,6 +61,8 @@ namespace CineTech.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator, Korisnik")]
+
         public async Task<IActionResult> OdabirSjedista([Bind("red,redniBrojSjedista,ProjekcijaId")] ZauzetaSjedista zauzetaSjedista)
         {
             if (ModelState.IsValid)
@@ -71,6 +75,8 @@ namespace CineTech.Controllers
         }
 
         // GET: Projekcijas
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> Index()
         {
             return View(await _context.Projekcija.ToListAsync());

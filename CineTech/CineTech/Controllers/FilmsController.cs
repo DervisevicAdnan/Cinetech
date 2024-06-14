@@ -30,13 +30,6 @@ namespace CineTech.Controllers
            // this.movieService = movieService;
         }
         // GET: Films
-        public async Task<IActionResult> Index()
-        {
-            var aktuelniFilmovi = await _context.Film
-            .Where(f => f.StatusPrikazivanja == StatusPrikazivanja.Aktuelan)
-            .ToListAsync();
-            return View(aktuelniFilmovi);
-        }
         [Authorize(Roles = "Administrator")]
         public IActionResult AdminIndex()
         {

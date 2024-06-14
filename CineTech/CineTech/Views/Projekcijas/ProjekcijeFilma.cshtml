@@ -48,7 +48,9 @@
                     <td>@Html.DisplayFor(modelItem => item.filmId)</td>
                 }
                 <td>
+                    @if ((User.IsInRole("Administrator") || (User.IsInRole("Korisnik")))){
                     <a class="btn btn-primary" asp-controller="ZauzetaSjedistas" asp-action="OdabirSjedista2" asp-route-id="@item.id">Odaberi projekciju</a>
+                    }
                 </td>
             </tr>
         }

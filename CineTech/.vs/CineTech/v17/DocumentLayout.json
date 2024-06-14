@@ -1,34 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\aNaToMiCaLL\\Desktop\\Faks\\tim27-cinetech\\CineTech\\",
+  "WorkspaceRootPath": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|c:\\users\\anatomicall\\desktop\\faks\\tim27-cinetech\\cinetech\\cinetech\\views\\home\\kupovinaview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|solutionrelative:cinetech\\views\\home\\kupovinaview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|c:\\users\\adidr\\onedrive\\dokumenti\\github\\tim27-cinetech\\cinetech\\cinetech\\models\\statusprikazivanja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|solutionrelative:cinetech\\models\\statusprikazivanja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|c:\\users\\anatomicall\\desktop\\faks\\tim27-cinetech\\cinetech\\cinetech\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|c:\\users\\adidr\\onedrive\\dokumenti\\github\\tim27-cinetech\\cinetech\\cinetech\\models\\film.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|solutionrelative:cinetech\\models\\film.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|c:\\users\\adidr\\onedrive\\dokumenti\\github\\tim27-cinetech\\cinetech\\cinetech\\views\\films\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|solutionrelative:cinetech\\views\\films\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|c:\\users\\adidr\\onedrive\\dokumenti\\github\\tim27-cinetech\\cinetech\\cinetech\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|solutionrelative:cinetech\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|c:\\users\\adidr\\onedrive\\dokumenti\\github\\tim27-cinetech\\cinetech\\cinetech\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|solutionrelative:cinetech\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|c:\\users\\anatomicall\\desktop\\faks\\tim27-cinetech\\cinetech\\cinetech\\controllers\\kupovinascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|solutionrelative:cinetech\\controllers\\kupovinascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|c:\\users\\anatomicall\\desktop\\faks\\tim27-cinetech\\cinetech\\cinetech\\views\\kupovinas\\uspjesnakupovina.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|solutionrelative:cinetech\\views\\kupovinas\\uspjesnakupovina.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|c:\\users\\anatomicall\\desktop\\faks\\tim27-cinetech\\cinetech\\cinetech\\views\\zauzetasjedistas\\odabirsjedista2.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|solutionrelative:cinetech\\views\\zauzetasjedistas\\odabirsjedista2.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|c:\\users\\anatomicall\\desktop\\faks\\tim27-cinetech\\cinetech\\cinetech\\views\\ocjenas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|solutionrelative:cinetech\\views\\ocjenas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|c:\\users\\anatomicall\\desktop\\faks\\tim27-cinetech\\cinetech\\cinetech\\controllers\\ocjenascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{937A346F-17B2-4C19-BF3B-15ADC0788CEA}|CineTech\\CineTech.csproj|solutionrelative:cinetech\\controllers\\ocjenascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,93 +30,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "OdabirSjedista2.cshtml",
-              "DocumentMoniker": "C:\\Users\\aNaToMiCaLL\\Desktop\\Faks\\tim27-cinetech\\CineTech\\CineTech\\Views\\ZauzetaSjedistas\\OdabirSjedista2.cshtml",
-              "RelativeDocumentMoniker": "CineTech\\Views\\ZauzetaSjedistas\\OdabirSjedista2.cshtml",
-              "ToolTip": "C:\\Users\\aNaToMiCaLL\\Desktop\\Faks\\tim27-cinetech\\CineTech\\CineTech\\Views\\ZauzetaSjedistas\\OdabirSjedista2.cshtml",
-              "RelativeToolTip": "CineTech\\Views\\ZauzetaSjedistas\\OdabirSjedista2.cshtml",
-              "ViewState": "AQIAADAAAAAAAAAAAAAAAD4AAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-14T08:38:54.48Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\aNaToMiCaLL\\Desktop\\Faks\\tim27-cinetech\\CineTech\\CineTech\\Views\\Ocjenas\\Index.cshtml",
-              "RelativeDocumentMoniker": "CineTech\\Views\\Ocjenas\\Index.cshtml",
-              "ToolTip": "C:\\Users\\aNaToMiCaLL\\Desktop\\Faks\\tim27-cinetech\\CineTech\\CineTech\\Views\\Ocjenas\\Index.cshtml",
-              "RelativeToolTip": "CineTech\\Views\\Ocjenas\\Index.cshtml",
-              "ViewState": "AQIAACQAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-14T09:48:23.895Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "OcjenasController.cs",
-              "DocumentMoniker": "C:\\Users\\aNaToMiCaLL\\Desktop\\Faks\\tim27-cinetech\\CineTech\\CineTech\\Controllers\\OcjenasController.cs",
-              "RelativeDocumentMoniker": "CineTech\\Controllers\\OcjenasController.cs",
-              "ToolTip": "C:\\Users\\aNaToMiCaLL\\Desktop\\Faks\\tim27-cinetech\\CineTech\\CineTech\\Controllers\\OcjenasController.cs",
-              "RelativeToolTip": "CineTech\\Controllers\\OcjenasController.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T09:47:41.693Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "KupovinaView.cshtml",
-              "DocumentMoniker": "C:\\Users\\aNaToMiCaLL\\Desktop\\Faks\\tim27-cinetech\\CineTech\\CineTech\\Views\\Home\\KupovinaView.cshtml",
-              "RelativeDocumentMoniker": "CineTech\\Views\\Home\\KupovinaView.cshtml",
-              "ToolTip": "C:\\Users\\aNaToMiCaLL\\Desktop\\Faks\\tim27-cinetech\\CineTech\\CineTech\\Views\\Home\\KupovinaView.cshtml",
-              "RelativeToolTip": "CineTech\\Views\\Home\\KupovinaView.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-14T08:41:15.053Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UspjesnaKupovina.cshtml",
-              "DocumentMoniker": "C:\\Users\\aNaToMiCaLL\\Desktop\\Faks\\tim27-cinetech\\CineTech\\CineTech\\Views\\Kupovinas\\UspjesnaKupovina.cshtml",
-              "RelativeDocumentMoniker": "CineTech\\Views\\Kupovinas\\UspjesnaKupovina.cshtml",
-              "ToolTip": "C:\\Users\\aNaToMiCaLL\\Desktop\\Faks\\tim27-cinetech\\CineTech\\CineTech\\Views\\Kupovinas\\UspjesnaKupovina.cshtml",
-              "RelativeToolTip": "CineTech\\Views\\Kupovinas\\UspjesnaKupovina.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-14T08:39:22.958Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "KupovinasController.cs",
-              "DocumentMoniker": "C:\\Users\\aNaToMiCaLL\\Desktop\\Faks\\tim27-cinetech\\CineTech\\CineTech\\Controllers\\KupovinasController.cs",
-              "RelativeDocumentMoniker": "CineTech\\Controllers\\KupovinasController.cs",
-              "ToolTip": "C:\\Users\\aNaToMiCaLL\\Desktop\\Faks\\tim27-cinetech\\CineTech\\CineTech\\Controllers\\KupovinasController.cs",
-              "RelativeToolTip": "CineTech\\Controllers\\KupovinasController.cs",
-              "ViewState": "AQIAADoAAAAAAAAAAAAswEcAAAANAAAA",
+              "Title": "StatusPrikazivanja.cs",
+              "DocumentMoniker": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\Models\\StatusPrikazivanja.cs",
+              "RelativeDocumentMoniker": "CineTech\\Models\\StatusPrikazivanja.cs",
+              "ToolTip": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\Models\\StatusPrikazivanja.cs",
+              "RelativeToolTip": "CineTech\\Models\\StatusPrikazivanja.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T08:39:27.557Z",
+              "WhenOpened": "2024-06-14T12:18:47.178Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\aNaToMiCaLL\\Desktop\\Faks\\tim27-cinetech\\CineTech\\CineTech\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "CineTech\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\aNaToMiCaLL\\Desktop\\Faks\\tim27-cinetech\\CineTech\\CineTech\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "CineTech\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAC4AAAAAAAAAAAAswEYAAAAwAAAA",
+              "Title": "Film.cs",
+              "DocumentMoniker": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\Models\\Film.cs",
+              "RelativeDocumentMoniker": "CineTech\\Models\\Film.cs",
+              "ToolTip": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\Models\\Film.cs",
+              "RelativeToolTip": "CineTech\\Models\\Film.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAYwBkAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T08:38:47.34Z",
+              "WhenOpened": "2024-06-14T12:08:38.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\Views\\Films\\Details.cshtml",
+              "RelativeDocumentMoniker": "CineTech\\Views\\Films\\Details.cshtml",
+              "ToolTip": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\Views\\Films\\Details.cshtml",
+              "RelativeToolTip": "CineTech\\Views\\Films\\Details.cshtml",
+              "ViewState": "AQIAACsAAAAAAAAAAAAmwDsAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-14T11:47:21.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "CineTech\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "CineTech\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-14T11:45:51.588Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "CineTech\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\AdiDr\\OneDrive\\Dokumenti\\GitHub\\tim27-cinetech\\CineTech\\CineTech\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "CineTech\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T11:45:30.459Z",
               "EditorCaption": ""
             }
           ]

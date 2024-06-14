@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CineTech.Data;
 using CineTech.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CineTech.Controllers
 {
@@ -20,12 +21,16 @@ namespace CineTech.Controllers
         }
 
         // GET: ZauzetaSjedistas
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> Index()
         {
             return View(await _context.ZauzetaSjedista.ToListAsync());
         }
 
         // GET: ZauzetaSjedistas/Details/5
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -46,6 +51,8 @@ namespace CineTech.Controllers
         [HttpGet]
 
         // GET: ZauzetaSjedistas/Create
+        [Authorize(Roles = "Administrator,Korisnik")]
+
         public async Task<IActionResult> OdabirSjedista2(int? id)
         {
             ViewBag.id = id;
@@ -93,8 +100,10 @@ namespace CineTech.Controllers
         // POST: ZauzetaSjedistas/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        /*[HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator,Korisnik")]
+
         public async Task<IActionResult> OdabirSjedista([Bind("id,red,redniBrojSjedista,ProjekcijaId")] ZauzetaSjedista zauzetaSjedista)
         {
             if (ModelState.IsValid)
@@ -104,9 +113,11 @@ namespace CineTech.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(zauzetaSjedista);
-        }
+        }*/
 
         // GET: ZauzetaSjedistas/Edit/5
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -127,6 +138,8 @@ namespace CineTech.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> Edit(int id, [Bind("id,red,redniBrojSjedista,ProjekcijaId")] ZauzetaSjedista zauzetaSjedista)
         {
             if (id != zauzetaSjedista.id)
@@ -158,6 +171,8 @@ namespace CineTech.Controllers
         }
 
         // GET: ZauzetaSjedistas/Delete/5
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -178,6 +193,8 @@ namespace CineTech.Controllers
         // POST: ZauzetaSjedistas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
+
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var zauzetaSjedista = await _context.ZauzetaSjedista.FindAsync(id);

@@ -61,10 +61,6 @@
     </div>
 
     <div class="text-center mt-4">
-        @if (User.IsInRole("Administrator"))
-        {
-            <a asp-action="Edit" asp-route-id="@Model.Item1?.id" class="btn btn-warning mx-2">Edit</a>
-        }
         <a asp-controller="Home" asp-action="Index" class="btn btn-primary mx-2">Nazad na početnu</a>
     </div>
 </div>
