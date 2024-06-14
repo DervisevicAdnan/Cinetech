@@ -8,6 +8,12 @@
 
 <h1 class="text-center my-4">Najgledaniji filmovi</h1>
 
+<center style="margin-bottom:10px">
+    <a asp-controller="Films" asp-action="NajgledanijiFilmoviUSvijetu" class="btn btn-secondary">
+        Najpopularniji filmovi u svijetu
+    </a>
+</center>
+
 <div class="container">
     <div class="row">
         @foreach (var film in Model)
@@ -32,7 +38,4 @@
             </div>
         }
     </div>
-    <a asp-controller="Films" asp-action="NajgledanijiFilmoviUSvijetu">
-        <button >Najgledaniji filmovi u svijetu</button>
-    </a>
 </div>
