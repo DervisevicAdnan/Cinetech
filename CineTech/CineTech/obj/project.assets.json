@@ -8972,19 +8972,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HP Compaq\\.nuget\\packages\\": {}
+    "C:\\Users\\aNaToMiCaLL\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\CineTech.csproj",
+      "projectUniqueName": "C:\\Users\\aNaToMiCaLL\\Desktop\\Faks\\tim27-cinetech\\CineTech\\CineTech\\CineTech.csproj",
       "projectName": "CineTech",
-      "projectPath": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\CineTech.csproj",
-      "packagesPath": "C:\\Users\\HP Compaq\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP Compaq\\Desktop\\tim27-cinetech\\CineTech\\CineTech\\obj\\",
+      "projectPath": "C:\\Users\\aNaToMiCaLL\\Desktop\\Faks\\tim27-cinetech\\CineTech\\CineTech\\CineTech.csproj",
+      "packagesPath": "C:\\Users\\aNaToMiCaLL\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\aNaToMiCaLL\\Desktop\\Faks\\tim27-cinetech\\CineTech\\CineTech\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\HP Compaq\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\aNaToMiCaLL\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8992,7 +8992,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -9090,7 +9089,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

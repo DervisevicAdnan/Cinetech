@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json;
 using System.Diagnostics;
 using static CineTech.Controllers.FilmsController;
 
@@ -16,16 +18,18 @@ namespace CineTech.Controllers
         private readonly ApplicationDbContext _filmoviController;
         private readonly ILogger<HomeController> _logger;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly ApplicationDbContext _context;
 
 
 
 
-        public HomeController(ILogger<HomeController> logger, ApplicationDbContext filmoviController, UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext filmoviController, UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, ApplicationDbContext context)
         {
             _logger = logger;
             _filmoviController = filmoviController;
             _userManager = userManager;
             _roleManager = roleManager;
+            _context = context;
         }
 
         public async Task<IActionResult> Index()
@@ -56,6 +60,25 @@ namespace CineTech.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public async Task<IActionResult> KupovinaView([FromBody] List<int[]> sjedista)
+        {
+            var projekcija = _context.Projekcija.FirstOrDefault(o => o.id == sjedista[0][2]);
+            var nova_cijena = projekcija.cijenaOsnovneKarte*sjedista.Count();
+
+            if (DateTime.Today.DayOfWeek == DayOfWeek.Wednesday)
+            {
+                nova_cijena = nova_cijena * 0.9;
+            }
+
+            var podaci = new { Sjedista = sjedista, NovaCijena = nova_cijena };
+            TempData["Sjedista"] = JsonConvert.SerializeObject(podaci);
+
+            return Json(new { redirectUrl = Url.Action("KupovinaView", "Home") });
+        }
+
+
+
         [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> AdminView()
         {

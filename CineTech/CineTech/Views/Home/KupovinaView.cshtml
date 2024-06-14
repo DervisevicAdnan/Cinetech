@@ -1,5 +1,12 @@
-﻿@{
+﻿@using Newtonsoft.Json
+
+@{
     ViewData["Title"] = "KupovinaView";
+    var sjedistaJson = TempData["Sjedista"] as string;
+        dynamic podaci = JsonConvert.DeserializeObject(sjedistaJson);
+        var sjedista = (podaci.Sjedista).ToObject<List<int[]>>();
+        var novaCijena = (double)podaci.NovaCijena;
+
 }
 
 <h1 class="text-center">Upišite podatke vaše kartice</h1>
@@ -12,8 +19,8 @@
                     <div class="row">
                         <div class="col-md-4">
                             <img src="~/img/logoCinetechCrni.png" alt="CineTech Logo" height="100px" />
-                            <h3>Za platiti:</h3>
-                            <p>Cijena</p>
+                            <h3>Cijena:</h3>
+                            <h1>@novaCijena KM</h1>
                         </div>
                         <div class="col-md-8">
                             <h2 class="text-center">Dovršite kupovinu karata</h2>
@@ -36,7 +43,7 @@
                                     <img src="~/img/Mastercard.png" alt="Mastercard" height="50px" />
                                 </div>
                                 <div class="text-center mt-3">
-                                    <button type="submit" class="btn btn-primary">Plati</button>
+                                    <a id="myButton" class="btn btn-primary">Plati</a>
                                 </div>
                             </form>
                         </div>
@@ -46,3 +53,25 @@
         </div>
     </div>
 </div>
+<script>
+    var OdabranaSjedista = @Html.Raw(JsonConvert.SerializeObject(sjedista));
+
+    document.getElementById('myButton').addEventListener('click', function () {
+        $.ajax({
+            type: 'POST',
+            url: '/Kupovinas/CreateSjediste',
+            data: JSON.stringify(OdabranaSjedista),
+            contentType: 'application/json',
+            success: function (response) {
+                if (response.redirectUrl) {
+                    window.location.href = response.redirectUrl;
+                } else {
+                    console.log('Data sent successfully:', response);
+                }
+            },
+            error: function (error) {
+                console.error('Error sending data:', error);
+            }
+        });
+    });
+</script>

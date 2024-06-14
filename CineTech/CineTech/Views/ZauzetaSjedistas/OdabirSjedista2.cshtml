@@ -95,9 +95,10 @@
 
     document.getElementById('myButton1').addEventListener('click', function () {
         var dataToSend = OdabranaSjedista;
+        var cijena = 0;
         $.ajax({
             type: 'POST',
-            url: '/Kupovinas/CreateSjediste',
+            url: '/Home/KupovinaView',
             data: JSON.stringify(dataToSend),
             contentType: 'application/json',
             success: function (response) {

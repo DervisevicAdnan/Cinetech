@@ -58,7 +58,6 @@ namespace CineTech.Controllers
             var user = await _userManager.GetUserAsync(User);
             var korisnik1 = await _userManager.GetUserIdAsync(user);
             ViewBag.KorisnikId = korisnik1;
-            id = 3;
             var zauzetaSjedista = await _context.ZauzetaSjedista
                 .FirstOrDefaultAsync(m => m.id == id);
             var projekcija = await _context.Projekcija
@@ -99,7 +98,6 @@ namespace CineTech.Controllers
             await _context.SaveChangesAsync();
             return Ok(new { redirectUrl = Url.Action("UspjesnaKupovina", "Kupovinas", new { id = kupovinaId.id }) });
         }
-
         public async Task<IActionResult> UspjesnaKupovina(int? id)
         {
             if (id == null)
