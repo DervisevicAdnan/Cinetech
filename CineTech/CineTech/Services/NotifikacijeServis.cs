@@ -8,9 +8,9 @@ namespace CineTech.Services
     public class NotifikacijeServis
     {
         private readonly ApplicationDbContext _context;
-        private readonly IMailService _mailService;
+        private readonly InEmailSender _mailService;
 
-        public NotifikacijeServis(ApplicationDbContext context, IMailService mailService)
+        public NotifikacijeServis(ApplicationDbContext context, InEmailSender mailService)
         {
             _context = context;
             _mailService = mailService;
@@ -64,7 +64,7 @@ namespace CineTech.Services
                                 mailData.EmailToName = "";
                                 mailData.NazivFilma = film.naziv;
                                 mailData.DatumPredstavljanja = film.releseDate.Date.ToString();
-                                _mailService.SendNotifikacijaMail(mailData);
+                                await _mailService.SendNotifikacijaMail(mailData);
 
                                 notifikacija.StatusNotifikacije = StatusNotifikacije.Dostavljena;
                                 _context.Notifikacija.Update(notifikacija);

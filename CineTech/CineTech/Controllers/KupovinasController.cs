@@ -20,12 +20,14 @@ namespace CineTech.Controllers
         private readonly ApplicationDbContext _context;
         private readonly UserManager<IdentityUser> _userManager;
         private readonly IMailService _mailService;
+        private readonly InEmailSender _inEmailSender;
 
-        public KupovinasController(ApplicationDbContext context, UserManager<IdentityUser> userManager, IMailService mailService)
+        public KupovinasController(ApplicationDbContext context, UserManager<IdentityUser> userManager, IMailService mailService, InEmailSender inEmailSender)
         {
             _context = context;
             _userManager = userManager;
             _mailService = mailService;
+            _inEmailSender = inEmailSender;
         }
 
         // GET: Kupovinas
@@ -134,7 +136,8 @@ namespace CineTech.Controllers
             mailData.TerminProjekcije = projekcija.datum.ToShortDateString() + ", " + projekcija.vrijeme.ToShortTimeString();
             mailData.NazivSale = kinoSala.naziv;
             mailData.ZauzetaSjedista = zauzetaSjedista;
-            _mailService.SendHTMLMail(mailData);
+            await _inEmailSender.SendHTMLEmailAsync(mailData);
+            //_mailService.SendHTMLMail(mailData);
 
 
             var uspjesnaKupovina = new Tuple<Kupovina, List<ZauzetaSjedista>, String, String>(kupovina, zauzetaSjedista, film.naziv, kinoSala.naziv);

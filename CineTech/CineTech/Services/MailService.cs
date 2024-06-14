@@ -4,15 +4,18 @@ using MimeKit;
 using MailKit.Net.Smtp;
 using MailKit.Security;
 using System.Net.Security;
+using System.Text.Encodings.Web;
 
 namespace CineTech.Services
 {
     public class MailService : IMailService
     {
         private readonly MailSettings _mailSettings;
-        public MailService(IOptions<MailSettings> mailSettingsOptions)
+        private readonly InEmailSender _emailSender1;
+        public MailService(IOptions<MailSettings> mailSettingsOptions, InEmailSender emailSender1)
         {
             _mailSettings = mailSettingsOptions.Value;
+            _emailSender1 = emailSender1;
         }
 
         public bool SendMail(MailData mailData)
@@ -157,6 +160,9 @@ namespace CineTech.Services
 
                     emailMessage.Body = emailBodyBuilder.ToMessageBody();
 
+                    //await _emailSender1.SendEmailAsync(Input.Email, "Potvrda registracije", $"Da potvrdite registraciju pritisnite -> <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>ovaj dio teksta</a>.");
+
+
                     using (SmtpClient mailClient = new SmtpClient())
                     {
                         mailClient.ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => {
@@ -237,7 +243,7 @@ namespace CineTech.Services
 
                     using (SmtpClient mailClient = new SmtpClient())
                     {
-                        mailClient.ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => {
+                        /*mailClient.ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => {
                             if (sslPolicyErrors == SslPolicyErrors.None)
                                 return true;
 
@@ -259,7 +265,8 @@ namespace CineTech.Services
                             Console.WriteLine($"Failed to connect using StartTls: {ex.Message}");
                             Console.WriteLine("Retrying with SslOnConnect...");
                             mailClient.Connect(_mailSettings.Server, 465, SecureSocketOptions.SslOnConnect);
-                        }
+                        }*/
+                        mailClient.Connect(_mailSettings.Server, 25, SecureSocketOptions.None);
                         //mailClient.Connect(_mailSettings.Server, _mailSettings.Port, MailKit.Security.SecureSocketOptions.StartTls);
                         mailClient.Authenticate(_mailSettings.SenderEmail, _mailSettings.Password);
                         mailClient.Send(emailMessage);
