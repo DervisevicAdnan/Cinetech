@@ -159,7 +159,30 @@ namespace CineTech.Services
 
                     using (SmtpClient mailClient = new SmtpClient())
                     {
-                        mailClient.Connect(_mailSettings.Server, _mailSettings.Port, MailKit.Security.SecureSocketOptions.StartTls);
+                        mailClient.ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => {
+                            if (sslPolicyErrors == SslPolicyErrors.None)
+                                return true;
+
+                            Console.WriteLine($"SSL Policy Errors: {sslPolicyErrors}");
+                            foreach (var status in chain.ChainStatus)
+                            {
+                                Console.WriteLine($"Certificate error: {status.StatusInformation}");
+                            }
+
+                            // Allow any certificate during development (not recommended for production)
+                            return true;
+                        };
+                        try
+                        {
+                            mailClient.Connect(_mailSettings.Server, 587, SecureSocketOptions.StartTlsWhenAvailable);
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"Failed to connect using StartTls: {ex.Message}");
+                            Console.WriteLine("Retrying with SslOnConnect...");
+                            mailClient.Connect(_mailSettings.Server, 465, SecureSocketOptions.SslOnConnect);
+                        }
+                        //mailClient.Connect(_mailSettings.Server, _mailSettings.Port, MailKit.Security.SecureSocketOptions.StartTls);
                         mailClient.Authenticate(_mailSettings.SenderEmail, _mailSettings.Password);
                         mailClient.Send(emailMessage);
                         mailClient.Disconnect(true);
@@ -214,7 +237,30 @@ namespace CineTech.Services
 
                     using (SmtpClient mailClient = new SmtpClient())
                     {
-                        mailClient.Connect(_mailSettings.Server, _mailSettings.Port, MailKit.Security.SecureSocketOptions.StartTls);
+                        mailClient.ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => {
+                            if (sslPolicyErrors == SslPolicyErrors.None)
+                                return true;
+
+                            Console.WriteLine($"SSL Policy Errors: {sslPolicyErrors}");
+                            foreach (var status in chain.ChainStatus)
+                            {
+                                Console.WriteLine($"Certificate error: {status.StatusInformation}");
+                            }
+
+                            // Allow any certificate during development (not recommended for production)
+                            return true;
+                        };
+                        try
+                        {
+                            mailClient.Connect(_mailSettings.Server, 587, SecureSocketOptions.StartTlsWhenAvailable);
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"Failed to connect using StartTls: {ex.Message}");
+                            Console.WriteLine("Retrying with SslOnConnect...");
+                            mailClient.Connect(_mailSettings.Server, 465, SecureSocketOptions.SslOnConnect);
+                        }
+                        //mailClient.Connect(_mailSettings.Server, _mailSettings.Port, MailKit.Security.SecureSocketOptions.StartTls);
                         mailClient.Authenticate(_mailSettings.SenderEmail, _mailSettings.Password);
                         mailClient.Send(emailMessage);
                         mailClient.Disconnect(true);
@@ -257,7 +303,30 @@ namespace CineTech.Services
 
                     using (SmtpClient mailClient = new SmtpClient())
                     {
-                        mailClient.Connect(_mailSettings.Server, _mailSettings.Port, MailKit.Security.SecureSocketOptions.StartTls);
+                        mailClient.ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => {
+                            if (sslPolicyErrors == SslPolicyErrors.None)
+                                return true;
+
+                            Console.WriteLine($"SSL Policy Errors: {sslPolicyErrors}");
+                            foreach (var status in chain.ChainStatus)
+                            {
+                                Console.WriteLine($"Certificate error: {status.StatusInformation}");
+                            }
+
+                            // Allow any certificate during development (not recommended for production)
+                            return true;
+                        };
+                        try
+                        {
+                            mailClient.Connect(_mailSettings.Server, 587, SecureSocketOptions.StartTlsWhenAvailable);
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"Failed to connect using StartTls: {ex.Message}");
+                            Console.WriteLine("Retrying with SslOnConnect...");
+                            mailClient.Connect(_mailSettings.Server, 465, SecureSocketOptions.SslOnConnect);
+                        }
+                        //mailClient.Connect(_mailSettings.Server, _mailSettings.Port, MailKit.Security.SecureSocketOptions.StartTls);
                         mailClient.Authenticate(_mailSettings.SenderEmail, _mailSettings.Password);
                         mailClient.Send(emailMessage);
                         mailClient.Disconnect(true);
